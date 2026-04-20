@@ -151,7 +151,13 @@ body{
   box-shadow:0 2px 12px var(--shadow);
 }
 #tb-left{display:flex;align-items:center;gap:10px;}
-#menu-btn{display:none;}
+#menu-btn{display:flex;}
+
+/* sidebar collapsed (desktop) */
+body.sb-collapsed #sidebar{transform:translateX(-100%);}
+body.sb-collapsed #topbar{left:0;}
+body.sb-collapsed #stage{left:0;}
+body.sb-collapsed #btn-prev{left:10px;}
 #pg-ind{
   font-size:11.5px;font-weight:700;
   color:var(--red);
@@ -440,20 +446,23 @@ body{
 
 /* ── 手機底部導覽列 ── */
 #mob-nav{
-  display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
-  background:var(--card);border:1px solid var(--border);
-  border-radius:40px;box-shadow:0 6px 24px var(--shadow);
-  padding:8px 16px;gap:16px;align-items:center;z-index:140;
+  display:none;position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
+  background:rgba(30,30,30,.55);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:40px;box-shadow:0 8px 28px rgba(0,0,0,.28);
+  padding:6px 14px;gap:12px;align-items:center;z-index:140;
 }
+[data-theme=dark] #mob-nav{background:rgba(15,15,15,.62);}
 .mob-btn{
-  width:44px;height:44px;border:none;background:transparent;
+  width:42px;height:42px;border:none;background:transparent;
   border-radius:50%;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
-  color:var(--ink2);transition:background .18s,color .18s;
+  color:rgba(255,255,255,.85);transition:background .18s,color .18s;
 }
-.mob-btn:hover,.mob-btn:active{background:var(--red);color:#fff;}
+.mob-btn:hover,.mob-btn:active{background:rgba(190,30,45,.75);color:#fff;}
 .mob-btn:disabled{opacity:.25;pointer-events:none;}
-#mob-pg{font-size:12px;color:var(--ink3);min-width:64px;text-align:center;letter-spacing:.03em;}
+#mob-pg{font-size:12px;color:rgba(255,255,255,.65);min-width:52px;text-align:center;letter-spacing:.03em;}
 
 /* ══════════════════════════════
    OVERLAY
@@ -651,7 +660,6 @@ body{
   <button class="mob-btn" id="mob-prev" onclick="prevPage()">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
-  <span id="mob-pg">1 / 20</span>
   <button class="mob-btn" id="mob-next" onclick="nextPage()">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 6 15 12 9 18"/></svg>
   </button>
@@ -890,7 +898,7 @@ body{
         <span class="tag t-f">【第一會場】</span>
         <h4>《孝經》書名翻譯研究──從 pietas、filial piety 到 family reverence 的詮釋轉譯現象</h4>
         <div class="ptags">
-          <span class="ptag">發表人　林昕曖　成大中文</span>
+          <span class="ptag">發表人　林昕嬡　成大中文</span>
           <span class="ptag">討論人　潘鳳娟 教授　臺師大東亞學系</span>
         </div>
       </div>
@@ -1425,8 +1433,19 @@ function applyFz(){document.documentElement.style.fontSize=(16+flv*1.5)+'px';}
 function changeFontSize(d){flv=Math.max(-2,Math.min(2,flv+d));localStorage.setItem('fz',flv);applyFz();}
 applyFz();
 
-function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('on');}
-function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('overlay').classList.remove('on');}
+function toggleSidebar(){
+  const mobile=window.innerWidth<=900;
+  if(mobile){
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('on');
+  } else {
+    document.body.classList.toggle('sb-collapsed');
+  }
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('on');
+}
 
 let tx=null,ty=null;
 document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
