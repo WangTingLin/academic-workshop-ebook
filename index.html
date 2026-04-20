@@ -444,25 +444,6 @@ body.sb-collapsed #btn-prev{left:10px;}
 #btn-prev{left:calc(var(--sb-w) + 10px);}
 #btn-next{right:12px;}
 
-/* ── 手機底部導覽列 ── */
-#mob-nav{
-  display:none;position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
-  background:rgba(30,30,30,.55);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:40px;box-shadow:0 8px 28px rgba(0,0,0,.28);
-  padding:6px 14px;gap:12px;align-items:center;z-index:140;
-}
-[data-theme=dark] #mob-nav{background:rgba(15,15,15,.62);}
-.mob-btn{
-  width:42px;height:42px;border:none;background:transparent;
-  border-radius:50%;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.85);transition:background .18s,color .18s;
-}
-.mob-btn:hover,.mob-btn:active{background:rgba(190,30,45,.75);color:#fff;}
-.mob-btn:disabled{opacity:.25;pointer-events:none;}
-#mob-pg{font-size:12px;color:rgba(255,255,255,.65);min-width:52px;text-align:center;letter-spacing:.03em;}
 
 /* ══════════════════════════════
    OVERLAY
@@ -485,7 +466,7 @@ body.sb-collapsed #btn-prev{left:10px;}
   .goal-grid{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
-  #stage{padding:10px 10px 80px;}
+  #stage{padding:10px 10px;}
   .page-body{padding:20px 22px 12px;}
   .page-hero{padding:20px 22px 16px;}
   .pg-band{padding:9px 22px;}
@@ -495,8 +476,6 @@ body.sb-collapsed #btn-prev{left:10px;}
   #topbar{padding:0 10px;}
   #tb-left{gap:6px;}
   #controls{gap:4px;}
-  .nav-arr{display:none;}
-  #mob-nav{display:flex;}
 }
 /* ── 論文全文專用樣式 ── */
 .paper-hero{
@@ -655,15 +634,6 @@ body.sb-collapsed #btn-prev{left:10px;}
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 6 15 12 9 18"/></svg>
 </button>
 
-<!-- ═══ MOBILE NAV ═══ -->
-<div id="mob-nav">
-  <button class="mob-btn" id="mob-prev" onclick="prevPage()">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="mob-btn" id="mob-next" onclick="nextPage()">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 6 15 12 9 18"/></svg>
-  </button>
-</div>
 
 <!-- ═══ STAGE ═══ -->
 <div id="stage">
@@ -871,7 +841,7 @@ body.sb-collapsed #btn-prev{left:10px;}
       </div>
     </div>
     <div class="a-item">
-      <div class="a-time">13:30–16:00</div>
+      <div class="a-time"></div>
       <div class="a-body">
         <span class="tag t-p">【第二會場】</span>
         <h4>解構聖王與安頓性命──《莊子》外、雜篇「至德之世」中的士人實踐之道</h4>
@@ -882,7 +852,7 @@ body.sb-collapsed #btn-prev{left:10px;}
       </div>
     </div>
     <div class="a-item">
-      <div class="a-time">13:30–16:00</div>
+      <div class="a-time"></div>
       <div class="a-body">
         <span class="tag t-b">【線上發表】</span>
         <h4>「政教二科」視域下孫詒讓《周禮》觀研探</h4>
@@ -893,7 +863,7 @@ body.sb-collapsed #btn-prev{left:10px;}
       </div>
     </div>
     <div class="a-item">
-      <div class="a-time">13:30–16:00</div>
+      <div class="a-time"></div>
       <div class="a-body">
         <span class="tag t-f">【第一會場】</span>
         <h4>《孝經》書名翻譯研究──從 pietas、filial piety 到 family reverence 的詮釋轉譯現象</h4>
@@ -1401,9 +1371,6 @@ function updateUI(){
   const atFirst=cur===0, atLast=cur>=TOTAL-1;
   document.getElementById('btn-prev').disabled=atFirst;
   document.getElementById('btn-next').disabled=atLast;
-  document.getElementById('mob-prev').disabled=atFirst;
-  document.getElementById('mob-next').disabled=atLast;
-  document.getElementById('mob-pg').textContent=`${cur+1} / ${TOTAL}`;
 }
 
 function toggleTheme(){
