@@ -534,7 +534,17 @@ body.sb-collapsed #btn-prev{left:10px;}
 }
 [data-theme=dark] .p-quote{border-left-color:#80a8d8;}
 
-.fn-r{font-size:0.625rem;color:#3d6090;vertical-align:super;margin-left:1px;cursor:default;line-height:0;font-family:'Times New Roman',Times,serif;}
+.fn-r{font-size:0.625rem;color:#3d6090;vertical-align:super;margin-left:1px;cursor:pointer;line-height:0;font-family:'Times New Roman',Times,serif;}
+.fn-r:hover{color:var(--red);}
+#fn-tip{
+  position:fixed;max-width:300px;min-width:180px;
+  background:var(--card);border:1px solid var(--border);
+  border-left:3px solid #3d6090;border-radius:0 4px 4px 0;
+  padding:10px 14px;font-size:12px;color:var(--ink2);line-height:1.75;
+  box-shadow:0 6px 24px var(--shadow);z-index:500;display:none;
+  pointer-events:none;
+}
+[data-theme=dark] #fn-tip{border-left-color:#80a8d8;}
 [data-theme=dark] .fn-r{color:#80a8d8;}
 .fn-list{
   margin-top:8px;padding-top:10px;
@@ -625,6 +635,8 @@ body.sb-collapsed #btn-prev{left:10px;}
     </button>
   </div>
 </div>
+
+<div id="fn-tip"></div>
 
 <!-- ═══ ARROWS ═══ -->
 <button class="nav-arr" id="btn-prev" onclick="prevPage()">
@@ -1050,8 +1062,6 @@ body.sb-collapsed #btn-prev{left:10px;}
       <p>以此視角看待「至德之世」，可知莊子並非真的要人們回歸原始生活，而是藉由素樸秩序與聖王之治的對照，揭示後者內在的理論悖謬：</p>
       <div class="p-quote">夫至德之世，同與禽獸居，族與萬物並，惡乎知君子小人哉！同乎無知，其德不離；同乎無欲，是謂素樸。素樸而民性得矣。及至聖人，蹩躠為仁，踶跂為義，而天下始疑矣；澶漫為樂，摘僻為禮，而天下始分矣。故純樸不殘，孰為犧尊！白玉不毀，孰為珪璋！道德不廢，安取仁義！性情不離，安用禮樂！五色不亂，孰為文采！五聲不亂，孰應六律！夫殘樸以為器，工匠之罪也；毀道德以為仁義，聖人之過也。（〈馬蹄〉）</div>
       <p>作者的主要論點，是將混亂的原因從禮崩樂壞翻轉為制禮作樂。在他看來，儒家視為秩序基礎的仁義禮樂，對於實現德性而言適得其反。而「至德之世」在這段表述所發揮的對照功能，是從根本上動搖聖王之治的邏輯前提──如果人民本具德性，為何還需要禮樂教化？其最終目的在於瓦解由士人建構與傳播的聖王敘事，使其不再將秩序的建立寄託於單一的權力核心，進而體認「無為」對於社會和諧的積極作用。此即本文後續兩節即將展開的探討重點。</p>
-      <div class="p-h2">三、解構聖王之治</div>
-      <p>在確立「至德之世」的對話對象後，我們必須進一步探討：莊子究竟如何反駁儒家的聖王思想。<sup class="fn-r">29</sup>面對戰國時代的失序焦慮，儒家建構出一套聖王救贖的心理結構，以提供人們實踐仁義的內在動力。<sup class="fn-r">30</sup>然而在莊子看來，這種將道德典範化、概念化的思維，反而讓士人迷失實踐方向，進而加劇秩序的崩潰。本節將指出，「至德之世」針對的正是聖王之治的理想。在社會現象的層面上，作者揭示道德價值被異化為獲得權力與名利的工具；在心性論的層面上，則批判仁義教化扭曲本性且攖擾人心。以此為基礎，本節進而說明莊子如何以「無為」取代「治天下」的實踐動機。</p>
     </div>
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 12 —</span></div>
@@ -1067,7 +1077,9 @@ body.sb-collapsed #btn-prev{left:10px;}
     <div class="ph-title">解構聖王之治</div>
   </div>
   <div class="page-body">
+    <div class="p-h2">三、解構聖王之治</div>
     <div class="paper-text">
+      <p>在確立「至德之世」的對話對象後，我們必須進一步探討：莊子究竟如何反駁儒家的聖王思想。<sup class="fn-r">29</sup>面對戰國時代的失序焦慮，儒家建構出一套聖王救贖的心理結構，以提供人們實踐仁義的內在動力。<sup class="fn-r">30</sup>然而在莊子看來，這種將道德典範化、概念化的思維，反而讓士人迷失實踐方向，進而加劇秩序的崩潰。本節將指出，「至德之世」針對的正是聖王之治的理想。在社會現象的層面上，作者揭示道德價值被異化為獲得權力與名利的工具；在心性論的層面上，則批判仁義教化扭曲本性且攖擾人心。以此為基礎，本節進而說明莊子如何以「無為」取代「治天下」的實踐動機。</p>
       <div class="p-h3">（一）社會現象的批判</div>
       <p>儒家的政治思想與其道德論述密不可分。根據徐復觀，儒家的德治係出於對人性的信賴，透過治者與被治者間的以德相與，達成人人各遂其性的理想。此理想的實現關鍵，在於君王能先盡其德而推己及人，乃能風行草偃地讓百姓率性以成治。<sup class="fn-r">31</sup>而堯、舜等古代聖王的傳說，與伯夷、叔齊等賢士的事蹟，都是在這種德治理想下所塑造的典範敘事，使人們於實踐上有所依循。然而，〈胠篋〉與〈盜跖〉二篇，卻從制度與文化層面對此提出質疑。</p>
       <p>首先是制度層面的弔詭。聖王是聖人與君王的二位一體，因此聖王的治理，必須使道德原則落實為政治規範。然而〈胠篋〉指出，為使人民遵循仁義而將道德制度化，本意雖在於抑惡揚善，實際卻使道德淪為一種中立的權力工具，如斗斛、權衡般任人操作。作者雖未明言田成子「並與其聖知之法而盜之」的具體細節，但根據司馬遷的記載，田成子刺殺齊簡公後，為了穩定權位，在外交與內政方面，皆運用道德語言鞏固自身統治。<sup class="fn-r">32</sup>莊子以「有乎盜賊之名，而身處堯、舜之安」一語，凸顯其中的荒謬。</p>
@@ -1334,7 +1346,7 @@ document.addEventListener('keydown',e=>{
 
 const TOTAL=20;
 let cur=0,flv=parseInt(localStorage.getItem('fz')||'0');
-const titles=['計畫目的','計畫目標','預期效益','與會學者名單','活動議程','論文發表場次','議事規則','第二篇｜論文摘要','一、前言','二（一）反駁原始主義','二（二）反駁隱逸思想','二（三）・三、解構聖王之治','三（一）社會現象的批判','三（二）人性論的批判','三（三）從治天下到無為','四（一）多元的和諧想像','四（二）以道化勢','五、結語','徵引文獻','附注'];
+const titles=['計畫目的','計畫目標','預期效益','與會學者名單','活動議程','論文發表場次','議事規則','第二篇｜論文摘要','一、前言','二（一）反駁原始主義','二（二）反駁隱逸思想','二（三）論辯策略','三、解構聖王之治','三（二）人性論的批判','三（三）從治天下到無為','四（一）多元的和諧想像','四（二）以道化勢','五、結語','徵引文獻','附注'];
 
 function goPage(n,dir){
   if(n<0||n>=TOTAL)return;
@@ -1425,6 +1437,36 @@ document.addEventListener('touchend',e=>{
 },{passive:true});
 
 updateUI();
+
+/* ── 註腳浮動提示 ── */
+const fnMap={};
+document.querySelectorAll('.fn-item').forEach(el=>{
+  const n=el.querySelector('.fn-n');
+  if(!n)return;
+  const num=n.textContent.trim();
+  const clone=el.cloneNode(true);
+  clone.querySelector('.fn-n').remove();
+  fnMap[num]=clone.textContent.trim();
+});
+const fnTip=document.getElementById('fn-tip');
+document.querySelectorAll('.fn-r').forEach(el=>{
+  el.addEventListener('click',e=>{
+    e.stopPropagation();
+    const n=el.textContent.trim();
+    const text=fnMap[n];
+    if(!text){fnTip.style.display='none';return;}
+    fnTip.innerHTML=`<strong style="color:#3d6090;font-family:'Times New Roman',serif;margin-right:4px;">${n}</strong>${text}`;
+    fnTip.style.left='-9999px';fnTip.style.top='-9999px';
+    fnTip.style.display='block';
+    const r=el.getBoundingClientRect();
+    const tw=fnTip.offsetWidth, th=fnTip.offsetHeight;
+    let left=r.left, top=r.bottom+8;
+    if(left+tw>window.innerWidth-12)left=Math.max(8,window.innerWidth-tw-12);
+    if(top+th>window.innerHeight-8)top=Math.max(8,r.top-th-8);
+    fnTip.style.left=left+'px';fnTip.style.top=top+'px';
+  });
+});
+document.addEventListener('click',()=>{fnTip.style.display='none';});
 </script>
 </body>
 </html>
