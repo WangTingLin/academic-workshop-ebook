@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>中文學科論文寫作計畫 活動手冊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════
+   TOKENS
+══════════════════════════════ */
+:root {
+  --red:      #be1e2d;
+  --red-lt:   #e8634a;
+  --teal:     #2e7d8e;
+  --teal-lt:  #4aacbe;
+  --ink:      #1a1510;
+  --ink2:     #3a2e28;
+  --ink3:     #7a6a60;
+  --paper:    #f5f1ea;
+  --paper2:   #ede7dc;
+  --card:     #faf8f3;
+  --border:   #d8cfc0;
+  --shadow:   rgba(26,21,16,.14);
+  --page-w:   680px;
+  --sb-w:     256px;
+  --topbar-h: 50px;
+}
+[data-theme=dark] {
+  --red:      #e05050;
+  --red-lt:   #f0806a;
+  --teal:     #4aacbe;
+  --teal-lt:  #70c8d8;
+  --ink:      #ede0cc;
+  --ink2:     #b8a898;
+  --ink3:     #7a6a60;
+  --paper:    #161210;
+  --paper2:   #201a14;
+  --card:     #1e1812;
+  --border:   #38302a;
+  --shadow:   rgba(0,0,0,.5);
+}
+
+/* ══════════════════════════════
+   RESET
+══════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  transition:background .3s,color .3s;
+  user-select:none;-webkit-user-select:none;
+  overflow:hidden;
+}
+
+/* ══════════════════════════════
+   SIDEBAR
+══════════════════════════════ */
+#sidebar{
+  position:fixed;left:0;top:0;
+  width:var(--sb-w);height:100%;
+  background:var(--ink) !important;
+  display:flex;flex-direction:column;
+  z-index:200;
+  transition:transform .32s ease;
+}
+[data-theme=dark] #sidebar{ background:#0e0c0a !important; }
+
+#sb-head{
+  padding:24px 20px 20px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  position:relative;overflow:hidden;
+}
+#sb-head::before{
+  content:'';position:absolute;
+  right:-40px;top:-40px;
+  width:120px;height:120px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(190,30,45,.25) 0%,transparent 70%);
+}
+#sb-head::after{
+  content:'';position:absolute;
+  right:20px;bottom:-20px;
+  width:70px;height:70px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(46,125,142,.3) 0%,transparent 70%);
+}
+.sb-kicker{
+  font-size:10px;letter-spacing:.25em;
+  color:var(--red-lt);margin-bottom:10px;
+  text-transform:uppercase;
+}
+.sb-title{
+  font-size:15px;font-weight:700;
+  color:#fff;line-height:1.65;
+  position:relative;z-index:1;
+}
+.sb-title .hi{ color:var(--red-lt); }
+.sb-sub{
+  font-size:10.5px;color:rgba(255,255,255,.38);
+  margin-top:6px;letter-spacing:.06em;
+  position:relative;z-index:1;
+}
+
+#toc{flex:1;overflow-y:auto;padding:8px 0;}
+.toc-sec{
+  font-size:9.5px;letter-spacing:.22em;
+  color:rgba(255,255,255,.28);
+  padding:14px 20px 4px;text-transform:uppercase;
+}
+.toc-link{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 20px;
+  color:rgba(255,255,255,.55);
+  font-size:13px;cursor:pointer;
+  border-left:3px solid transparent;
+  transition:all .18s;
+}
+.toc-link:hover{color:#fff;background:rgba(255,255,255,.06);border-left-color:var(--red-lt);}
+.toc-link.active{color:#fff;background:rgba(190,30,45,.18);border-left-color:var(--red);font-weight:700;}
+.toc-link .pn{
+  margin-left:auto;font-size:10px;
+  color:rgba(255,255,255,.25);
+  background:rgba(255,255,255,.07);
+  padding:1px 7px;border-radius:10px;
+}
+
+#sb-foot{
+  padding:14px 20px;
+  border-top:1px solid rgba(255,255,255,.07);
+  font-size:10.5px;color:rgba(255,255,255,.25);
+  letter-spacing:.04em;line-height:1.8;
+}
+
+/* ══════════════════════════════
+   TOPBAR
+══════════════════════════════ */
+#topbar{
+  position:fixed;top:0;
+  left:var(--sb-w);right:0;
+  height:var(--topbar-h);
+  background:var(--card);
+  border-bottom:2px solid var(--red);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 18px;z-index:150;
+  transition:left .32s,background .3s;
+  box-shadow:0 2px 12px var(--shadow);
+}
+#tb-left{display:flex;align-items:center;gap:10px;}
+#menu-btn{display:none;}
+#pg-ind{
+  font-size:11.5px;font-weight:700;
+  color:var(--red);
+  background:rgba(190,30,45,.08);
+  border:1px solid rgba(190,30,45,.2);
+  padding:3px 12px;border-radius:20px;
+  letter-spacing:.05em;
+}
+#tb-title{
+  font-size:13px;color:var(--ink3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:240px;
+}
+#controls{display:flex;gap:5px;}
+.btn{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:5px;padding:4px 10px;
+  cursor:pointer;color:var(--ink2);
+  font-size:12px;transition:all .18s;
+  display:flex;align-items:center;gap:4px;
+  font-family:inherit;
+}
+.btn:hover{background:var(--paper2);color:var(--red);border-color:var(--red);}
+
+/* ══════════════════════════════
+   STAGE
+══════════════════════════════ */
+#stage{
+  position:fixed;
+  top:var(--topbar-h);left:var(--sb-w);right:0;bottom:0;
+  display:flex;align-items:center;justify-content:center;
+  padding:18px 68px;
+  overflow:hidden;
+  transition:left .32s;
+}
+
+/* ── SINGLE ── */
+#bk-single{width:100%;max-width:var(--page-w);height:100%;position:relative;}
+.page-card{
+  position:absolute;inset:0;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:3px;
+  box-shadow:0 6px 40px var(--shadow);
+  overflow-y:auto;overflow-x:hidden;
+  padding:0;
+  opacity:0;pointer-events:none;
+  transform:translateX(32px);
+  transition:opacity .28s ease,transform .28s ease;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+}
+.page-card.active{opacity:1;pointer-events:all;transform:none;}
+.page-card.xl{opacity:0;transform:translateX(-32px);}
+.page-card.xr{opacity:0;transform:translateX(32px);}
+
+
+/* ══════════════════════════════
+   PAGE INNER LAYOUT
+══════════════════════════════ */
+
+/* page-hero: coloured top band, like poster header */
+.page-hero{
+  position:relative;overflow:hidden;
+  padding:28px 36px 22px;
+  background:linear-gradient(135deg,var(--red) 0%,#8b1020 100%);
+  color:#fff;
+}
+.page-hero.teal{background:linear-gradient(135deg,var(--teal) 0%,#1a5060 100%);}
+.page-hero .deco-circle{
+  position:absolute;right:-30px;bottom:-50px;
+  width:160px;height:160px;border-radius:50%;
+  background:rgba(255,255,255,.08);
+  pointer-events:none;
+}
+.page-hero .deco-circle2{
+  position:absolute;right:60px;top:-40px;
+  width:80px;height:80px;border-radius:50%;
+  background:rgba(255,255,255,.06);
+  pointer-events:none;
+}
+.hero-kicker{
+  font-size:10px;letter-spacing:.28em;
+  color:rgba(255,255,255,.6);
+  margin-bottom:8px;text-transform:uppercase;
+}
+.hero-title{
+  font-size:clamp(18px,2.2vw,24px);
+  font-weight:900;line-height:1.4;
+  letter-spacing:.06em;
+}
+.hero-title .red-word{ color:var(--red-lt); }
+.hero-title .teal-word{ color:var(--teal-lt); }
+
+/* page body padding */
+.page-body{padding:28px 36px 16px;}
+
+/* section bracket label  【 】 */
+.bracket-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.18em;
+  color:var(--red);margin-bottom:14px;
+}
+.bracket-label::before{content:'【';font-size:14px;}
+.bracket-label::after {content:'】';font-size:14px;}
+.bracket-label.teal{color:var(--teal);}
+.bracket-label.teal::before,.bracket-label.teal::after{color:var(--teal);}
+
+/* prose */
+.prose{font-size:14px;color:var(--ink2);line-height:2.05;}
+.prose p{margin-bottom:1.2em;text-indent:2em;}
+.prose p:first-of-type{text-indent:0;}
+
+/* ● bullet section (like poster) */
+.bullet-sec{margin-bottom:20px;}
+.bullet-sec .bul-head{
+  display:flex;align-items:flex-start;gap:12px;
+  margin-bottom:10px;
+}
+.bul-dot{
+  width:18px;height:18px;border-radius:50%;
+  background:var(--red);flex-shrink:0;margin-top:2px;
+}
+.bul-dot.t{background:var(--teal);}
+.bul-head-text{font-size:15px;font-weight:700;color:var(--ink);}
+.bul-people{
+  display:flex;flex-direction:column;gap:5px;
+  padding-left:30px;
+}
+.bul-person{
+  font-size:13px;color:var(--ink2);
+  display:flex;align-items:baseline;gap:6px;
+}
+.bul-person .slash{color:var(--border);}
+.bul-person .aff{color:var(--ink3);font-size:12px;}
+
+/* goal grid */
+.goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;}
+.g-card{
+  background:var(--paper2);
+  border:1px solid var(--border);
+  border-top:3px solid var(--red);
+  padding:16px;border-radius:2px;
+}
+.g-card:nth-child(even){border-top-color:var(--teal);}
+.g-card h3{font-size:12.5px;font-weight:700;color:var(--red);margin-bottom:7px;line-height:1.5;}
+.g-card:nth-child(even) h3{color:var(--teal);}
+.g-card p{font-size:12px;color:var(--ink2);line-height:1.75;}
+
+/* benefit list */
+.b-list{list-style:none;}
+.b-list li{
+  padding:14px 0 14px 20px;
+  border-bottom:1px solid var(--border);
+  font-size:13.5px;color:var(--ink2);
+  line-height:1.85;position:relative;
+}
+.b-list li:last-child{border-bottom:none;}
+.b-list li::before{
+  content:'';position:absolute;left:0;top:21px;
+  width:7px;height:7px;border-radius:50%;
+  background:var(--red);
+}
+.b-list li:nth-child(even)::before{background:var(--teal);}
+.b-list li strong{display:block;color:var(--ink);font-size:14px;font-weight:700;margin-bottom:3px;}
+
+/* scholar table */
+.s-table{width:100%;border-collapse:collapse;font-size:13px;}
+.s-table thead tr{background:linear-gradient(90deg,var(--red),var(--teal));}
+.s-table th{
+  color:#fff;font-size:10.5px;font-weight:500;
+  letter-spacing:.12em;padding:9px 14px;text-align:left;
+}
+.s-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--ink2);}
+.s-table tr:hover td{background:var(--paper2);}
+.s-table td:first-child{color:var(--ink3);font-size:11px;width:30px;}
+.s-table td:nth-child(2){font-weight:700;color:var(--ink);white-space:nowrap;}
+
+/* agenda header stripe */
+.agh{
+  background:linear-gradient(90deg,var(--red),var(--teal));
+  color:#fff;padding:12px 20px;
+  border-radius:2px;margin-bottom:16px;
+}
+.agh .ad{font-size:14px;font-weight:700;letter-spacing:.06em;opacity:.75;}
+.agh .as{font-size:17px;font-weight:900;letter-spacing:.04em;margin-top:2px;}
+.agh .av{font-size:10.5px;margin-top:4px;opacity:.78;line-height:1.8;}
+
+.a-item{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+.a-item:last-child{border-bottom:none;}
+.a-time{
+  font-size:11.5px;color:var(--teal);
+  white-space:nowrap;font-weight:700;
+  min-width:90px;padding-top:2px;
+  font-variant-numeric:tabular-nums;
+}
+.a-body{flex:1;}
+.tag{
+  display:inline-block;font-size:10px;
+  padding:2px 9px;border-radius:2px;
+  margin-bottom:5px;letter-spacing:.04em;font-weight:500;
+}
+.t-f{background:rgba(190,30,45,.1);color:var(--red);border:1px solid rgba(190,30,45,.22);}
+.t-p{background:rgba(46,125,142,.1);color:var(--teal);border:1px solid rgba(46,125,142,.22);}
+.t-c{background:rgba(200,160,60,.12);color:#7a5a10;border:1px solid rgba(200,160,60,.25);}
+.t-b{background:var(--paper2);color:var(--ink3);border:1px solid var(--border);}
+[data-theme=dark] .t-c{color:#c8a060;}
+.a-body h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.a-body p{font-size:12px;color:var(--ink2);line-height:1.7;}
+.ptags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;}
+.ptag{
+  font-size:11px;background:var(--paper2);
+  border:1px solid var(--border);
+  padding:2px 9px;border-radius:14px;color:var(--ink2);
+}
+
+/* paper boxes */
+.paper-box{
+  background:var(--paper2);
+  border-left:3px solid var(--red);
+  padding:11px 14px;margin-bottom:9px;
+  font-size:13px;color:var(--ink2);
+  line-height:1.8;border-radius:0 2px 2px 0;
+}
+.paper-box:nth-child(even){border-left-color:var(--teal);}
+.paper-box strong{display:block;color:var(--ink);font-weight:700;margin-bottom:2px;}
+.paper-box small{color:var(--ink3);font-size:11.5px;}
+
+/* timing */
+.t-block{
+  background:var(--paper2);border:1px solid var(--border);
+  border-left:4px solid var(--red);
+  padding:18px;margin-bottom:16px;border-radius:0 3px 3px 0;
+}
+.t-block:nth-child(2){border-left-color:var(--teal);}
+.t-block h3{font-size:14.5px;font-weight:700;color:var(--red);margin-bottom:12px;}
+.t-block:nth-child(2) h3{color:var(--teal);}
+.t-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:12.5px;}
+.t-row .tl{color:var(--ink3);font-size:11px;width:98px;flex-shrink:0;}
+.t-row .tb{height:5px;border-radius:3px;background:linear-gradient(90deg,var(--red),var(--red-lt));min-width:6px;}
+.t-block:nth-child(2) .t-row .tb{background:linear-gradient(90deg,var(--teal),var(--teal-lt));}
+.t-row .tv{color:var(--red);font-weight:700;font-size:12px;flex-shrink:1;}
+.t-block:nth-child(2) .t-row .tv{color:var(--teal);}
+.notice{
+  background:var(--card);border:1px solid var(--border);
+  padding:12px 15px;border-radius:2px;
+  font-size:12px;color:var(--ink2);line-height:1.9;margin-top:10px;
+}
+.notice::before{content:'注意事項';display:block;font-size:10px;letter-spacing:.1em;color:var(--ink3);margin-bottom:5px;}
+
+/* rules */
+.rules{background:var(--paper2);border:1px solid var(--border);padding:16px;margin-bottom:18px;border-radius:2px;}
+.rules p{font-size:13px;color:var(--ink2);line-height:2;padding-left:1.2em;position:relative;margin-bottom:.3em;}
+.rules p::before{content:'※';position:absolute;left:0;color:var(--red);}
+
+/* page bottom footer band — like poster footer */
+.pg-band{
+  margin-top:auto;
+  padding:10px 36px;
+  background:linear-gradient(90deg,var(--red),var(--teal));
+  display:flex;align-items:center;justify-content:space-between;
+}
+.pg-band .org{font-size:10.5px;color:rgba(255,255,255,.75);letter-spacing:.04em;}
+.pg-band .pgn{font-size:11px;color:rgba(255,255,255,.55);font-weight:700;}
+
+/* page wrapper (inner flex column) */
+.pw{display:flex;flex-direction:column;height:100%;}
+.page-body{flex:1;overflow-y:auto;min-height:0;}
+
+/* ══════════════════════════════
+   NAV ARROWS
+══════════════════════════════ */
+.nav-arr{
+  position:fixed;top:50%;transform:translateY(-50%);
+  width:44px;height:72px;
+  border:1px solid var(--border);background:var(--card);
+  border-radius:6px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink2);box-shadow:0 4px 18px var(--shadow);
+  transition:background .18s,color .18s,opacity .18s;z-index:140;
+}
+.nav-arr:hover{background:var(--red);color:#fff;border-color:var(--red);box-shadow:0 6px 22px rgba(180,60,60,.35);}
+.nav-arr:active{transform:translateY(-50%) scale(.93);}
+.nav-arr:disabled{opacity:.15;cursor:default;pointer-events:none;}
+#btn-prev{left:calc(var(--sb-w) + 10px);}
+#btn-next{right:12px;}
+
+/* ── 手機底部導覽列 ── */
+#mob-nav{
+  display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
+  background:var(--card);border:1px solid var(--border);
+  border-radius:40px;box-shadow:0 6px 24px var(--shadow);
+  padding:8px 16px;gap:16px;align-items:center;z-index:140;
+}
+.mob-btn{
+  width:44px;height:44px;border:none;background:transparent;
+  border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink2);transition:background .18s,color .18s;
+}
+.mob-btn:hover,.mob-btn:active{background:var(--red);color:#fff;}
+.mob-btn:disabled{opacity:.25;pointer-events:none;}
+#mob-pg{font-size:12px;color:var(--ink3);min-width:64px;text-align:center;letter-spacing:.03em;}
+
+/* ══════════════════════════════
+   OVERLAY
+══════════════════════════════ */
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:190;}
+#overlay.on{display:block;}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media(max-width:900px){
+  :root{--sb-w:256px;}
+  #sidebar{transform:translateX(-100%);}
+  #sidebar.open{transform:translateX(0);}
+  #topbar{left:0;}#stage{left:0;padding:14px 50px;}
+  #tb-title{display:none;}
+  #btn-prev{left:4px;}#btn-next{right:4px;}
+  #menu-btn{display:flex;}
+  #overlay{display:none;}#overlay.on{display:block;}
+  .goal-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  #stage{padding:10px 10px 80px;}
+  .page-body{padding:20px 22px 12px;}
+  .page-hero{padding:20px 22px 16px;}
+  .pg-band{padding:9px 22px;}
+  .btn.fs-btn{display:none;}
+  #tb-title{display:none;}
+  #pg-ind{font-size:11px;padding:3px 9px;letter-spacing:0;}
+  #topbar{padding:0 10px;}
+  #tb-left{gap:6px;}
+  #controls{gap:4px;}
+  .nav-arr{display:none;}
+  #mob-nav{display:flex;}
+}
+/* ── 論文全文專用樣式 ── */
+.paper-hero{
+  position:relative;overflow:hidden;
+  padding:28px 36px 22px;
+  background:linear-gradient(135deg,#2d3a5a 0%,#1a2540 100%);
+  color:#fff;
+}
+.paper-hero .deco-circle{
+  position:absolute;right:-30px;bottom:-50px;width:160px;height:160px;
+  border-radius:50%;background:rgba(255,255,255,.07);pointer-events:none;
+}
+.paper-hero .deco-circle2{
+  position:absolute;right:60px;top:-40px;width:80px;height:80px;
+  border-radius:50%;background:rgba(255,255,255,.05);pointer-events:none;
+}
+.ph-kicker{font-size:10px;letter-spacing:.28em;color:rgba(255,255,255,.55);margin-bottom:8px;}
+.ph-title{font-size:clamp(14px,1.8vw,19px);font-weight:900;line-height:1.5;letter-spacing:.04em;}
+.ph-title .hi{color:#80a8d8;}
+.ph-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:6px;}
+
+.abstract-box{
+  background:var(--paper2);border:1px solid var(--border);
+  border-left:4px solid #3d6090;
+  padding:18px 20px;margin-bottom:16px;border-radius:0 3px 3px 0;
+}
+.abstract-box .ab-label{
+  font-size:10px;letter-spacing:.2em;color:#3d6090;margin-bottom:8px;
+}
+.abstract-box p{font-size:0.844rem;color:var(--ink2);line-height:1.95;text-indent:2em;}
+.kw-box{font-size:0.813rem;color:var(--ink3);margin-top:12px;}
+.kw-box strong{color:var(--ink2);}
+
+.paper-text{font-size:0.844rem;color:var(--ink2);line-height:1.95;}
+.paper-text p{margin-bottom:.95em;text-indent:2em;text-align:justify;}
+.p-quote+p{text-indent:0;}
+
+.p-h2{
+  font-size:1rem;font-weight:900;color:var(--ink);
+  margin:22px 0 12px;padding-bottom:7px;
+  border-bottom:2px solid;
+  border-image:linear-gradient(90deg,#3d6090,transparent) 1;
+}
+.p-h3{
+  font-size:0.875rem;font-weight:700;color:#3d6090;
+  margin:16px 0 8px;
+}
+[data-theme=dark] .p-h3{color:#80a8d8;}
+
+.p-quote{
+  background:var(--paper2);border-left:3px solid #3d6090;
+  padding:12px 16px;margin:12px 0;
+  font-size:0.813rem;color:var(--ink2);line-height:1.9;
+  border-radius:0 2px 2px 0;
+  font-family:'標楷體','DFKai-SB','BiauKai','Kaiti TC','Kaiti SC',cursive;
+}
+[data-theme=dark] .p-quote{border-left-color:#80a8d8;}
+
+.fn-r{font-size:0.625rem;color:#3d6090;vertical-align:super;margin-left:1px;cursor:default;line-height:0;font-family:'Times New Roman',Times,serif;}
+[data-theme=dark] .fn-r{color:#80a8d8;}
+.fn-list{
+  margin-top:8px;padding-top:10px;
+  border-top:1px solid var(--border);
+  column-count:1;
+}
+.fn-item{
+  font-size:0.719rem;color:var(--ink3);line-height:1.75;
+  margin-bottom:5px;padding-left:2em;text-indent:-2em;
+}
+.fn-item .fn-n{color:#3d6090;font-weight:700;margin-right:4px;}
+
+.bib-section{margin-top:6px;}
+.bib-section h4{font-size:0.813rem;font-weight:700;color:var(--ink);margin:14px 0 6px;}
+.bib-item{font-size:0.781rem;color:var(--ink2);line-height:1.8;margin-bottom:4px;padding-left:1.5em;text-indent:-1.5em;}
+
+.info-card{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--paper2);border:1px solid var(--border);
+  padding:14px 16px;margin-bottom:14px;border-radius:2px;
+}
+.info-card .ic-role{font-size:10px;letter-spacing:.12em;color:var(--ink3);margin-bottom:3px;}
+.info-card .ic-name{font-size:15px;font-weight:700;color:var(--ink);}
+.info-card .ic-aff{font-size:12px;color:var(--ink3);margin-top:2px;}
+</style>
+</head>
+<body>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav id="sidebar">
+  <div id="sb-head">
+    <div class="sb-kicker">活動手冊 · 2026</div>
+    <div class="sb-title">中文學科<span class="hi">論文寫作</span>增能<br>計畫活動手冊</div>
+    <div class="sb-sub">師大國文系八十週年系慶 · May 14</div>
+  </div>
+  <div id="toc">
+    <div class="toc-sec">計畫說明</div>
+    <div class="toc-link" onclick="goPage(0)"><span>計畫目的</span><span class="pn">1</span></div>
+    <div class="toc-link" onclick="goPage(1)"><span>計畫目標</span><span class="pn">2</span></div>
+    <div class="toc-link" onclick="goPage(2)"><span>預期效益</span><span class="pn">3</span></div>
+    <div class="toc-sec">活動資訊</div>
+    <div class="toc-link" onclick="goPage(3)"><span>與會學者名單</span><span class="pn">4</span></div>
+    <div class="toc-link" onclick="goPage(4)"><span>活動議程</span><span class="pn">5</span></div>
+    <div class="toc-link" onclick="goPage(5)"><span>論文發表場次</span><span class="pn">6</span></div>
+    <div class="toc-link" onclick="goPage(6)"><span>議事規則</span><span class="pn">7</span></div>
+    <div class="toc-sec">論文全文</div>
+    <div class="toc-link" onclick="goPage(7)">
+      <div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:2px;">第二篇｜李宗祐</div>
+        <div style="font-size:12.5px;line-height:1.5;">解構聖王與安頓性命</div>
+      </div>
+      <span class="pn">8</span>
+    </div>
+  </div>
+  <div id="sb-foot">
+    主辦｜臺師大國文系・北市大儒學中心<br>
+    協辦｜中華孔孟學會
+  </div>
+</nav>
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<!-- ═══ TOPBAR ═══ -->
+<div id="topbar">
+  <div id="tb-left">
+    <button class="btn" id="menu-btn" onclick="toggleSidebar()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <span id="pg-ind">第 1 頁 / 共 7 頁</span>
+    <span id="tb-title">計畫目的</span>
+  </div>
+  <div id="controls">
+    <button class="btn fs-btn" onclick="changeFontSize(-1)">A−</button>
+    <button class="btn fs-btn" onclick="changeFontSize(1)">A+</button>
+    <button class="btn" id="theme-btn" onclick="toggleTheme()">
+      <svg id="sun-ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg id="moon-ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      夜間
+    </button>
+  </div>
+</div>
+
+<!-- ═══ ARROWS ═══ -->
+<button class="nav-arr" id="btn-prev" onclick="prevPage()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<button class="nav-arr" id="btn-next" onclick="nextPage()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 6 15 12 9 18"/></svg>
+</button>
+
+<!-- ═══ MOBILE NAV ═══ -->
+<div id="mob-nav">
+  <button class="mob-btn" id="mob-prev" onclick="prevPage()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <span id="mob-pg">1 / 20</span>
+  <button class="mob-btn" id="mob-next" onclick="nextPage()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 6 15 12 9 18"/></svg>
+  </button>
+</div>
+
+<!-- ═══ STAGE ═══ -->
+<div id="stage">
+<div id="bk-single">
+
+<!-- ▌PAGE 1：計畫目的 ▐ -->
+<div class="page-card active" id="pg-0">
+<div class="pw">
+  <div class="page-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="hero-kicker">第一章 · CHAPTER 01</div>
+    <div class="hero-title">計畫目的</div>
+  </div>
+  <div class="page-body">
+    <div class="prose">
+      <p>「中文學科論文寫作增能工作坊」特別結合「國立臺灣師範大學國文學系創系80週年慶」辦理，作為「中文學科論文寫作增能讀書會」本學期的重要成果發表活動。</p>
+      <p>本讀書會於112年起，由臺師大與成大的學生自發組成小型的論文讀書會，歷經數年發展，逐步擴增來自臺師大、臺大、成大、高師大、中山及復旦大學等校，約10位博碩士研究生，並以同儕審查為核心機制，歷經專題會議，針對成員的學術論文進行深度討論與修訂。</p>
+      <p>本次工作坊不僅回顧與展現本學期（114學年第2學期）的共學歷程，也藉由臺師大國文系80週年慶的契機，邀請相關領域的教授專家擔任特約討論人，使成員論文在正式投稿前獲得更高層次的學術檢驗與回饋，並彰顯本系長年推動學術交流與人才培育的成果。</p>
+      <p>工作坊亦安排「經驗分享」與「小型論壇」環節，期望將讀書會累積的協作學習經驗——包含論文架構規劃、投稿修稿策略、期刊選擇等實務知識——向更廣泛的研究生社群傳遞，促成跨校、跨領域的學術對話，共同為中文學科研究生建立可持續的學術支持網絡。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 1 —</span></div>
+</div>
+</div>
+
+<!-- ▌PAGE 2：計畫目標 ▐ -->
+<div class="page-card" id="pg-1">
+<div class="pw">
+  <div class="page-hero teal">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="hero-kicker">第二章 · CHAPTER 02</div>
+    <div class="hero-title">計畫目標</div>
+  </div>
+  <div class="page-body">
+    <div class="goal-grid">
+      <div class="g-card">
+        <h3>雙向視角的<br>學術發表機制揭示</h3>
+        <p>透過「投稿者經驗分享」與「審查者視角揭示」兩場圓桌論壇的對照設計，讓參與者得以同時聽見發表端的實戰歷程與審查端的判斷邏輯，將隱性的學術發表知識公開化、結構化。</p>
+      </div>
+      <div class="g-card">
+        <h3>成果展示與<br>專家檢驗</h3>
+        <p>讀書會成員論文已歷經多輪同儕審查，本工作坊進一步邀請教授專家擔任特約討論人，模擬正式學術研討會機制，使論文在投稿前接受更高層次的學術檢驗。</p>
+      </div>
+      <div class="g-card">
+        <h3>經驗分享與<br>學術增能</h3>
+        <p>安排已具投稿經驗的博士候選人分享論文架構規劃、投稿修稿流程及期刊選擇策略等實務經驗，開放研究生廣泛參與，將個人摸索所得轉化為可複製的學術寫作知能。</p>
+      </div>
+      <div class="g-card">
+        <h3>跨校學術對話與<br>社群深化</h3>
+        <p>透過小型論壇的設置，以讀書會的協作學習實踐為基礎，探討跨校研究生如何在中文學科建立有效的學術合作模式，為後續讀書會的運作與擴展提供反思與規劃的契機。</p>
+      </div>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 2 —</span></div>
+</div>
+</div>
+
+<!-- ▌PAGE 3：預期效益 ▐ -->
+<div class="page-card" id="pg-2">
+<div class="pw">
+  <div class="page-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="hero-kicker">第三章 · CHAPTER 03</div>
+    <div class="hero-title">預期效益</div>
+  </div>
+  <div class="page-body">
+    <ul class="b-list">
+      <li><strong>公開化學術發表的隱性知識</strong>透過投稿者與審查者雙向視角的圓桌對話，使學術論文從撰寫、投稿、回應審查到最終刊登的完整歷程具體呈現，讓參與者掌握審稿常見評估標準與退稿應對策略。</li>
+      <li><strong>強化讀書會成員的學術發表動能</strong>分享人於整理投稿經驗過程中進行反思性梳理；其餘成員可透過聆聽座談學者揭示的審查視角，重新檢視論文修訂方向，形成更明確的投稿規劃。</li>
+      <li><strong>提升論文投稿品質</strong>成員論文經同儕審查後，再接受教授專家的特約討論與審查意見評分，就題目摘要、文獻評述、研究方法、研究成果、格式等五項提供明確修改方向。</li>
+      <li><strong>培養學術發表實務能力</strong>透過經驗分享環節，使參與者具體掌握論文架構規劃、投稿修稿流程及期刊選擇等實務知識，縮短從「完成論文」到「成功發表」之間的學習曲線。</li>
+      <li><strong>形成可延續的跨校學術合作模式</strong>藉由小型論壇歸納讀書會一年來的協作學習經驗，探索跨校中文學科研究生學術社群的可持續運作方式，為後續擴展與深化奠定基礎。</li>
+    </ul>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 3 —</span></div>
+</div>
+</div>
+
+<!-- ▌PAGE 4：與會學者名單 ▐ -->
+<div class="page-card" id="pg-3">
+<div class="pw">
+  <div class="page-hero teal">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="hero-kicker">第四章 · CHAPTER 04</div>
+    <div class="hero-title">與會學者名單</div>
+  </div>
+  <div class="page-body">
+    <p style="font-size:11.5px;color:var(--ink3);margin-bottom:14px;letter-spacing:.08em;">按姓氏筆劃排序</p>
+    <table class="s-table">
+      <thead><tr><th>序</th><th>姓名</th><th>服務單位／職稱</th></tr></thead>
+      <tbody>
+        <tr><td>01</td><td>王誠御</td><td>國立臺灣大學中國文學系博士候選人</td></tr>
+        <tr><td>02</td><td>吳佩熏</td><td>國立勤益科技大學基礎通識教育中心助理教授</td></tr>
+        <tr><td>03</td><td>吳瑞文</td><td>中央研究院語言學研究所研究員；國立政治大學中國文學系合聘教授</td></tr>
+        <tr><td>04</td><td>吳肇嘉</td><td>臺北市立大學中國語文學系副教授</td></tr>
+        <tr><td>05</td><td>李宗祐</td><td>國立臺灣師範大學國文學系博士生</td></tr>
+        <tr><td>06</td><td>林昕嬡</td><td>國立成功大學中國文學系博士候選人</td></tr>
+        <tr><td>07</td><td>林素英</td><td>國立臺灣師範大學國文學系兼任教授</td></tr>
+        <tr><td>08</td><td>金培懿</td><td>國立臺灣師範大學國文學系特聘教授</td></tr>
+        <tr><td>09</td><td>夏卓浩</td><td>復旦大學哲學系博士生</td></tr>
+        <tr><td>10</td><td>徐國能</td><td>國立臺灣師範大學國文學系教授兼主任</td></tr>
+        <tr><td>11</td><td>陳皓渝</td><td>國立高雄師範大學國文學系博士候選人</td></tr>
+        <tr><td>12</td><td>楊卓剛</td><td>國立成功大學中國文學系博士生</td></tr>
+        <tr><td>13</td><td>葉叡宸</td><td>國立臺灣大學中國文學系助理教授</td></tr>
+        <tr><td>14</td><td>趙旻祐</td><td>韓國延世大學中文系助理教授</td></tr>
+        <tr><td>15</td><td>潘鳳娟</td><td>國立臺灣師範大學東亞學系教授</td></tr>
+        <tr><td>16</td><td>蔡瑩瑩</td><td>臺北市立大學中國語文學系助理教授兼儒學中心主任</td></tr>
+        <tr><td>17</td><td>鄭吉雄</td><td>香港教育大學文學與文化學系講座教授</td></tr>
+        <tr><td>18</td><td>嚴浩然</td><td>國立成功大學中國文學系博士候選人</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 4 —</span></div>
+</div>
+</div>
+
+<!-- ▌PAGE 5：活動議程 ▐ -->
+<div class="page-card" id="pg-4">
+<div class="pw">
+  <div class="page-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="hero-kicker">第五章 · CHAPTER 05</div>
+    <div class="hero-title">活動議程</div>
+  </div>
+  <div class="page-body">
+    <div class="rules">
+      <p>請參照會議時程，準時進出會場／線上會議室。</p>
+      <p>實體進行期間請將手機靜音；線上會議請將麥克風關閉。</p>
+    </div>
+    <div class="agh">
+      <div class="ad">May 14, 2026（週四）</div>
+      <div class="as">上午場【圓桌論壇】</div>
+      <div class="av">臺北市立大學 公誠樓4樓G412室<br>線上連結　Google Meet：fdh-crrz-mfb</div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">09:30–10:00</div>
+      <div class="a-body"><span class="tag t-b">報到</span><h4>報到時間</h4></div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">10:00–10:10</div>
+      <div class="a-body"><span class="tag t-c">開幕式</span><h4>開幕式</h4><p>蔡瑩瑩主任（臺北市立大學儒學中心）</p></div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">10:10–11:40</div>
+      <div class="a-body">
+        <span class="tag t-f">【圓桌論壇（一）】</span>
+        <h4>又被退了！論文投稿的甘苦談</h4>
+        <div class="ptags">
+          <span class="ptag">王誠御　臺大中文博士候選人</span>
+          <span class="ptag">嚴浩然　成大中文博士候選人</span>
+          <span class="ptag">楊卓剛　成大中文博士生</span>
+        </div>
+      </div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">10:10–11:40</div>
+      <div class="a-body">
+        <span class="tag t-p">【圓桌論壇（二）】</span>
+        <h4>我看了什麼？審查委員的辛酸</h4>
+        <div class="ptags">
+          <span class="ptag">鄭吉雄　香港教育大學講座教授</span>
+          <span class="ptag">葉叡宸　臺大中文助理教授</span>
+          <span class="ptag">蔡瑩瑩　北市大助理教授</span>
+          <span class="ptag">吳佩熏　勤益科大助理教授</span>
+          <span class="ptag">趙旻祐　延世大學助理教授</span>
+        </div>
+      </div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">11:40–13:30</div>
+      <div class="a-body"><span class="tag t-b">午休</span><h4>午餐時間</h4></div>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 5 —</span></div>
+</div>
+</div>
+
+<!-- ▌PAGE 6：論文發表場次 ▐ -->
+<div class="page-card" id="pg-5">
+<div class="pw">
+  <div class="page-hero teal">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="hero-kicker">第五章（續）· CHAPTER 05</div>
+    <div class="hero-title">論文發表工作坊</div>
+  </div>
+  <div class="page-body">
+    <div class="agh" style="background:linear-gradient(90deg,var(--teal),#1a5060)">
+      <div class="ad">May 14, 2026（週四）</div>
+      <div class="as">下午場【論文發表工作坊】</div>
+      <div class="av">
+        第一會場　臺師大 勤六樓EMI教室（線上同步）<br>
+        第二會場　臺北市立大學 公誠樓G412室<br>
+        主持　金培懿 特聘教授（臺師大國文 ／ 中華孔孟學會秘書長）
+      </div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">13:30–16:00</div>
+      <div class="a-body">
+        <span class="tag t-f">【第一會場】</span>
+        <h4>佛教咒語詞hūṃ之中古漢語音譯分析</h4>
+        <div class="ptags">
+          <span class="ptag">發表人　陳皓渝　高師大國文</span>
+          <span class="ptag">討論人　吳瑞文 教授　中研院語言所</span>
+        </div>
+      </div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">13:30–16:00</div>
+      <div class="a-body">
+        <span class="tag t-p">【第二會場】</span>
+        <h4>解構聖王與安頓性命──《莊子》外、雜篇「至德之世」中的士人實踐之道</h4>
+        <div class="ptags">
+          <span class="ptag">發表人　李宗祐　臺師大國文</span>
+          <span class="ptag">討論人　吳肇嘉 副教授　臺北市立大學</span>
+        </div>
+      </div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">13:30–16:00</div>
+      <div class="a-body">
+        <span class="tag t-b">【線上發表】</span>
+        <h4>「政教二科」視域下孫詒讓《周禮》觀研探</h4>
+        <div class="ptags">
+          <span class="ptag">發表人　夏卓浩　復旦哲學　＊線上</span>
+          <span class="ptag">討論人　林素英 教授　臺師大國文</span>
+        </div>
+      </div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">13:30–16:00</div>
+      <div class="a-body">
+        <span class="tag t-f">【第一會場】</span>
+        <h4>《孝經》書名翻譯研究──從 pietas、filial piety 到 family reverence 的詮釋轉譯現象</h4>
+        <div class="ptags">
+          <span class="ptag">發表人　林昕曖　成大中文</span>
+          <span class="ptag">討論人　潘鳳娟 教授　臺師大東亞學系</span>
+        </div>
+      </div>
+    </div>
+    <div class="a-item">
+      <div class="a-time">16:00–16:20</div>
+      <div class="a-body"><span class="tag t-c">閉幕式</span><h4>閉幕式</h4><p>徐國能主任（國立臺灣師範大學國文學系）</p></div>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 6 —</span></div>
+</div>
+</div>
+
+<!-- ▌PAGE 7：議事規則 ▐ -->
+<div class="page-card" id="pg-6">
+<div class="pw">
+  <div class="page-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="hero-kicker">第六章 · CHAPTER 06</div>
+    <div class="hero-title">議事規則</div>
+  </div>
+  <div class="page-body">
+    <div class="t-block">
+      <h3>【圓桌論壇】　10:10 – 11:40　共 90 分鐘</h3>
+      <div class="t-row"><span class="tl">主持人介紹</span><div class="tb" style="width:5px"></div><span class="tv">5 分鐘</span></div>
+      <div class="t-row"><span class="tl">特邀分享</span><div class="tb" style="width:24px"></div><span class="tv">24 分鐘（每人 8 分鐘）</span></div>
+      <div class="t-row"><span class="tl">座談時間</span><div class="tb" style="width:56px"></div><span class="tv">56 分鐘</span></div>
+      <div class="t-row"><span class="tl">主持人總結</span><div class="tb" style="width:5px"></div><span class="tv">5 分鐘</span></div>
+      <div class="notice">
+        分享人口頭報告 <strong>8 分鐘</strong>，7分鐘時一短鈴、8分鐘時一長鈴。<br>
+        座談時間由主持人帶領，發言請先告知姓名、服務單位及職稱。
+      </div>
+    </div>
+    <div class="t-block">
+      <h3>【論文發表工作坊】　13:30 – 16:00　共 150 分鐘</h3>
+      <div class="t-row"><span class="tl">主持人介紹</span><div class="tb" style="width:5px"></div><span class="tv">5 分鐘</span></div>
+      <div class="t-row"><span class="tl">論文發表時間</span><div class="tb" style="width:60px"></div><span class="tv">60 分鐘（每人 15 分鐘）</span></div>
+      <div class="t-row"><span class="tl">特約討論時間</span><div class="tb" style="width:60px"></div><span class="tv">60 分鐘（每人 15 分鐘）</span></div>
+      <div class="t-row"><span class="tl">綜合討論</span><div class="tb" style="width:20px"></div><span class="tv">20 分鐘</span></div>
+      <div class="t-row"><span class="tl">主持人總結</span><div class="tb" style="width:5px"></div><span class="tv">5 分鐘</span></div>
+      <div class="notice">
+        發表人口頭報告 <strong>15 分鐘</strong>，14分鐘一短鈴、15分鐘一長鈴。<br>
+        特約討論人口頭講評 <strong>15 分鐘</strong>，鈴聲同上。<br>
+        綜合討論每位發言最多 <strong>2 分鐘</strong>，一長鈴提醒。<br>
+        發言請先告知姓名、服務單位及職稱。
+      </div>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 7 —</span></div>
+</div>
+</div>
+
+
+<!-- ▌PG-7：第二篇 摘要 ▐ -->
+<div class="page-card" id="pg-7">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">解構聖王與安頓性命<br>──《莊子》外、雜篇「至德之世」<span class="hi">中的士人實踐之道</span></div>
+    <div class="ph-sub">論文發表工作坊 · 2026.05.14</div>
+  </div>
+  <div class="page-body">
+    <div class="info-card">
+      <div>
+        <div class="ic-role">發表人</div>
+        <div class="ic-name">李宗祐</div>
+        <div class="ic-aff">國立臺灣師範大學國文學系博士生　＊第二會場</div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div>
+        <div class="ic-role">特約討論人</div>
+        <div class="ic-name">吳肇嘉 副教授</div>
+        <div class="ic-aff">臺北市立大學中國語文學系　＊第二會場</div>
+      </div>
+    </div>
+    <div class="abstract-box">
+      <div class="ab-label">摘　要</div>
+      <p>本文旨在探討《莊子》外、雜篇中「至德之世」的思想意涵，反駁將其視為復古烏托邦或消極隱逸的既有詮釋。本文認為，此表述旨在解構當時戰國士人所建構之聖王話語。面對天下失序，諸子將重建秩序的希望寄託於聖王之治，卻導致道德淪為權力工具並扭曲萬物本性。莊子則藉由描繪無聖王的素樸社會，促使士人放下對道德典範的依賴與「治天下」的迷思，轉而依循無為的實踐原則：在思想層面上，透過「外化而內不化」消解人際間的價值衝突；在政治層面上則虛化自我以具備對他者的容受性，以氣化感通使君王覺察聖王理想之局限，進而放下權力擴張之意圖。就此而言，「至德之世」實為一種消解一元權威的表述策略，其最終指向為萬物各自「安其性命之情」的自然秩序。</p>
+    </div>
+    <div class="kw-box"><strong>關鍵字：</strong>莊子、至德之世、聖王、士人、無為</div>
+  </div>
+  <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 8 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-8：一、前言 ▐ -->
+<div class="page-card" id="pg-8">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">解構聖王與安頓性命</div>
+  </div>
+  <div class="page-body">
+    <div class="p-h2">一、前言</div>
+    <div class="paper-text">
+      <p>《莊子》外、雜篇中存在一類獨特的表述，常以遠古素樸社會作為批判現實政治與道德異化的標準。根據劉笑敢的分析，體現這類表述的篇章包含：〈駢拇〉、〈馬蹄〉、〈胠篋〉、〈在宥〉、〈讓王〉、〈盜跖〉、〈漁父〉。它們共同的思想傾向，是反對仁義道德與禮樂賞罰之治理而強調「安其性命之情」，批評後代日益衰敗而嚮往古代的和諧。<sup class="fn-r">1</sup>然而，除了上述各篇，〈天地〉、〈天運〉、〈繕性〉、〈山木〉、〈知北遊〉亦散見對於素樸之世的描寫，本文所指涉的「至德之世」文獻，即以此類非議聖知、崇尚素樸、緬懷遠古的篇章與段落作為主要討論對象。</p>
+      <p>「至德之世」在思想詮釋上常被視為一種不切實際的政治理想，但若置於戰國的時代脈絡下檢視，便會發現這種看似過於理想的表述，其現實性或許在於對「聖王之治」的理論挑戰。面對春秋以降的政治失序，諸子普遍將重建秩序的希望寄託於聖王之治。儒家雖在《荀子》中才明示聖王一詞，但其對堯、舜、禹、湯的推崇已見於《論語》、《孟子》。如孔子盛讚：「大哉，堯之為君也，巍巍乎！唯天為大，唯堯則之。」（《論語．泰伯》）<sup class="fn-r">2</sup>孟子亦主張：「為君盡君道，欲為臣盡臣道，二者皆法堯舜而已矣。」（《孟子．離婁上》）<sup class="fn-r">3</sup>墨家更屢屢將其主張訴諸聖王，明言「古者聖王之為政，列德而尚賢」（《墨子．尚賢上》）、「兼相愛、交相利，此聖王之法，天下之治道也」（《墨子．兼愛中》）、「厚葬久喪，其非聖王之道也」（《墨子．節葬下》）。<sup class="fn-r">4</sup>曾暐傑指出這是一種近乎信仰的古代聖王崇拜心理，在這種思維結構中，聖王雖不存在於現實，人們對於聖王的期待，卻能使他們獲得面對混亂秩序的生存動力。<sup class="fn-r">5</sup>這種心理結構，使得當時的人們普遍以聖王作為天下秩序的思考前提。</p>
+      <p>《莊子》中的聖王形象則有其複雜性。〈在宥〉、〈盜跖〉等篇大力抨擊古代聖王，徐聖心卻由歷史詮釋的角度切入，指出《莊子》中的堯、舜、禹並非全是負面的批判形象，其中亦有與儒家呼應之典範意義──堯象徵著個體的生命昇進、舜代表超越性的人文之源、禹體現出理想落於現實中的困境。<sup class="fn-r">6</sup>本文同意《莊子》中確實也存在此種藉由聖王典範傳達理想人格之表述，也認為這些表述對於儒家蘊含一種更為同情的接受態度。但莊子對聖賢生命境界之肯定，與他對政治權力的批判並不衝突。徐氏的研究聚焦於聖王作為個體的內在轉化，本文則試圖論證，莊子正是在肯定個體修養的同時，極力拆解那套將聖王視為秩序核心的話語結構。為了挑戰人們對聖王的依賴，莊子刻意追溯到堯、舜以前的時空，描述一個沒有聖王卻自然和諧的至德之世。這不僅否定了聖王作為救贖者的必要性，更試圖在思想上切斷道德秩序與君王統治之間的必然連結。<sup class="fn-r">7</sup></p>
+      <p>然而，這正是問題最為弔詭之處：如果聖王之治本質上是崇古意識在政治上的投射，那麼至德之世的理想，在形式上豈非同樣落入此種崇古的思維結構？這便帶來一個更為關鍵的問題：這些文字的作者是否真的希望實現三代以前的原始社會？進一步說，如果莊子沿用了當時流行的崇古敘事，卻取消了其中最核心的聖王角色，那麼這種表述除了傳達對現實的批判與懷舊之外，是否還蘊含特定的論述目的，甚至積極的政治意義？</p>
+      <p>在回答上述問題之前，需要先說明本文對待《莊子》各篇的基本立場。雖然本文依循劉笑敢的分類方式，選擇〈駢拇〉等篇作為主要的研討對象，但不表示也接受他對這些篇章所作的無君派之定調。因為此一認定不僅預設了這幾篇的內容性質，也在〈駢拇〉等篇與其它篇章間劃出界線，而否定內、外、雜各篇之間義理相通的可能性。換言之，本文傾向對《莊子》全書採取融貫性的詮釋視角。儘管外、雜篇含有許多表述上的差異，但與其將此視為思想立場上的不同，不如看作是基於同一立場而開展出的多元論述主題。<sup class="fn-r">8</sup>而這種一致性，正是建立在《莊子》各篇對有為與心知的批判態度上。因此，即使是像〈天地〉、〈天道〉等肯定帝王之德的篇章，其論旨亦在表明無為的內涵，與〈駢拇〉等篇並不真正衝突。基於此一理解，本文的探討將不自限於無君派篇章的框架，而將視論述需要，適度援引其它篇章的相關段落，以闡明「至德之世」的表述脈絡。</p>
+      <p>本文將指出，「至德之世」之所以挪用崇古形式卻捨棄其中的聖王，其目的正在於將君王從道德的意義範圍中排除，以釐清「至德」之義。而這些話語，旨在拆解由士人階層所建構的道德話語及社會理想。它提供士人一個跳脫聖王期待的政治批判視角，以及在社會中如何透過「外化而內不化」的工夫，與他者互不相傷而安頓彼此性命的解紛之道。下文將依序展開論證：第二節首先探討既有詮釋之限制，指出「至德之世」並非一個期待君王實現的施政藍圖，而是針對儒家聖王理論的論辯策略；第三節分析「至德之世」如何從社會現象與人性論的面向解構聖王之治，進而歸結於對「治天下」意圖的反省；第四節則闡明在此一新視角下，「無為」作為士人的實踐原則，不僅得以化解潛在的人我衝突，更能為社會帶來一種新的秩序想像。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 9 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-9：二、詮釋商榷（一）▐ -->
+<div class="page-card" id="pg-9">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">「至德之世」詮釋商榷</div>
+  </div>
+  <div class="page-body">
+    <div class="p-h2">二、「至德之世」詮釋商榷</div>
+    <div class="paper-text">
+      <p>儘管外、雜篇的「至德之世」常被視為一種理想，學界一般仍承認其中含有批判現實政治的目的。在此基礎上，有些學者重視其崇古性質以及與老子思想的關聯，認為作者藉由古代美好社會之建構，以批判當時君權集中、重典治國的時代環境。也有學者認為這類表述透露出高度的道德理想，但其理想無法在當時的政治背景下實現，因此最終形成隱逸的思想主張。然而這兩種觀點都面臨著詮釋上的困難：前者忽略了《莊子》與《老子》有著不同的表述重點，後者則有簡化莊子思想之嫌。本節將首先檢討這兩種觀點各自的限制，隨後指出「至德之世」是一套針對當時崇古意識的論辯策略，其用意在於促使讀者重新思考道德的內涵與實現方式。</p>
+      <div class="p-h3">（一）反駁原始主義詮釋</div>
+      <p>葛瑞漢（Angus Charles Graham）將〈駢拇〉、〈馬蹄〉、〈胠篋〉與〈在宥〉前半篇稱為「原始主義」。他認為這幾篇成於秦朝滅亡至西漢建立之間的政權真空期，旨在探問取代法家暴政者，是否僅是另一種絕對權力形式──儒家或墨家的道德主義。其內涵在於發展老子「小國寡民」的思想，質疑文明與人為的欲望刺激，肯定人們的原始感受與恬淡的生活方式。葛瑞漢進而指出這種批判性的思想「可能是一股個人解放與限制政治的潮流，提醒君王壓迫將導致反叛，鼓勵士人退隱於林泉，阻止官吏改革現實的企圖」。<sup class="fn-r">9</sup></p>
+      <p>葛瑞漢的詮釋特別強調這些篇章與老子的思想關聯，他認為這些篇章的用語，相較於《莊子》內篇，與《老子》有更多的呼應關係。<sup class="fn-r">10</sup>在他看來，老子是古代無政府主義的代表，而此判斷的基礎之一是：「他的著作假定而且確實是說給君王聽的，但建議給君王的施政方針卻是『無為』，讓事物自然地自治自理。」<sup class="fn-r">11</sup>因此，老子雖未明確否定君王的存在，實際卻是家長式的無政府主義（paternalistic anarchism）。問題在於，此觀點即使適用於《老子》，卻未必同樣適用於《莊子》。葛瑞漢的詮釋將「至德之世」視為一套政治實踐藍圖，卻忽略了《莊子》這類表述中的論辯與解構性質。</p>
+      <p>關於〈駢拇〉等篇的表述對象與目的，司馬遷提供了一個線索：「莊子者，蒙人也，名周。……作〈漁父〉、〈盜跖〉、〈胠篋〉，以詆訿孔子之徒，以明老子之術。……然善屬書離辭，指事類情，用剽剝儒、墨，雖當世宿學不能自解免也。」<sup class="fn-r">12</sup>他指出作者目的在於「以詆訿孔子之徒，以明老子之術」，可見這些篇章並非單純承續老子之學，還具備針對儒、墨的辯駁內容。因此「至德之世」雖然也涉及治道的思考，但其最核心的批判對象，是由儒、墨等士人階層所建構並掌握的道德話語與崇古敘事。</p>
+      <p>由此考察〈駢拇〉等篇，可以看出這些表述精準地正針對士人階層的意識形態進行拆解。第一，從文章將社會混亂歸因於百家爭鳴這點來看，其立論是建立在對士人學派論爭的反省之上。比如〈在宥〉明確將「儒、墨畢起」<sup class="fn-r">13</sup>視為天下大亂的徵兆，〈胠篋〉更激烈地提出「鉗楊、墨之口」的訴求。第二，作者抨擊曾參、史鰌等儒家典範人物，以挑戰讀者對這些典範的印象。比如〈駢拇〉提到精熟於仁義的曾、史「非吾所謂臧也」，甚至刻意將伯夷與盜跖並提，認為他們「是同為淫僻也」。第三，它最主要的駁斥對象是儒、墨兩家的政治理想，甚至將天下失序歸咎於聖賢的創制。比如〈馬蹄〉曰：「及至聖人，蹩躠為仁，踶跂為義，而天下始疑矣；澶漫為樂，摘僻為禮，而天下始分矣。」〈胠篋〉亦曰：「甚矣夫好知之亂天下也！自三代以下者是已。舍夫種種之民而悅夫役役之佞，釋夫恬淡無為而悅夫啍啍之意，啍啍已亂天下矣。」此皆指儒、墨論述中的聖王之治，儒、墨所推崇的「三代」被轉化為混亂的起點。</p>
+      <p>凡此種種，皆顯示〈駢拇〉等篇的寫作意圖，並非提倡一個無政府的原始社會，而是試圖在思想上解消人們對於聖賢典範與仁義教化的執著。因此，若僅如葛瑞漢將「至德之世」視為原始主義的政治理想，便會忽略作者所處的論辯環境及其中關於道德反思的深層義理。</p>
+      <p>有別於葛瑞漢強調其批判文明的性質，楊儒賓則從神話學的角度指出，「至德之世」的表述承襲自原始神話思維，旨在展現一種前範疇、前反省的渾沌意識。他援引耶律亞德（Mircea Eliade）的「永恆回歸」概念，主張這類描述涉及人類意識深層的原型，因此其中所涉及的反智與愚民之義是一套關於「人的解放」之存在論述，迥異於法家的統治理論。他視此為道家政治思想的典範，其目的在於要求君王承擔修養自我的責任以使宇宙秩序呈現於其心中，並藉無為之治讓百姓安身復性，從而恢復天地自然的生命韻律。<sup class="fn-r">14</sup></p>
+      <p>然而，楊儒賓雖敏銳地留意到「至德之世」在心性論層面上的積極意涵，並試圖將其轉化為一種關於人類存在狀態的救贖論述；但他仍將實踐的主體繫於君王，認為應由君王負責引導百姓。這種解讀不僅無視《莊子》與《老子》在政治主體思考上的差異，也忽略了莊子對於「治天下」的深刻懷疑。〈在宥〉首章對「在宥天下」與「治天下」二者嚴加區辨，不論是堯所帶來的「使天下欣欣焉」或桀所導致的「使天下瘁瘁焉」皆是「治天下」，唯有使天下「不淫其性、不遷其德」方為「在宥天下」。郭象注云：「宥使自在則治，治之則亂也。」<sup class="fn-r">15</sup>郭象以「自在」與否分別二者，點出秩序根據在於百姓自身而非君王。因此區辨關鍵不在於君王採取何種治理方案，而在於是否將百姓視為有待治理的客體。在這樣的意義下，楊儒賓所論的君王雖已虛靜其心，其「促使百姓返回自家尚未分裂的存在狀態」之表述，<sup class="fn-r">16</sup>在本質上仍預設一種由上而下的救贖結構。但對莊子而言，儘管是神話式的復歸，君王任何政治理想都將因「治天下」之動機而有異化的危機。換句話說，若將「至德之世」理解為期待君王完成的政治目標，在詮釋上將陷入自相矛盾的困難。</p>
+      <p>因此，即使莊子的「至德之世」與老子的「小國寡民」之間，可能存在著概念上的親緣關係，但其表述形式已有所變化，在內容上也有所發展。「至德之世」所表述的和諧秩序，是出於對士人所熟知的儒家理論之深切反省。此一轉變意味著，面對戰國亂局，莊子並不將期待完全寄託於君王，而著眼於士人所具備之話語影響力與道德解釋權。<sup class="fn-r">17</sup>唯有釐清此一批判對象的轉換（從君王的統治技術，轉向士人的政治理論），我們才能真正進入「至德之世」的表述脈絡。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 10 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-10：二（二）反駁隱逸思想詮釋 ▐ -->
+<div class="page-card" id="pg-10">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">「至德之世」詮釋商榷（續）</div>
+  </div>
+  <div class="page-body">
+    <div class="paper-text">
+      <div class="p-h3">（二）反駁隱逸思想詮釋</div>
+      <p>在釐清「至德之世」的批判對象後，我們隨即面對的問題是：既然莊子鋪陳了一個沒有仁義禮法的社會，這是否意味著他建議士人徹底脫離政治場域而隱逸？不僅在前引的葛瑞漢文字中明確指出作者「鼓勵士人退隱於林泉」，許多莊子詮釋也常強調莊子思想與楊朱或戰國隱者間的關聯。此觀點的立論基礎在於，〈駢拇〉等篇對「性命之情」的重視係承襲自楊朱的貴己思想，從而蘊含對政治權力的排斥態度。<sup class="fn-r">18</sup>但此類解讀很可能簡化了這些篇章的意涵。</p>
+      <p>要證成莊子是隱逸思想，就需要解釋莊子支持隱逸的原因。以保全生命為理由是一種最粗淺的詮釋，本文將要討論的，是一些根據道德理由視莊子為隱逸思想的詮釋。而在這類試圖賦予隱逸積極道德意涵的論述中，我們可從尤銳（Yuri Pines）的觀點開始談起。尤銳透過對戰國士人生活手段的分析，認為莊子有鑑於參與政治對個人生命帶來的風險，以及對道德原則的違背，乃建議士人退出仕途。他並以〈胠篋〉等篇對儒家的抨擊為例，說明莊子如何將從政視為不道德的行為。<sup class="fn-r">19</sup>尤銳留意到這些篇章的旨趣是一種道德論述，但在他的詮釋下，莊子成為一個逃避現實的極端理想主義者。</p>
+      <p>相較之下，文青雲（Aat Vervoorn）對隱逸的說明較為持平，他說：「隱逸是一個堅守原則的人在不利環境下有可能達到的最大成功；是崇高道德理想在一個嚴酷難耐的現實中的權宜安頓。」<sup class="fn-r">20</sup>在此理解下，避世並非隱逸的唯一形式，還取決於個人所持的理想內容，以及他對所處環境的理解方式。因此，有別於一般隱者因拒絕政治權力而避世，文青雲指出，莊子是一種藏身於社會之中的隱逸思想，其真正的警惕對象是名聲。因為即使能夠找出宗教上、道德上與政治上的理由來追求名聲，但多數人追求名聲僅僅是為了名聲本身，就像他們追求財富與權力一樣沒有理由。<sup class="fn-r">21</sup>換句話說，文青雲認為莊子之所以肯定在社會中的隱逸，其主要理由是避免道德實踐的異化危機。</p>
+      <p>雖然文青雲的文本依據是內七篇，但此詮釋亦含納對〈刻意〉、〈繕性〉等外、雜篇章的理解，且他將莊子的隱逸從「形隱」轉化為更具修養深度的「德隱」，<sup class="fn-r">22</sup>此義可再藉牟宗三的觀點進一步開展。依文青雲，對莊子而言「隱逸乃是一種思想狀態，是某種不依賴空間處所的事情」，<sup class="fn-r">23</sup>因為莊子理想中的聖人，消除了自我而與變化為一，「也就跟變化本身一樣，超越限制獲得自由」。<sup class="fn-r">24</sup>這種精神自由的詮釋對當代莊子學界並不陌生，在《莊子》原文與歷代注本中也能獲得支持。牟宗三便依據郭象的注文，闡發迹冥圓融之義：</p>
+      <div class="p-quote">冥之體必須轉於具體而不離迹，即冥體之無必會有。冥即在會中見。會而無執即為冥，冥而照俗即為迹。冥則成其無累之會，故體化合變，而遊無窮。迹則實其冥體之無，故冥非絕會，即在域中。遊無窮，則會而冥矣。會而冥，雖迹而無迹。即在域中，則冥而會矣。<sup class="fn-r">25</sup></div>
+      <p>「冥」是經由修養而無執無累之內在心境，「迹」則是個體在現實社會中與物相接的外在行跡。這段引文旨在表明：真正的逍遙並不需要也不可能脫離世俗而達成。相反地，「冥之體必須轉於具體而不離迹」，無執的心境必須在參與及應對世俗的變化中體現。唯有個體維持無為之修養工夫，那麼即使身處世俗場域，也能不為名聲侷限，「雖迹而無迹」。</p>
+      <p>這種迹冥圓融的詮釋，可為文青雲所主張的「社會中的隱逸」提供堅實的存有論基礎。若將二者合觀，我們可以看出，莊子式的隱逸並非將「隱」視為一種對抗政治的物理距離，而是將其轉化為一種遊於世俗的實踐工夫，保持精神上的自由。然而，這種狀態是否還適合稱為「隱逸」？更精確的提問則是：若我們以「隱逸」一詞描述無為修養所達至的心靈狀態，是否會遮蔽這種修養的其它可能性？因為，即便是德隱、心隱、朝隱，「隱逸」本質上仍然是一個與政治權力相對立的概念，預設著現實政治結構的穩固不移。於是當我們以隱逸詮釋莊子思想的同時，便容易陷入一種定見：面對難以撼動的現實政治，個體只能採取退守姿態，與之保持距離而遊於其中。<sup class="fn-r">26</sup></p>
+      <p>為避免「隱逸」概念所帶來的詮釋限制，賴錫三曾試圖透過微型權力的視角，賦予莊子的「遊」更具批判性的政治意涵。他指出，莊子思想是基於對名言符號所建構起的人際網絡之細微洞察，如庖丁解牛般地「入遊其樊」，迂迴回應並導化社會中無處不在的權力關係。<sup class="fn-r">27</sup>賴錫三的詮釋，將莊子從尋求個體逍遙的隱逸思想，轉為一種入而不入的批判意識，並強調其對治微型權力的作用。</p>
+      <p>此一觀點為我們重新理解「至德之世」提供了重要的理論參照。若將賴錫三所謂的符號羅網置於戰國思想環境中檢視，儒家透過仁義禮樂等概念所建構的聖王敘事，無疑正是當時士人深陷其中、甚至內化為集體意識的一種權力話語。在此視域下，「至德之世」不應被視為一種呼籲士人逃離現實的懷舊烏托邦，而是一套針對此種心理的解構論述。而「性命之情」作為這套論述中的核心概念，意在揭示聖王理想中的造作與有為，從而解構此一權力話語的合理性，指引士人探索另一種安頓性命的秩序基礎。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 11 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-11：二（三）論辯策略 ▐ -->
+<div class="page-card" id="pg-11">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">作為論辯策略的「至德之世」</div>
+  </div>
+  <div class="page-body">
+    <div class="paper-text">
+      <div class="p-h3">（三）本文的詮釋角度：作為論辯策略的「至德之世」</div>
+      <p>綜上所述，本文認為「至德之世」並非期待君王實現的政治理想，亦非隱士的避世宣言，而是一套針對士人階層所建構之聖王話語進行解構的論辯策略。此詮釋角度可藉莊子這段文字予以說明：</p>
+      <div class="p-quote">莊子曰：「人有能遊，且得不遊乎？人而不能遊，且得遊乎？夫流遁之志、決絕之行，噫！其非至知厚德之任與！覆墜而不反，火馳而不顧，雖相與為君臣，時也，易世而無以相賤。故曰：至人不留行焉。夫尊古而卑今，學者之流也。且以豨韋氏之流觀今之世，夫孰能不波？唯至人乃能遊於世而不僻，順人而不失己，彼教不學，承意不彼。」（〈外物〉）</div>
+      <p>此文清楚呈現了莊子對士人處世態度建議的要點。一方面，他反對「流遁之志、決絕之行」，視避世為非「至知厚德」之舉，從而批評了消極的隱逸路線。其立論基礎在於否定君臣關係的絕對性，視其為「時也」，故士人無須將此視為不變的神聖結構。另一方面，他也反對當時「尊古而卑今」的學術風氣，認為推崇古代體制是不能正視時代變化的心態，人們不應盲目跟從。莊子藉由這兩種極端狀態，表達理想的處世態度是「遊於世而不僻，順人而不失己」。</p>
+      <p>其中，尤其重要的是「且以豨韋氏之流觀今之世，夫孰能不波」這句話，林希逸已點出其中的反諷意味。<sup class="fn-r">28</sup>作為一句反諷，莊子之所以提出早於三皇五帝的豨韋氏，並不意在標舉另一個古代聖王，而是為了凸顯崇古思維的無稽。對於這種反諷的論辯策略，我們不能將其中的字句都視為作者認同的理念，而應視為針對儒、墨崇古思維的刻意挪用。</p>
+      <p>以此視角看待「至德之世」，可知莊子並非真的要人們回歸原始生活，而是藉由素樸秩序與聖王之治的對照，揭示後者內在的理論悖謬：</p>
+      <div class="p-quote">夫至德之世，同與禽獸居，族與萬物並，惡乎知君子小人哉！同乎無知，其德不離；同乎無欲，是謂素樸。素樸而民性得矣。及至聖人，蹩躠為仁，踶跂為義，而天下始疑矣；澶漫為樂，摘僻為禮，而天下始分矣。故純樸不殘，孰為犧尊！白玉不毀，孰為珪璋！道德不廢，安取仁義！性情不離，安用禮樂！五色不亂，孰為文采！五聲不亂，孰應六律！夫殘樸以為器，工匠之罪也；毀道德以為仁義，聖人之過也。（〈馬蹄〉）</div>
+      <p>作者的主要論點，是將混亂的原因從禮崩樂壞翻轉為制禮作樂。在他看來，儒家視為秩序基礎的仁義禮樂，對於實現德性而言適得其反。而「至德之世」在這段表述所發揮的對照功能，是從根本上動搖聖王之治的邏輯前提──如果人民本具德性，為何還需要禮樂教化？其最終目的在於瓦解由士人建構與傳播的聖王敘事，使其不再將秩序的建立寄託於單一的權力核心，進而體認「無為」對於社會和諧的積極作用。此即本文後續兩節即將展開的探討重點。</p>
+      <div class="p-h2">三、解構聖王之治</div>
+      <p>在確立「至德之世」的對話對象後，我們必須進一步探討：莊子究竟如何反駁儒家的聖王思想。<sup class="fn-r">29</sup>面對戰國時代的失序焦慮，儒家建構出一套聖王救贖的心理結構，以提供人們實踐仁義的內在動力。<sup class="fn-r">30</sup>然而在莊子看來，這種將道德典範化、概念化的思維，反而讓士人迷失實踐方向，進而加劇秩序的崩潰。本節將指出，「至德之世」針對的正是聖王之治的理想。在社會現象的層面上，作者揭示道德價值被異化為獲得權力與名利的工具；在心性論的層面上，則批判仁義教化扭曲本性且攖擾人心。以此為基礎，本節進而說明莊子如何以「無為」取代「治天下」的實踐動機。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 12 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-12：三（一）社會現象的批判 ▐ -->
+<div class="page-card" id="pg-12">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">解構聖王之治</div>
+  </div>
+  <div class="page-body">
+    <div class="paper-text">
+      <div class="p-h3">（一）社會現象的批判</div>
+      <p>儒家的政治思想與其道德論述密不可分。根據徐復觀，儒家的德治係出於對人性的信賴，透過治者與被治者間的以德相與，達成人人各遂其性的理想。此理想的實現關鍵，在於君王能先盡其德而推己及人，乃能風行草偃地讓百姓率性以成治。<sup class="fn-r">31</sup>而堯、舜等古代聖王的傳說，與伯夷、叔齊等賢士的事蹟，都是在這種德治理想下所塑造的典範敘事，使人們於實踐上有所依循。然而，〈胠篋〉與〈盜跖〉二篇，卻從制度與文化層面對此提出質疑。</p>
+      <p>首先是制度層面的弔詭。聖王是聖人與君王的二位一體，因此聖王的治理，必須使道德原則落實為政治規範。然而〈胠篋〉指出，為使人民遵循仁義而將道德制度化，本意雖在於抑惡揚善，實際卻使道德淪為一種中立的權力工具，如斗斛、權衡般任人操作。作者雖未明言田成子「並與其聖知之法而盜之」的具體細節，但根據司馬遷的記載，田成子刺殺齊簡公後，為了穩定權位，在外交與內政方面，皆運用道德語言鞏固自身統治。<sup class="fn-r">32</sup>莊子以「有乎盜賊之名，而身處堯、舜之安」一語，凸顯其中的荒謬。</p>
+      <p>田成子利用「聖知之法」保障自身，這顯示出制度化道德的邏輯缺陷。由於道德被具體化為禮樂刑度等可操作的治理技術，它便成為獨立於道德主體的符號工具，使握有這套符號工具的掌權者成為善惡的最終根據。換句話說，它只能防範危害社會治安的小盜，但對篡國這種程度的惡行而言，它反而成為最便利的統治手段。所謂「竊鉤者誅，竊國者為諸侯」，在道德與法制合一的前提下，竊國者能夠同時掌握解釋道德與執行法度的權力，進而利用這套聖王敘事掩蓋其暴力奪權的本質。</p>
+      <p>其次，在文化層面上，莊子將批判的矛頭指向儒者所致力形塑的道德風氣。根據佐藤將之的研究，儒家對倫理價值的提倡，與戰國初期的政治轉型需求息息相關，其所培養的道德人才有助於新興官僚體制的建立，從而使魯、齊、魏、楚等地逐漸形成重視仁、義等道德語彙的思想環境。<sup class="fn-r">33</sup>然而對莊子來說，提倡仁義原是為了教化世人，一旦此目標與士人干謁求進的欲求彼此交織，便讓道德知識成為一種換取名利的文化資本。在〈盜跖〉中，作者藉盜跖之口痛斥孔子「矯言偽行，以迷惑天下之主，而欲求富貴焉」，這並非指責追求富貴的欲望本身，而是指責利用道德符號矯飾欲望的行為，以強調提倡仁義的結果，是帶來虛偽與欺瞞的風氣。</p>
+      <p>為了進一步化解這種風氣，〈盜跖〉將儒家所推崇的典範人物進行顛覆性的再詮釋。對於黃帝、堯、舜等聖王典範，作者稱他們獲取權力的過程「皆以利惑其真而強反其情性」；對伯夷、叔齊等賢士典範，凸顯他們重視名聲勝過自己生命的行為「無異於磔犬、流豕、操瓢而乞者」；而對比干、伍子胥等忠臣典範，指出他們失去政治判斷力而「卒為天下笑」。對比於「至德之隆」的和諧社會，作者旨在揭示：效仿這些典範不僅捨本逐末，更是對生命的戕害。此一批評看似激進，實則蘊含著莊子對於性命之情的重視。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 13 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-13：三（二）人性論的批判 ▐ -->
+<div class="page-card" id="pg-13">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">解構聖王之治（續）</div>
+  </div>
+  <div class="page-body">
+    <div class="paper-text">
+      <div class="p-h3">（二）人性論的批判</div>
+      <p>除了對社會現象的批判，莊子更將視角深入人性論的層面，直指聖王之治在理論前提上的困難。對莊子而言，儒家這套以仁義為核心的教化論述，不僅不足以作為天下失序的解決之道，其將仁義視為普遍人性的前提，反而成為攖擾人心、引發社會紛爭的思想根源。</p>
+      <p>儒者論述以仁義內在的人性論作為前提，〈駢拇〉卻針對這點提出尖銳的詰問：「仁義其非人情乎！彼仁人何其多憂也？」倘若人性本具仁義，那麼順應人性而不多加施為，便能實現仁義的社會。而現實中的儒者卻為了如何教化而時常憂愁，這恰恰反證了仁義不是人性之自然，而是一種如「膠漆纆索」般強加於人的外在規範。莊子藉由拆解這層理論基礎，指出聖王教化的出發點本身，即是對自然人性的扭曲，故曰：「自虞氏招仁義以撓天下也，天下莫不奔命於仁義，是非以仁義易其性與？」</p>
+      <p>正因仁義並非自然，儒家以此為普世標準來「慰天下之心」的理想，在莊子看來便有著違背人性的危險。如蕭振聲所指出的，外、雜篇對人性的特殊規定在於，人性本身即是圓滿且和諧的，無須另設外在標準以圖改善。<sup class="fn-r">34</sup>為表達此義，〈駢拇〉有一段生動的比喻：</p>
+      <div class="p-quote">彼至正者，<sup class="fn-r">35</sup>不失其性命之情。故合者不為駢，而枝者不為跂；長者不為有餘，短者不為不足。是故鳧脛雖短，續之則憂；鶴脛雖長，斷之則悲。故性長非所斷，性短非所續，無所去憂也。（〈駢拇〉）</div>
+      <p>鶴脛與鳧脛雖有長短之別，但各自具足，以仁義規範人性，猶如斷長續短以求萬物平齊。此一比喻，既顯示莊子將人性視為各自殊異的多元存在，又凸顯儒家並不信任這種依據存在特質而定義的人性。故莊子的批評重點在於，儒家標舉聖賢典範而倡導仁義之舉，其實是一種忽視個體、強求齊同的結構性暴力。</p>
+      <p>進一步言之，當士人與君王共同協作以推進聖王之治的理想時，這套重視齊同的人性論述，便容易將人心不齊視為缺乏治理的結果。〈在宥〉即藉崔瞿之口表達此一立場：「不治天下，安臧人心？」<sup class="fn-r">36</sup>以「臧人心」為「治天下」之內容，言下之意是：唯有使人們接受教化，取得一致的道德標準，方能建立群體秩序。作者對此提出反駁：「僨驕而不可係者，其唯人心乎！」由於人心的動向難以規約，倘若試圖將其框限於單一標準，不僅無法取得和諧，反而攖擾人心、引發更多爭亂。為了強調聖王之治的負面後果，〈在宥〉描述自從黃帝「始以仁義攖人之心」以來，堯、舜等君王的「治理」隨著時代演進日益嚴厲，天下也愈加失序；為應對新的混亂，君王只能加強法度，最終使天下淪為「釿鋸制焉，繩墨殺焉，椎鑿決焉」的困境。</p>
+      <p>莊子認為，要解決天下失序的問題，必須從根本上揚棄「治天下」的思考前提，轉向對萬物自化的信任。〈在宥〉提到：「自三代以下者，匈匈焉終以賞罰為事，彼何暇安其性命之情哉！」這句話明確顯示「安其性命之情」的主語不是君王而是人民自身，而妨礙人民安其性命之情的主因就是君王的治理意圖。這是一種顛覆式的政治想像，它將秩序的基礎從統治者的聖知，轉移到人民的自然本性之上，如此一來，「聖王」便失去其存在的理論正當性。這裡隨即衍生出一個問題：當聖王之治被證明為一種攖擾人心的災難，士人們原先所追求的政治理想即遭瓦解；然則，莊子筆下那不依賴君王權力的至德之世，又能對士人們提供何種實踐指引？</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 14 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-14：三（三）從治天下到無為 ▐ -->
+<div class="page-card" id="pg-14">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">解構聖王之治（續）</div>
+  </div>
+  <div class="page-body">
+    <div class="paper-text">
+      <div class="p-h3">（三）從「治天下」到「無為」的實踐轉向</div>
+      <p>在解構聖王之治後，莊子雖於〈馬蹄〉、〈胠篋〉等篇中反覆描述至德之世，但他不是為了向君王提供另一套名為「無為」的統治術。如〈繕性〉所言：「古之行身者，不以辯飾知，不以知窮天下，不以知窮德，危然處其所而反其性已，又何為哉！」莊子將不以知巧干預天下的要求，落實於每一個體之上，這意味著，秩序的維持不再依賴由上而下的單向治理，而是建立在個體各自「反其性」的基礎上。因此，「無為」作為維繫這種秩序的方法，也不再從屬於君王一人，而是士人甚至一般人民各自的生活實踐。</p>
+      <p>〈在宥〉提到：「君子苟能無解其五藏，無擢其聰明，尸居而龍見，淵默而雷聲，神動而天隨，從容無為而萬物炊累焉。吾又何暇治天下哉！」顯示「無為」是一種自我修養，旨在化解耳目與精神之疲役，以養護個體的感受能力。<sup class="fn-r">37</sup>郭象於「神動而天隨」句下注云：「神順物而動，天隨理而行。」<sup class="fn-r">38</sup>個體經由無為工夫而得以順應事物變化，同時個體所處的環境，也將因此恢復其本然之理。相較於「治天下」使君王與人民皆勞頓不堪，「無為」呈現的是主體從容自在、萬物自生自成的理境。莊子在此藉由「何暇治天下」的反問，明確表達了真正的無為實踐，必須建基於外在治理意圖的徹底解消。</p>
+      <p>必須釐清的是，莊子否定「治天下」，並非主張徹底取消君王在政治實踐中的地位；相反地，這是為了打破「秩序必須由統治者一人由上而下締造」的單一主體迷思。當君王徹底「在宥」時，其原先作為秩序給予者的政治功能便被懸置，統治活動從一種強制性的「支配」，轉化為任由萬物自化的「引導」。<sup class="fn-r">39</sup>在此圖景中，政治實踐的主體不再是孤立的聖王，而是擴展為包含君王、士人與庶民在內的複數主體。天下的和諧，仰賴於每一個體在平行互動中皆能各自無為以安其性命之情。</p>
+      <p>當秩序的維繫責任從治理天下的君王轉為各正性命的萬物時，士人群體的實踐便顯得尤為關鍵。有別於身陷權力競爭的君王與缺乏知識涵養的庶民，士人是封建政治逐步解體的戰國時代中，作為道德標準與價值符號的主要建構者。過往他們將恢復秩序的責任完全寄託於君王，而積極為「治天下」提供各種理論藍圖。倘若士人率先放下協助君王成聖的動機，進而將無為視為自身的實踐原則時，這不僅是個人修養的轉向，更是從根本處改變當時單一權力中心背後的社會基礎。然而問題在於，士人不像君王那般握有政治強制力，他們的無為又如何可能促成一種新的和諧？此為下節的討論重點。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 15 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-15：四（一）多元的和諧想像 ▐ -->
+<div class="page-card" id="pg-15">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">士人的無為實踐與政治作用</div>
+  </div>
+  <div class="page-body">
+    <div class="p-h2">四、士人的無為實踐與政治作用</div>
+    <div class="paper-text">
+      <p>莊子對聖王之治的解構，使秩序的根源從君王一人的聖知，轉向萬物的性命之情。然而，一旦政治的實踐主體由君王轉移至萬物，便必須面對兩個現實的理論挑戰：其一，在缺乏絕對標準的情況下，如何保證人們彼此間的價值差異不會帶來衝突？其二，掌握知識卻缺乏實際權力的士人，其無為又能發揮何種積極的政治作用？針對這些問題，本節首先透過分析〈知北遊〉的「外化而內不化」，說明個體如何懸置成心，消解歧見之間的潛在衝突，從而與他者共構一種雖多元卻和諧的思想環境；接著再以〈山木〉的一則君臣對話，闡明士人如何採取「旁觀者」的姿態介入政治，讓君王自行覺察「有為」的局限而消解其擴張權力之意圖。</p>
+      <div class="p-h3">（一）多元的和諧想像</div>
+      <p>在探討士人的無為實踐之前，必須先釐清莊子對衝突根源的理解。當君王由上而下的干預被取消後，並不意味著萬物的性命之情便能自動地達成和諧。事實上，傳統聖王論述的立論基礎，往往預設了社會衝突源自萬物的存在差異，故須由聖王建立規範來統攝齊一。然而莊子對此作出更深層的思考，爭亂的根源並非這些不可消除的處境差異或價值紛歧，而是在於人們慣於將自身的有限立場視為普遍標準，並試圖以此規範他者。乃使個體間的差異失去彼此交流的可能性，此即莊子批評的「天下多得一察焉以自好，譬如耳目鼻口，皆有所明，不能相通」（〈天下〉）。社會中的個體皆「以自為方」（同上），欲以成心凌駕甚至同化他者時，排他性與壓迫感便隨之而生。因此，僅僅否定統治者的治理動機並不足以保障差異秩序的落實；若不處理人際間橫向的成心爭端，性命之情仍有異化為是非之爭的可能。這正是為何莊子轉而建議士人透過自身的工夫實踐，共同促成一個互不相傷的思想環境。</p>
+      <p>面對此種困境，士人有何化解之道？〈知北遊〉提出「外化而內不化」的工夫實踐，培養個體對差異與未知事物的容受能力。以下先引錄這段義理豐富的文字：</p>
+      <div class="p-quote">顏淵問乎仲尼曰：「回嘗聞諸夫子曰：『無有所將，無有所迎。』回敢問其遊。」仲尼曰：「古之人，外化而內不化；今之人，內化而外不化。與物化者，一不化者也，安化安不化？安與之相靡？必與之莫多。狶韋氏之囿，黃帝之圃，有虞氏之宮，湯、武之室。君子之人，若儒、墨者師，故以是非相𩐋也，而況今之人乎！聖人處物不傷物。不傷物者，物亦不能傷也。唯無所傷者，為能與人相將迎。山林與！皋壤與！使我欣欣然而樂與！樂未畢也，哀又繼之。哀樂之來，吾不能禦，其去弗能止。悲夫！世人直為物逆旅耳！夫知遇而不知所不遇，知能能而不能所不能。無知無能者，固人之所不免也。夫務免乎人之所不免者，豈不亦悲哉！至言去言，至為去為。齊知之所知，則淺矣。」（〈知北遊〉）</div>
+      <p>這段對話的焦點在於說明「無有所將，無有所迎」的意涵，且明顯呼應於〈應帝王〉的「至人之用心若鏡，不將不迎，應而不藏，故能勝物而不傷」。成玄英疏云：「將，送也。夫聖人如鏡，不送不迎。」<sup class="fn-r">40</sup>不因事物之去來而特意送迎，這種鏡心描述，易被誤解為與世俗保持距離以避免傷害，故作者假托仲尼師徒問答釐清其意。</p>
+      <p>仲尼在此提出一組對比概念：「外化而內不化」、「內化而外不化」。就個體置身於社會關係中的外在面向而言，古之人「外化」而今之人「外不化」。意指古之人置身於社會關係時，能夠靈活調整自身的價值標準，以隨順並應對萬物殊異的存在特質；今之人的「不化」，則是由於執著成心，無法改變自身的理解視角，只能採取固定的方式應對他者。另一方面，就個體自處的內在面向而言，古之人「內不化」而今之人「內化」。則指古之人能藉由工夫自我虛靜，不執著於事物的遷化，讓他的心隨時保有靈活回應外界的能力；<sup class="fn-r">41</sup>今之人由於缺乏虛靜工夫，未能消解成心對特定標準之執取，因此其內心常隨著變動不已的外在事物而哀樂相繼，即〈齊物論〉所謂的「其形化，其心與之然」。</p>
+      <p>這組對比概念，展現了「不將不迎」一語所蘊含的應世原則。依據「外化」與「外不化」的對比，可知其意並非斷絕物我間的往來互動，而是強調個體對於他者之順應；而「內不化」與「內化」的對比，則點出這種順應能力的前提，是解消成心的無為工夫。只有當內心維持不執著於特定價值的鏡心狀態，才不會因事物的「去」而產生眷戀（不將），也不會因事物的「來」而預設期待（不迎）。因此，「外化而內不化」作為無為工夫的兩面描述，既要以內在的虛靜確保照顯的如實，亦要以外在的順隨消解物我間的對抗。</p>
+      <p>特別的是，相較於〈應帝王〉的「勝物而不傷」是單方面的我不傷物，〈知北遊〉的「聖人處物不傷物。不傷物者，物亦不能傷也」進而表達出兩不相傷的和諧理想。可知對莊子而言，無為工夫不僅能帶來個體的轉化，更涉及物我關係的改善。在這意義上，原文的「狶韋氏之囿，黃帝之圃，有虞氏之宮，湯、武之室」，正是作為「至德之世」的變奏。呂惠卿解云：「世益衰而天下之遊者益少，故其居彌狹也。」<sup class="fn-r">42</sup>這種政治空間上的變化，最後歸結於「君子之人，若儒、墨者師，故以是非相𩐋也，而況今之人乎」，不僅比喻天下秩序的失衡過程，更暗指儒、墨的思想論爭是當代社會的紛亂根源。<sup class="fn-r">43</sup>因此，對治爭亂的起點，是由士人率先展開對成心之反省，並從士人的生活周遭開始，透過無為工夫逐步落實人我間的和諧。</p>
+      <p>最後也當留意「無知無能者，固人之所不免也」的存在限制。每一個體皆有所不遇、有所不知，但成心往往使人忽略此一根本限制，此即爭亂之起因。<sup class="fn-r">44</sup>即使個體藉由工夫而「用心若鏡」，獲得如實接納與照顯他者的能力，這種存在限制也不會隨之消失，反而因虛靜而更加朗現。換言之，無為工夫同時蘊含著對內的自我觀照，以體認「知遇而不知所不遇，知能能而不能所不能」的真實狀態。正因能覺察到自身的不知與不能，人們才得以徹底解消宰制與同化他者的意圖。當無為成為士人的實踐原則，其外在作用首先是為士人切身的論辯生活帶來一個容許差異存在的思想環境，進而引發一種無須齊同價值的秩序想像。這種想像並非逃避現實的烏托邦，而是一種思想上的綜合能力；當此一去中心化的圖像被士人接納並形成共識，便能轉化為肯定個體自律的思想力量，從根本上動搖集權政治的運作邏輯。<sup class="fn-r">45</sup></p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 16 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-16：四（二）以道化勢 ▐ -->
+<div class="page-card" id="pg-16">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">士人的無為實踐與政治作用（續）</div>
+  </div>
+  <div class="page-body">
+    <div class="paper-text">
+      <div class="p-h3">（二）以道化勢</div>
+      <p>然而，對於身處亂世的士人而言，無為的實踐還面臨一個更為嚴峻的考驗：如何面對掌握絕對權力的統治者？用余英時的話來說，便是「怎樣使道與勢的關係達到一種恰如其分的境地」？他指出孟子雖假托古代聖賢試圖讓君王產生道高於勢之意識，但終究只能期待君王與士人個別的自覺。<sup class="fn-r">46</sup>若莊子對士人提供了一套有別於儒家的實踐原則，他是否能使道、勢二者不落於對立關係，而避免這種依賴各自修養的理論困境？</p>
+      <p>固然，內篇〈人間世〉的前三章（顏回將之衛、子高將使齊、顏闔將傅衛靈公大子）是答覆此一問題的極佳詮釋材料。不論是「無聽之以心而聽之以氣」的工夫修養、「行事之情而忘其身」的心態調整，或是「就不欲入、和不欲出」的戒慎應對，都表現莊子清楚意識到權力結構中所潛藏的危機，以及士人踏入這些危機前所需具備之心理基礎。然而〈山木〉將此類敘事往前推進，虛構出一則市南宜僚與魯侯的當面對話。這則寓言有助於讀者理解：士人如何藉由無為的實踐，以容受性（receptivity）的開放姿態進入政治場域，<sup class="fn-r">47</sup>讓君王在氣化感通中覺察「有為」之局限。</p>
+      <p>這則寓言，始於市南宜僚對魯侯情緒狀態的敏銳感知：「君有憂色，何也？」此提問基於市南宜僚先以無為工夫解消成心，從而形成一種參與他人情感脈絡的能力。因為有此提問，魯侯得以自陳其憂：「吾學先王之道，修先君之業，吾敬鬼尊賢，親而行之，無須臾離居，然不免於患，吾是以憂。」他雖以儒家標舉的聖王自許，這卻無法解決政權顛覆之現實危患。作者透過魯侯的憂慮，點出儒家政治理論中的一個盲區：即使真心實踐聖王之道，君王的身分，也不能使其政治決策全然忽略他自身的生命安危──因為其生命攸關於國家秩序。而儒家的道德理想，恰恰建立在義利對揚的基礎之上。這種思想要求君王透過自身的道德完善來證成其統治的正當性，卻也同時將君王異化為一個維繫秩序的功能性客體。於是在莊子看來，儒家的先王之道，不僅不能作為君王權勢運作之標準，反而使君王陷於道與勢之兩難抉擇。</p>
+      <p>面對魯侯的憂慮，市南宜僚屢言「吾願君刳形去皮」、「吾願君去國捐俗」、「吾願去君之累，除君之憂」，這些話語都引導魯侯覺察他的憂慮源自於治天下之動機。正是因為他將國家視作有待治理的對象，乃使自身與百姓相互役用而不得自然。<sup class="fn-r">48</sup>在過程中，市南宜僚是以一種順應的態度，偕同魯侯思考更為有效的「除患之術」。其中便提到一段關於「建德之國」的素樸社會描述：</p>
+      <div class="p-quote">南越有邑焉，名為建德之國。其民愚而朴，少私而寡欲；知作而不知藏，與而不求其報；不知義之所適，不知禮之所將；猖狂妄行，乃蹈乎大方；其生可樂，其死可葬。吾願君去國捐俗，與道相輔而行。（〈山木〉）</div>
+      <p>這段文字是「至德之世」的翻版，展示了一個無需聖王亦能自發和諧的社會。但市南宜僚的用意並非提出一套新的施政藍圖，而是為了鬆動魯侯原先的聖王想像，為對方帶來自我轉化的契機。</p>
+      <p>進一步言之，莊子在此展現出來的道、勢關係，既非以道抗勢、亦非以道輔勢，而是以道化勢。在儒家的視野中，道往往被視為客觀真理，士人必須以道自任，藉以批判或指導政治權力的運作；而在黃老論述中，道則被理解為法的形上依據，助長君王對於社會各個層面的控制。<sup class="fn-r">49</sup>雖然前者重道而後者重勢，卻都認為政治的穩定有賴於這兩者的協作，而形成「治出於一」的秩序結構。在莊子看來，這種結構將使君王陷入「有人者累，見有於人者憂」的困境。因此市南宜僚對魯侯的建議，實是暗示他主動放開對道德解釋權的掌握，當他勸魯侯「與道相輔而行」、「獨與道遊於大莫之國」，並非要求魯侯放棄君王的身分，而是引導他解消原先道德與權勢互補的思考方式。在此意義上，「化勢」並非取消政治權勢，而是使權勢虛化。當君王不再以道自居、試圖建立治天下的價值規範，他的權勢便不再具備壓迫萬物的道德重量。這對君王而言是生死憂患的解脫，對萬物而言則是存在秩序的回歸。<sup class="fn-r">50</sup></p>
+      <p>這種以道化勢的姿態，避開了道、勢對立而可能招致的政治衝突，同時也透顯另一種實踐方向：與其訴諸道德理念的實現，不如在氣化感通中讓君王發現權勢與道德結合的危機，進而使其為了安頓自己，主動放下干預國家的治理意圖。當君王解消「治天下」的重擔時，原本建基於勢的一元秩序結構便隨之瓦解。此時，政治運作的焦點，便不再是要讓國家符合哪種單一的道德理想，而是如何持續解消權力的集中化，任由一個容許萬物自然並存的差異秩序自發生成。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 17 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-17：五、結語 ▐ -->
+<div class="page-card" id="pg-17">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">結語</div>
+  </div>
+  <div class="page-body">
+    <div class="p-h2">五、結語</div>
+    <div class="paper-text">
+      <p>《莊子》外、雜篇中的「至德之世」長久以來常被視為不切實際的復古烏托邦，或是消極的隱逸呼籲。然而，本文的探討指出，這套論述實為針對戰國士人所建構與維護之聖王話語所發動的一場思想解構。面對天下失序，儒、墨等家將重建秩序的希望寄託於聖王之治，試圖以單一的道德標準梳理思想與政治上的混亂。但在莊子眼中，這種道德政治不僅在現實中容易淪為掌權者擴張權力與掩飾暴力的工具，在理論上更是以單一的仁義標準扭曲萬物殊異的本性。因此，莊子藉由描繪一個沒有聖王卻自然和諧的素樸社會，其根本目的並非鼓勵人們返回原始生活，而是為了徹底瓦解士人對政治權力與道德典範的依賴，以及「治天下」的實踐迷思。</p>
+      <p>當秩序的根源從君王一人的聖知，轉向萬物各自「安其性命之情」的自發狀態時，政治實踐的主體亦從單一的統治者擴展為複數的社會個體，而士人介入社會與政治的姿態也必須隨之轉變。在思想層面，人際間橫向的成心壓迫才是衝突的根本原因。因此士人必須透過「外化而內不化」的工夫懸置成心，消解將自身有限立場普遍化的意圖。這種如鏡子般不將不迎的應世姿態，解消了將單一價值強加於人的壓迫性，從而使人我之間形成一個差異並存的思想環境。在政治層面，面對掌握權力的君王，士人則須揚棄以道抗勢或以道輔勢的思考框架，轉而以具備容受性的開放姿態進入政治場域。在氣化感通的互動中，士人不再為君王提供治天下的道德理論，而是如實映照出聖王論述的限制，引導統治者自行覺察權勢的局限。</p>
+      <p>綜上所述，本文透過對「至德之世」的重新探討，釐清了莊子「剽剝儒、墨」的表述背後所蘊含的政治思維。在戰國這個君權日益集中的時代，莊子留意到，士人所建構的道德論述一旦與政治權力結合，便會陷入聖王之治的迷思，而隨時可能異化為壓迫萬物的權力結構。因此，莊子所指引的這條實踐之道，其核心在於拒絕將天下視為有待拯救與規範的客體，亦反對讓士人淪為權力擴張的共謀。藉由無為，士人得以在政治領域中取得獨立的思想空間，無須將自己的存在價值建立於對君權的依附之上。就此而言，「至德之世」實為一種消解一元權威的表述策略，它不僅是對現實的批判，更是在士人社群中注入自然秩序的共同想像，揭示了真正的和諧無法在由上而下的治理中實現，而必須由包含君王在內的萬物各自「安其性命之情」而自發形成。</p>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 18 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-18：徵引文獻 ▐ -->
+<div class="page-card" id="pg-18">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">徵引文獻</div>
+  </div>
+  <div class="page-body">
+    <div class="p-h2">徵引文獻</div>
+    <div class="bib-section">
+      <h4>古籍</h4>
+      <div class="bib-item">漢．司馬遷撰，宋．裴駰集解：《史記》（臺北：藝文印書館，2011年）。</div>
+      <div class="bib-item">漢．趙岐注，宋．孫奭疏，廖名春、劉佑平整理，錢遜審定：《孟子注疏》（北京：北京大學出版社，2000年）。</div>
+      <div class="bib-item">魏．何晏注，宋．邢昺疏，朱漢民整理，張豈之審定：《論語注疏》（北京：北京大學出版社，2000年）。</div>
+      <div class="bib-item">宋．呂惠卿撰，湯君集校：《莊子義集校》（北京：中華書局，2009年）。</div>
+      <div class="bib-item">宋．林希逸著，周啟成校注：《莊子鬳齋口義校注》（北京：中華書局，1997年）。</div>
+      <div class="bib-item">清．郭慶藩撰，王孝魚點校：《莊子集釋》（北京：中華書局，1997年）。</div>
+      <div class="bib-item">清．孫詒讓撰，孫啟治點校：《墨子閒詁》（北京：中華書局，2001年）。</div>
+      <h4>近人論著</h4>
+      <div class="bib-item">牟宗三：《才性與玄理》（臺北：臺灣學生書局，2002年）。</div>
+      <div class="bib-item">牟宗三：《中國哲學十九講》（臺北：臺灣學生書局，1999年）。</div>
+      <div class="bib-item">余英時：《士與中國文化》（上海：上海人民出版社，2003年）。</div>
+      <div class="bib-item">林明照：〈《莊子》他者倫理中的情感性〉，《哲學論集》第49期（2018年2月），頁61–79。</div>
+      <div class="bib-item">徐復觀：《學術與政治之間》（臺北：臺灣學生書局，2013年）。</div>
+      <div class="bib-item">徐聖心：〈聖王的誕生──《莊子》中的堯舜禹形象〉，《漢學研究》第37卷第2期（2019年6月），頁25–56。</div>
+      <div class="bib-item">曹峰：《中國古代「名」的政治思想研究》（上海：上海古籍出版社，2017年）。</div>
+      <div class="bib-item">陳伯軒：〈（真）隱士為何被看見？從「渾」與「狂」談《莊子》的應世修養與行動展演〉，《漢學研究集刊》第39期（2024年12月），頁1–34。</div>
+      <div class="bib-item">陳贇：〈「內聖外王」與中國思想中的秩序結構〉，《政治哲學研究》第2輯（2024年4月），頁83–101。</div>
+      <div class="bib-item">陳贇：〈引導性的秩序理念及其機制和根據〉，《倫理學研究》第122期（2022年11月），頁47–57。</div>
+      <div class="bib-item">曾暐傑：〈作為救贖的等待──中國哲學場域「聖王崇拜」的起源、結構與原理〉，《政大中文學報》第36期（2021年12月），頁69–104。</div>
+      <div class="bib-item">楊儒賓：《道家與古之道術》（上海：上海古籍出版社，2023年）。</div>
+      <div class="bib-item">劉笑敢：《莊子哲學及其演變（修訂版）》（北京：中國人民大學出版社，2012年）。</div>
+      <div class="bib-item">蕭振聲：〈《莊子》的人性論：批判、分析與解釋〉，《國立政治大學哲學學報》第31期（2014年1月），頁67–105。</div>
+      <div class="bib-item">賴錫三：《道家型知識分子論》（臺北：五南圖書出版，2021年）。</div>
+      <div class="bib-item">日．池田知久著，王啟發、曹峰譯：《道家思想的新研究──以《莊子》為中心》（鄭州：中洲古籍出版社，2009年）。</div>
+      <div class="bib-item">日．佐藤將之：《參於天地之治：荀子禮治政治思想的起源與構造》（臺北：臺大出版中心，2016年）。</div>
+      <div class="bib-item">以．尤銳著，孫英剛譯，王宇校：《展望永恆帝國：戰國時代的中國政治思想》（上海：上海古籍出版社，2013年）。</div>
+      <div class="bib-item">法．畢來德著，宋剛譯：〈莊子九札〉，《中國文哲研究通訊》第22卷第3期（2012年9月），頁5–39。</div>
+      <div class="bib-item">美．任博克著，彭榮譯：《一與異的反諷：早期中國思想中的「連貫成形」觀念》（杭州：浙江大學出版社，2023年）。</div>
+      <div class="bib-item">英．葛瑞漢著，張海晏譯：《論道者：中國古代哲學論辯》（北京：中國社會科學出版社，2003年）。</div>
+      <div class="bib-item">澳．文青雲著，徐克謙譯：《巖穴之士：中國早期隱逸傳統》（濟南：山東畫報出版社，2009年）。</div>
+      <div class="bib-item">Angus Charles Graham, <em>Studies in Chinese Philosophy and Philosophical Literature</em> (Singapore: The Institute of East Asian Philosophies, National University of Singapore, 1986).</div>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 19 —</span></div>
+</div>
+</div>
+
+<!-- ▌PG-19：附注 ▐ -->
+<div class="page-card" id="pg-19">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">第二篇</div>
+    <div class="ph-title">附注</div>
+  </div>
+  <div class="page-body">
+    <div class="p-h2">附注</div>
+    <div class="fn-list">
+      <div class="fn-item"><span class="fn-n">1</span>劉笑敢：《莊子哲學及其演變（修訂版）》（北京：中國人民大學出版社，2012年），頁93–98。</div>
+      <div class="fn-item"><span class="fn-n">2</span>魏．何晏注，宋．邢昺疏，朱漢民整理，張豈之審定：《論語注疏》（北京：北京大學出版社，2000年），頁118。</div>
+      <div class="fn-item"><span class="fn-n">3</span>漢．趙岐注，宋．孫奭疏，廖名春、劉佑平整理，錢遜審定：《孟子注疏》（北京：北京大學出版社，2000年），頁224–225。</div>
+      <div class="fn-item"><span class="fn-n">4</span>清．孫詒讓撰，孫啟治點校：《墨子閒詁》（北京：中華書局，2001年），頁46、113、187。</div>
+      <div class="fn-item"><span class="fn-n">5</span>曾暐傑：〈作為救贖的等待──中國哲學場域「聖王崇拜」的起源、結構與原理〉，《政大中文學報》第36期（2021年12月），頁69–104。</div>
+      <div class="fn-item"><span class="fn-n">6</span>徐聖心：〈聖王的誕生──《莊子》中的堯舜禹形象〉，《漢學研究》第37卷第2期（2019年6月），頁25–56。</div>
+      <div class="fn-item"><span class="fn-n">7</span>莊子對於「至德」一詞的使用方式，也提供了一個間接的思考線索。「至德」一詞並非莊子首次提出，孔子即以「至德」盛讚泰伯三讓天下之美德（《論語．泰伯》）。然而這個原先用於形容個人的詞語，卻被莊子擴張為一個時代狀態，隱然取消了「至德」的個人權威性質。</div>
+      <div class="fn-item"><span class="fn-n">8</span>劉笑敢曾依據各篇章用語相關程度之分析，對外、雜篇作出述莊派、無君派、黃老派之區分。然而某些篇章具有相關用語，不能直接推導出它們在思想內容上之一致；反之，某些篇章即使沒有彼此直接相關之用語，也不能據此認定它們屬於不同的思想立場。而在詮釋原則的考量上，劉笑敢這三種思想路線的區分，也有破壞《莊子》一書整體性之危險，詹康與蕭裕民對此都有相關的檢討。參閱蕭裕民：〈《莊子》內外雜篇新論──從思想的一致性來觀察〉，《興大人文學報》第36期（2006年3月），頁159–185；詹康：〈《莊子》調和派的道德挑戰與實踐哲學〉，《政治科學論叢》第43期（2010年3月），頁1–51。</div>
+      <div class="fn-item"><span class="fn-n">9</span>英．葛瑞漢著，張海晏譯：《論道者：中國古代哲學論辯》（北京：中國社會科學出版社，2003年），頁350–355。</div>
+      <div class="fn-item"><span class="fn-n">10</span>Angus Charles Graham, <em>Studies in Chinese Philosophy and Philosophical Literature</em> (Singapore: The Institute of East Asian Philosophies, National University of Singapore, 1986), p. 307.</div>
+      <div class="fn-item"><span class="fn-n">11</span>英．葛瑞漢著，張海晏譯：《論道者：中國古代哲學論辯》，頁346。</div>
+      <div class="fn-item"><span class="fn-n">12</span>漢．司馬遷撰，宋．裴駰集解：《史記》（臺北：藝文印書館，2011年），頁859–860。</div>
+      <div class="fn-item"><span class="fn-n">13</span>本文引用的《莊子》原文皆出自清．郭慶藩撰，王孝魚點校：《莊子集釋》（北京：中華書局，1997年），徵引時隨文附上篇名，不另外標註。</div>
+      <div class="fn-item"><span class="fn-n">14</span>楊儒賓：《道家與古之道術》（上海：上海古籍出版社，2023年），頁92–161。</div>
+      <div class="fn-item"><span class="fn-n">15</span>清．郭慶藩撰，王孝魚點校：《莊子集釋》，頁364。</div>
+      <div class="fn-item"><span class="fn-n">16</span>楊儒賓：《道家與古之道術》，頁154。</div>
+      <div class="fn-item"><span class="fn-n">17</span>戰國中晚期的士人雖無政治權力，但他們所具備的道德解釋權，可對當時的君王與政治環境造成實質影響，余英時稱此為「以道輔勢」。關於士人影響力在戰國時期之興衰，以及士人所代表的道統實際影響君王之案例，請參閱余英時：《士與中國文化》（上海：上海人民出版社，2003年），頁77–99。</div>
+      <div class="fn-item"><span class="fn-n">18</span>比如池田知久提到，這些篇章受到楊朱、子華子、詹何等先驅者的影響，其本質是「一種克服人的異化，確立起人主體性的願望」，而其表述的明顯特徵是，經常將養生與政治權力對立起來。日．池田知久著，王啟發、曹峰譯：《道家思想的新研究──以《莊子》為中心》（鄭州：中洲古籍出版社，2009年），頁434–435。</div>
+      <div class="fn-item"><span class="fn-n">19</span>以．尤銳著，孫英剛譯，王宇校：《展望永恆帝國：戰國時代的中國政治思想》（上海：上海古籍出版社，2013年），頁198–199。</div>
+      <div class="fn-item"><span class="fn-n">20</span>澳．文青雲著，徐克謙譯：《巖穴之士：中國早期隱逸傳統》（濟南：山東畫報出版社，2009年），頁58。</div>
+      <div class="fn-item"><span class="fn-n">21</span>澳．文青雲著，徐克謙譯：《巖穴之士：中國早期隱逸傳統》，頁46–47。</div>
+      <div class="fn-item"><span class="fn-n">22</span>為免正文贅述，此處借用陳伯軒提出的「形隱」與「德隱」這對詞語，以區別實際脫離社會生活之避世，與奠基於內心修養而混跡於俗的無名狀態。參閱陳伯軒：〈（真）隱士為何被看見？從「渾」與「狂」談《莊子》的應世修養與行動展演〉，《漢學研究集刊》第39期（2024年12月），頁1–34。</div>
+      <div class="fn-item"><span class="fn-n">23</span>澳．文青雲著，徐克謙譯：《巖穴之士：中國早期隱逸傳統》，頁49。</div>
+      <div class="fn-item"><span class="fn-n">24</span>澳．文青雲著，徐克謙譯：《巖穴之士：中國早期隱逸傳統》，頁50。</div>
+      <div class="fn-item"><span class="fn-n">25</span>牟宗三：《才性與玄理》（臺北：臺灣學生書局，2002年），頁192。</div>
+      <div class="fn-item"><span class="fn-n">26</span>我們可從前述學者的表述中，發現他們同樣具備這個預設。尤銳說：「《莊子》的顛覆性立場是廣為人知的，但是它是否提出了替代出仕的實踐性方案呢？根據我的理解，答案是否定的。……莊子所宣揚的無心政治的道德態度，是否真正地挑戰了士人加入政府的選拔體系？答案也是否定的。」文青雲則在一段檢討1980年代臺灣學界的文字中，批評臺灣學者容易將隱士「描繪為傳統專制社會中思想自由和個人獨立的鬥士」，其主要理由是「隱士們並不太關心批判社會政治制度本身，而更多地是批評這個制度內部的濫用」。此一論斷同時涵蓋了莊子與一般的隱士。至於牟宗三的迹冥圓融之說，雖不等同於隱逸思想，但他仍將道家視為無意承擔時代責任的隱者學：「假定沒有道德判斷、沒有是非，那局勢一壞他不就投機了嗎？縱使不投機，他也可以跑到深山去隱遁起來呀，道家不就是這樣的嗎？」參閱以．尤銳著，孫英剛譯，王宇校：《展望永恆帝國》，頁199–200；澳．文青雲著，徐克謙譯：《巖穴之士》，頁12；牟宗三：《中國哲學十九講》（臺北：臺灣學生書局，1999年），頁62。</div>
+      <div class="fn-item"><span class="fn-n">27</span>賴錫三：《道家型知識分子論》（臺北：五南圖書出版，2021年），頁24–29。</div>
+      <div class="fn-item"><span class="fn-n">28</span>林希逸云：「豨韋氏，三皇五帝之先也，若以天地之初、上古之世而觀於今日，則皆為波蕩流逐而失其性者矣，故曰『夫孰能不波』。學者之古今，只自三皇五帝為始，此蓋譏貶古帝王之意。」宋．林希逸著，周啟成校注：《莊子鬳齋口義校注》（北京：中華書局，1997年），頁424。</div>
+      <div class="fn-item"><span class="fn-n">29</span>需要特別說明的是，戰國時期提倡聖王之治者並非僅有儒家，《墨子》一書同樣具有許多推崇聖王的表述，且莊子亦常將儒、墨並舉予以抨擊。然本節的討論聚焦於儒家，其理由在於：〈駢拇〉、〈馬蹄〉等篇的批判內容，乃是仁義禮樂如何扭曲萬物殊異的本性，並淪為統治者遂行權力的工具。相較於墨家側重於客觀層面的制度思考，儒家更試圖將仁義內在化，為其禮樂教化的主張賦予人性論的根據。這套基於人性論以規範萬物的秩序想像，正是莊子省思「治天下」動機時的主要對象。故本節在探討聖王之治的理論困境時，主要以儒家的道德政治為主軸。</div>
+      <div class="fn-item"><span class="fn-n">30</span>曾暐傑指出，雖然聖王始終只能存在於過去，但對人們而言，這是一種「不存在的存在」。人們等待聖王的過程本身，即帶給人們一種理解存在意義的角度，以及修養自身的動力。參閱曾暐傑：〈作為救贖的等待〉，頁93–96。</div>
+      <div class="fn-item"><span class="fn-n">31</span>徐復觀：《學術與政治之間》（臺北：臺灣學生書局，2013年），頁49–50。</div>
+      <div class="fn-item"><span class="fn-n">32</span>司馬遷記載了田成子操作聖知之法的具體事例。田成子刺殺齊簡公後，為保障自身權位，在外交方面，「乃盡歸魯、衛侵地，西約晉、韓、魏、趙氏，南通吳、越之使，修功行賞，親於百姓」，以避免諸侯攻伐；而在內政方面，他向齊平公說：「德施，人之所欲，君其行之；刑罰，人之所惡，臣請行之。」進而取得執法權以翦除政敵。參閱漢．司馬遷撰，宋．裴駰集解：《史記》，頁751。</div>
+      <div class="fn-item"><span class="fn-n">33</span>日．佐藤將之：《參於天地之治：荀子禮治政治思想的起源與構造》（臺北：臺大出版中心，2016年），頁104。</div>
+      <div class="fn-item"><span class="fn-n">34</span>蕭振聲：〈《莊子》的人性論：批判、分析與解釋〉，《國立政治大學哲學學報》第31期（2014年1月），頁67–105。</div>
+      <div class="fn-item"><span class="fn-n">35</span>俞樾認為「彼正正者」當為「彼至正者」之誤，本文從之。參閱清．郭慶藩撰，王孝魚點校：《莊子集釋》，頁317。</div>
+      <div class="fn-item"><span class="fn-n">36</span>通行本作「安藏人心」，此處引文依世德堂本。參閱清．郭慶藩撰，王孝魚點校：《莊子集釋》，頁373。</div>
+      <div class="fn-item"><span class="fn-n">37</span>成玄英疏云：「五藏，精靈之宅；聰明，耳目之用。若分辨五臟情識，顯擢聰明之用，則精神奔馳於內，耳目竭喪於外矣。」清．郭慶藩撰，王孝魚點校：《莊子集釋》，頁370。</div>
+      <div class="fn-item"><span class="fn-n">38</span>清．郭慶藩撰，王孝魚點校：《莊子集釋》，頁370。</div>
+      <div class="fn-item"><span class="fn-n">39</span>陳贇認為，莊子展現出的是一種引導性而非支配性的秩序理念，在這種秩序中，君王虛化其意志而參與天道的運作機制，以引發天下人自發、自治的能力。本文採納其關於莊子秩序理想的說明，尤其是「支配」與「引導」這對詞語之張力；惟陳贇之論述重心仍繫於王者如何透過虛靜之德以紹述天道，本文則進一步強調，在「治天下」意圖已內化為士人普遍意識的背景下，「明王之治」不能僅訴諸君王的自覺，更需仰賴士人群體率先解消對於聖王理想之堅持，使政治的實踐主體由君王個人擴展為天下萬物。參閱陳贇：〈引導性的秩序理念及其機制和根據〉，《倫理學研究》第122期（2022年11月），頁47–57。</div>
+      <div class="fn-item"><span class="fn-n">40</span>清．郭慶藩撰，王孝魚點校：《莊子集釋》，頁765。</div>
+      <div class="fn-item"><span class="fn-n">41</span>需要強調，本文以虛靜心作為對「內不化」的說明，並非表達一種超然於世的寂然心境，而意在指謂將成心懸置以後，不抱持特定視角以應對事物之狀態。任博克對於「應」與「虛」兩概念間的關係作了詳細的說明，本文受此啟發。參閱美．任博克著，彭榮譯：《一與異的反諷：早期中國思想中的「連貫成形」觀念》（杭州：浙江大學出版社，2023年），頁219–220。</div>
+      <div class="fn-item"><span class="fn-n">42</span>宋．呂惠卿撰，湯君集校：《莊子義集校》（北京：中華書局，2009年），頁415。</div>
+      <div class="fn-item"><span class="fn-n">43</span>這段原文諷刺了黃帝以下的歷代君王，但到了戰國時代，卻轉而批判儒家與墨家（而非天子、諸侯）。此一對象身分上的轉變，顯示作者真正的指責對象並非當代君王，而是士人群體。</div>
+      <div class="fn-item"><span class="fn-n">44</span>郭嵩燾的解釋，精準點出「務免乎人之所不免者」所造成的爭端。其云：「各有所知，各有所能，無相強也；各有所不知，各有所不能，無相勝也。強其所知以通其所不知，強其所能以通其所不能，而據之以為知，據之以為能，強天下而齊之，是非相乘，哀樂茲繁。」參閱清．郭慶藩撰，王孝魚點校：《莊子集釋》，頁768。</div>
+      <div class="fn-item"><span class="fn-n">45</span>畢來德（Jean François Billeter）曾藉由卡斯托里亞迪斯（Cornelius Castoriadis）的論述，強調「想像」對於社會變遷所帶來的影響力。畢來德進而指出，要對這種影響進行更精準地表述，關鍵在於「把想像力看作是完成綜合的能力，因為這一觀念可以更好地說明，想像得來的圖像與由此產生的經驗之間的關係。而且，我們也會更好地觀察到，一個想像綜合在一個個體的思想當中產生以後，如何被另一個或是另一些人接納，而他們之間又是如何達成對其意義及其價值的共識，從而把它變成一種共同的財富」。畢來德認為莊子也對想像力的作用有明確的意識，因此透過書寫以肯定「人的自律性」，且蘊含他對於自律社會的想像。參閱法．畢來德著，宋剛譯：〈莊子九札〉，《中國文哲研究通訊》第22卷第3期（2012年9月），頁31–36。</div>
+      <div class="fn-item"><span class="fn-n">46</span>余英時：《士與中國文化》，頁90。</div>
+      <div class="fn-item"><span class="fn-n">47</span>「容受性」一詞取用自林明照的莊子詮釋，係指主體弱化自身的理性主導，形成一種向他者開放且能感應其情緒的心理狀態。而莊子的「虛」與「聽之以氣」，則揭示達成這種狀態的工夫途徑。參閱林明照：〈《莊子》他者倫理中的情感性〉，《哲學論集》第49期（2018年2月），頁61–79。</div>
+      <div class="fn-item"><span class="fn-n">48</span>林希逸對「有人者累，見有於人者憂」一句解云：「有人者，以我而役物也；見有於人，我為物所役也。二者皆非自然之道。」宋．林希逸著，周啟成校注：《莊子鬳齋口義校注》（北京：中華書局，1997年），頁304。</div>
+      <div class="fn-item"><span class="fn-n">49</span>曹峰指出，黃老家將老子道、物二分的世界觀詮解為君王與百姓的關係，為君王的權力集中提供理論依據。參閱曹峰：《中國古代「名」的政治思想研究》（上海：上海古籍出版社，2017年），頁137–140。</div>
+      <div class="fn-item"><span class="fn-n">50</span>此段關於道、勢關係的討論，亦可藉「聖」與「王」兩概念加以展開。但一方面，本文希望接續余英時所開啟的討論脈絡；另一方面，「聖」與「王」在《莊子》中有著更為複雜的意涵而將超出本文的討論範疇。不過，本文關於莊子道、勢關係的思考亦有鑑於學界對「內聖外王」的研究成果。陳贇認為「內聖外王」的原初語境在於處理「治出於一」向「治出於二」轉型過程中的治、教關係，此說法對於本文頗具啟發。參閱陳贇：〈「內聖外王」與中國思想中的秩序結構〉，《政治哲學研究》第2輯（2024年4月），頁83–101。</div>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 20 —</span></div>
+</div>
+</div>
+
+</div><!-- /bk-single -->
+
+
+</div><!-- /stage -->
+
+<script>
+/* COPY PROTECTION */
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('copy',e=>e.preventDefault());
+document.addEventListener('cut',e=>e.preventDefault());
+document.addEventListener('dragstart',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{
+  const k=e.key.toLowerCase();
+  if((e.ctrlKey||e.metaKey)&&['c','u','s','a','p','i'].includes(k))e.preventDefault();
+  if(e.key==='F12')e.preventDefault();
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')nextPage();
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')prevPage();
+});
+
+const TOTAL=20;
+let cur=0,flv=parseInt(localStorage.getItem('fz')||'0');
+const titles=['計畫目的','計畫目標','預期效益','與會學者名單','活動議程','論文發表場次','議事規則','第二篇｜論文摘要','一、前言','二（一）反駁原始主義','二（二）反駁隱逸思想','二（三）・三、解構聖王之治','三（一）社會現象的批判','三（二）人性論的批判','三（三）從治天下到無為','四（一）多元的和諧想像','四（二）以道化勢','五、結語','徵引文獻','附注'];
+
+function goPage(n,dir){
+  if(n<0||n>=TOTAL)return;
+  const from=document.getElementById('pg-'+cur);
+  const to=document.getElementById('pg-'+n);
+  if(!from||!to||from===to){cur=n;updateUI();return;}
+  const right=(dir!==undefined)?dir>0:n>cur;
+  from.classList.remove('active');
+  from.classList.add(right?'xl':'xr');
+  to.style.transform=right?'translateX(32px)':'translateX(-32px)';
+  to.style.opacity='0';
+  to.classList.remove('xl','xr');
+  requestAnimationFrame(()=>{
+    to.style.transition='opacity .28s ease,transform .28s ease';
+    to.style.transform='';to.style.opacity='';
+    to.classList.add('active');
+  });
+  setTimeout(()=>{
+    from.classList.remove('xl','xr');
+    from.style.transform='';from.style.opacity='';
+  },300);
+  cur=n;updateUI();
+}
+function prevPage(){goPage(cur-1,-1);}
+function nextPage(){goPage(cur+1,1);}
+
+function updateUI(){
+  document.getElementById('pg-ind').textContent=`第 ${cur+1} 頁 / 共 ${TOTAL} 頁`;
+  document.getElementById('tb-title').textContent=titles[cur]||'';
+  document.querySelectorAll('.toc-link').forEach((el,i)=>{
+    const match = i===cur || (i===7 && cur>=7);
+    el.classList.toggle('active', match);
+  });
+  const atFirst=cur===0, atLast=cur>=TOTAL-1;
+  document.getElementById('btn-prev').disabled=atFirst;
+  document.getElementById('btn-next').disabled=atLast;
+  document.getElementById('mob-prev').disabled=atFirst;
+  document.getElementById('mob-next').disabled=atLast;
+  document.getElementById('mob-pg').textContent=`${cur+1} / ${TOTAL}`;
+}
+
+function toggleTheme(){
+  const dark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(dark){
+    document.documentElement.removeAttribute('data-theme');
+    document.getElementById('sun-ic').style.display='';
+    document.getElementById('moon-ic').style.display='none';
+    document.getElementById('theme-btn').lastChild.nodeValue=' 夜間';
+    localStorage.setItem('th','light');
+  }else{
+    document.documentElement.setAttribute('data-theme','dark');
+    document.getElementById('sun-ic').style.display='none';
+    document.getElementById('moon-ic').style.display='';
+    document.getElementById('theme-btn').lastChild.nodeValue=' 日間';
+    localStorage.setItem('th','dark');
+  }
+}
+if(localStorage.getItem('th')==='dark'){
+  document.documentElement.setAttribute('data-theme','dark');
+  document.getElementById('sun-ic').style.display='none';
+  document.getElementById('moon-ic').style.display='';
+  document.getElementById('theme-btn').lastChild.nodeValue=' 日間';
+}
+
+function applyFz(){document.documentElement.style.fontSize=(16+flv*1.5)+'px';}
+function changeFontSize(d){flv=Math.max(-2,Math.min(2,flv+d));localStorage.setItem('fz',flv);applyFz();}
+applyFz();
+
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('on');}
+function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('overlay').classList.remove('on');}
+
+let tx=null,ty=null;
+document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+document.addEventListener('touchend',e=>{
+  if(tx===null)return;
+  const dx=e.changedTouches[0].clientX-tx;
+  const dy=e.changedTouches[0].clientY-ty;
+  if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.8){dx<0?nextPage():prevPage();}
+  tx=null;ty=null;
+},{passive:true});
+
+updateUI();
+</script>
+</body>
+</html>
