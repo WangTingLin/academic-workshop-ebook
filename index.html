@@ -514,13 +514,15 @@ body.sb-collapsed #btn-prev{left:10px;}
   #controls{gap:4px;}
 }
 /* ── 封面縮放 ── */
-#pg-0 .pw{background:#e8e6e0 !important;display:flex;align-items:center;justify-content:center;overflow:auto;}
-#pg-0 .pw > div{transform-origin:top center;}
+#pg-0 .pw{background:#e8e6e0 !important;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;overflow-x:hidden;}
+#pg-0 .pw > div{transform-origin:top center;flex-shrink:0;}
 @media(max-width:640px){
-  #pg-0 .pw > div{transform:scale(.52);margin:-200px auto;}
+  #pg-0 .pw{padding-top:12px;padding-bottom:12px;}
+  #pg-0 .pw > div{transform:scale(.52);margin-bottom:calc((1 - .52) * -100%);}
 }
 @media(min-width:641px) and (max-width:900px){
-  #pg-0 .pw > div{transform:scale(.72);margin:-120px auto;}
+  #pg-0 .pw{padding-top:16px;padding-bottom:16px;}
+  #pg-0 .pw > div{transform:scale(.72);margin-bottom:calc((1 - .72) * -100%);}
 }
 
 /* ── 論文全文專用樣式 ── */
