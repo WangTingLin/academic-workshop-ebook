@@ -514,16 +514,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   #controls{gap:4px;}
 }
 /* ── 封面縮放 ── */
-#pg-0 .pw{background:#e8e6e0 !important;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;overflow-x:hidden;}
-#pg-0 .pw > div{transform-origin:top center;flex-shrink:0;}
-@media(max-width:640px){
-  #pg-0 .pw{padding-top:12px;padding-bottom:12px;}
-  #pg-0 .pw > div{transform:scale(.52);margin-bottom:calc((1 - .52) * -100%);}
-}
-@media(min-width:641px) and (max-width:900px){
-  #pg-0 .pw{padding-top:16px;padding-bottom:16px;}
-  #pg-0 .pw > div{transform:scale(.72);margin-bottom:calc((1 - .72) * -100%);}
-}
+#pg-0 .pw{background:#e8e6e0 !important;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+#pg-0 .pw > div{transform-origin:center center;flex-shrink:0;}
 
 /* ── 論文全文專用樣式 ── */
 .paper-hero{
@@ -1584,6 +1576,18 @@ document.querySelectorAll('.fn-r').forEach(el=>{
   });
 });
 document.addEventListener('click',()=>{fnTip.style.display='none';});
+
+function scaleCover(){
+  const pw=document.querySelector('#pg-0 .pw');
+  const inner=pw&&pw.firstElementChild;
+  if(!inner)return;
+  const cw=pw.clientWidth, ch=pw.clientHeight;
+  const iw=595, ih=842;
+  const s=Math.min(cw/iw, ch/ih, 1);
+  inner.style.transform=`scale(${s})`;
+}
+scaleCover();
+window.addEventListener('resize',scaleCover);
 </script>
 </body>
 </html>
