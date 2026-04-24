@@ -6,6 +6,8 @@
 <meta name="robots" content="noindex, nofollow">
 <title>中文學科論文寫作計畫 活動手冊</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════
@@ -129,6 +131,19 @@ body{
   padding:1px 7px;border-radius:10px;
 }
 
+#sb-fz{
+  padding:12px 20px;
+  border-top:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;gap:8px;
+}
+#sb-fz span{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.1em;flex:1;}
+.sb-fz-btn{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.7);border-radius:4px;
+  padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;
+  transition:background .15s;
+}
+.sb-fz-btn:hover{background:rgba(190,30,45,.5);border-color:rgba(190,30,45,.6);}
 #sb-foot{
   padding:14px 20px;
   border-top:1px solid rgba(255,255,255,.07);
@@ -477,6 +492,16 @@ body.sb-collapsed #btn-prev{left:10px;}
   #tb-left{gap:6px;}
   #controls{gap:4px;}
 }
+/* ── 封面縮放 ── */
+#pg-0 .pw{background:#e8e6e0 !important;display:flex;align-items:center;justify-content:center;overflow:auto;}
+#pg-0 .pw > div{transform-origin:top center;}
+@media(max-width:640px){
+  #pg-0 .pw > div{transform:scale(.52);margin:-200px auto;}
+}
+@media(min-width:641px) and (max-width:900px){
+  #pg-0 .pw > div{transform:scale(.72);margin:-120px auto;}
+}
+
 /* ── 論文全文專用樣式 ── */
 .paper-hero{
   position:relative;overflow:hidden;
@@ -582,22 +607,27 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div id="toc">
     <div class="toc-sec">計畫說明</div>
-    <div class="toc-link" onclick="goPage(0)"><span>計畫目的</span><span class="pn">1</span></div>
-    <div class="toc-link" onclick="goPage(1)"><span>計畫目標</span><span class="pn">2</span></div>
-    <div class="toc-link" onclick="goPage(2)"><span>預期效益</span><span class="pn">3</span></div>
+    <div class="toc-link" onclick="goPage(1)"><span>計畫目的</span><span class="pn">1</span></div>
+    <div class="toc-link" onclick="goPage(2)"><span>計畫目標</span><span class="pn">2</span></div>
+    <div class="toc-link" onclick="goPage(3)"><span>預期效益</span><span class="pn">3</span></div>
     <div class="toc-sec">活動資訊</div>
-    <div class="toc-link" onclick="goPage(3)"><span>與會學者名單</span><span class="pn">4</span></div>
-    <div class="toc-link" onclick="goPage(4)"><span>活動議程</span><span class="pn">5</span></div>
-    <div class="toc-link" onclick="goPage(5)"><span>論文發表場次</span><span class="pn">6</span></div>
-    <div class="toc-link" onclick="goPage(6)"><span>議事規則</span><span class="pn">7</span></div>
+    <div class="toc-link" onclick="goPage(4)"><span>與會學者名單</span><span class="pn">4</span></div>
+    <div class="toc-link" onclick="goPage(5)"><span>活動議程</span><span class="pn">5</span></div>
+    <div class="toc-link" onclick="goPage(6)"><span>論文發表場次</span><span class="pn">6</span></div>
+    <div class="toc-link" onclick="goPage(7)"><span>議事規則</span><span class="pn">7</span></div>
     <div class="toc-sec">論文全文</div>
-    <div class="toc-link" onclick="goPage(7)">
+    <div class="toc-link" onclick="goPage(8)">
       <div>
         <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:2px;">第二篇｜李宗祐</div>
         <div style="font-size:12.5px;line-height:1.5;">解構聖王與安頓性命</div>
       </div>
       <span class="pn">8</span>
     </div>
+  </div>
+  <div id="sb-fz">
+    <span>字級</span>
+    <button class="sb-fz-btn" onclick="changeFontSize(-1)">A−</button>
+    <button class="sb-fz-btn" onclick="changeFontSize(1)">A+</button>
   </div>
   <div id="sb-foot">
     主辦｜臺師大國文系・北市大儒學中心<br>
@@ -651,8 +681,70 @@ body.sb-collapsed #btn-prev{left:10px;}
 <div id="stage">
 <div id="bk-single">
 
-<!-- ▌PAGE 1：計畫目的 ▐ -->
+<!-- ▌PAGE 0：封面 ▐ -->
 <div class="page-card active" id="pg-0">
+<div class="pw" style="background:#e8e6e0;display:flex;align-items:center;justify-content:center;">
+  <div style="
+    width:595px;height:842px;background:#fdfcf8;
+    position:relative;overflow:hidden;
+    font-family:'Noto Serif TC','Source Han Serif TC','Songti TC',serif;
+    color:#0a0a0a;
+    box-shadow:0 30px 80px rgba(0,0,0,.18),0 8px 24px rgba(0,0,0,.1);
+    flex-shrink:0;
+  ">
+    <!-- 紙質底紋 -->
+    <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 15% 20%,rgba(180,140,90,.04) 0%,transparent 40%),radial-gradient(circle at 85% 80%,rgba(120,90,60,.04) 0%,transparent 40%);pointer-events:none;"></div>
+    <!-- 左上：朱紅直線 + 資訊 -->
+    <div style="position:absolute;top:44px;left:56px;display:flex;gap:18px;">
+      <div style="width:2px;height:100%;background:#c93226;min-height:110px;"></div>
+      <div>
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:2.5px;color:#666;line-height:1.8;">
+          <div>NO. 01　/　HANDBOOK</div>
+          <div>MAY 14, 2026</div>
+        </div>
+        <div style="margin-top:14px;padding-top:10px;border-top:1px solid #0a0a0a;width:220px;">
+          <div style="font-size:13.5px;letter-spacing:2px;font-weight:500;">國立臺灣師範大學國文學系</div>
+          <div style="font-size:11px;letter-spacing:3px;color:#c93226;margin-top:3px;font-weight:600;">八十週年系慶　·　1946–2026</div>
+        </div>
+      </div>
+    </div>
+    <!-- 右上英文副標 -->
+    <div style="position:absolute;top:48px;right:56px;text-align:right;font-family:'Playfair Display','Georgia',serif;font-size:13px;font-style:italic;color:#888;line-height:1.4;">
+      A Handbook For<br>Academic Workshop
+    </div>
+    <!-- 裝飾圓 -->
+    <div style="position:absolute;top:220px;right:30px;width:320px;height:320px;border-radius:50%;background:rgba(0,0,0,.05);pointer-events:none;"></div>
+    <!-- 主標（左側直排） -->
+    <div style="position:absolute;top:230px;left:70px;writing-mode:vertical-rl;font-size:38px;font-weight:700;line-height:1;letter-spacing:2px;color:#0a0a0a;height:420px;white-space:nowrap;">
+      中文學科<span style="color:#c93226;">論文寫作</span>增能
+    </div>
+    <!-- 右下 80 -->
+    <div style="position:absolute;bottom:130px;right:46px;text-align:right;">
+      <div style="font-family:'Playfair Display','Georgia',serif;font-size:130px;font-weight:400;line-height:.82;color:#c93226;letter-spacing:-4px;">80</div>
+      <div style="font-size:9.5px;letter-spacing:4px;color:#666;margin-top:8px;font-family:'JetBrains Mono',monospace;">YEARS · 八十周年</div>
+    </div>
+    <!-- 左下副標 -->
+    <div style="position:absolute;bottom:110px;left:70px;">
+      <div style="height:1px;width:40px;background:#c93226;margin-bottom:10px;"></div>
+      <div style="font-size:18px;letter-spacing:10px;font-weight:500;color:#1a1a1a;">計畫活動手冊</div>
+      <div style="font-size:9.5px;letter-spacing:3px;color:#888;margin-top:6px;font-family:'JetBrains Mono',monospace;">PROGRAM　·　HANDBOOK</div>
+    </div>
+    <!-- 底部主辦單位 -->
+    <div style="position:absolute;bottom:40px;left:56px;right:46px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;letter-spacing:1.5px;color:#333;padding-top:14px;border-top:.5px solid rgba(0,0,0,.2);">
+      <div style="line-height:1.9;">
+        <span style="color:#c93226;font-weight:600;">主辦 ／ </span>臺師大國文系・北市大儒學中心<br>
+        <span style="color:#c93226;font-weight:600;">協辦 ／ </span>中華孔孟學會
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#999;text-align:right;line-height:1.6;">
+        ——　ACADEMIC<br>　　WORKSHOP
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ▌PAGE 1：計畫目的 ▐ -->
+<div class="page-card" id="pg-1">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -672,7 +764,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PAGE 2：計畫目標 ▐ -->
-<div class="page-card" id="pg-1">
+<div class="page-card" id="pg-2">
 <div class="pw">
   <div class="page-hero teal">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -704,7 +796,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PAGE 3：預期效益 ▐ -->
-<div class="page-card" id="pg-2">
+<div class="page-card" id="pg-3">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -725,7 +817,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PAGE 4：與會學者名單 ▐ -->
-<div class="page-card" id="pg-3">
+<div class="page-card" id="pg-4">
 <div class="pw">
   <div class="page-hero teal">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -763,7 +855,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PAGE 5：活動議程 ▐ -->
-<div class="page-card" id="pg-4">
+<div class="page-card" id="pg-5">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -824,7 +916,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PAGE 6：論文發表場次 ▐ -->
-<div class="page-card" id="pg-5">
+<div class="page-card" id="pg-6">
 <div class="pw">
   <div class="page-hero teal">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -895,7 +987,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PAGE 7：議事規則 ▐ -->
-<div class="page-card" id="pg-6">
+<div class="page-card" id="pg-7">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -935,7 +1027,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 
 
 <!-- ▌PG-7：第二篇 摘要 ▐ -->
-<div class="page-card" id="pg-7">
+<div class="page-card" id="pg-8">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -969,7 +1061,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-8：一、前言 ▐ -->
-<div class="page-card" id="pg-8">
+<div class="page-card" id="pg-9">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -992,7 +1084,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-9：二、詮釋商榷（一）▐ -->
-<div class="page-card" id="pg-9">
+<div class="page-card" id="pg-10">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1019,7 +1111,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-10：二（二）反駁隱逸思想詮釋 ▐ -->
-<div class="page-card" id="pg-10">
+<div class="page-card" id="pg-11">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1045,7 +1137,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-11：二（三）論辯策略 ▐ -->
-<div class="page-card" id="pg-11">
+<div class="page-card" id="pg-12">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1069,7 +1161,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-12：三（一）社會現象的批判 ▐ -->
-<div class="page-card" id="pg-12">
+<div class="page-card" id="pg-13">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1093,7 +1185,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-13：三（二）人性論的批判 ▐ -->
-<div class="page-card" id="pg-13">
+<div class="page-card" id="pg-14">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1117,7 +1209,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-14：三（三）從治天下到無為 ▐ -->
-<div class="page-card" id="pg-14">
+<div class="page-card" id="pg-15">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1138,7 +1230,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-15：四（一）多元的和諧想像 ▐ -->
-<div class="page-card" id="pg-15">
+<div class="page-card" id="pg-16">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1165,7 +1257,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-16：四（二）以道化勢 ▐ -->
-<div class="page-card" id="pg-16">
+<div class="page-card" id="pg-17">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1190,7 +1282,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-17：五、結語 ▐ -->
-<div class="page-card" id="pg-17">
+<div class="page-card" id="pg-18">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1210,7 +1302,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-18：徵引文獻 ▐ -->
-<div class="page-card" id="pg-18">
+<div class="page-card" id="pg-19">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1259,7 +1351,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 </div>
 
 <!-- ▌PG-19：附注 ▐ -->
-<div class="page-card" id="pg-19">
+<div class="page-card" id="pg-20">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1344,9 +1436,9 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft'||e.key==='ArrowUp')prevPage();
 });
 
-const TOTAL=20;
+const TOTAL=21;
 let cur=0,flv=parseInt(localStorage.getItem('fz')||'0');
-const titles=['計畫目的','計畫目標','預期效益','與會學者名單','活動議程','論文發表場次','議事規則','第二篇｜論文摘要','一、前言','二（一）反駁原始主義','二（二）反駁隱逸思想','二（三）論辯策略','三、解構聖王之治','三（二）人性論的批判','三（三）從治天下到無為','四（一）多元的和諧想像','四（二）以道化勢','五、結語','徵引文獻','附注'];
+const titles=['封面','計畫目的','計畫目標','預期效益','與會學者名單','活動議程','論文發表場次','議事規則','第二篇｜論文摘要','一、前言','二（一）反駁原始主義','二（二）反駁隱逸思想','二（三）論辯策略','三、解構聖王之治','三（二）人性論的批判','三（三）從治天下到無為','四（一）多元的和諧想像','四（二）以道化勢','五、結語','徵引文獻','附注'];
 
 function goPage(n,dir){
   if(n<0||n>=TOTAL)return;
@@ -1377,7 +1469,7 @@ function updateUI(){
   document.getElementById('pg-ind').textContent=`第 ${cur+1} 頁 / 共 ${TOTAL} 頁`;
   document.getElementById('tb-title').textContent=titles[cur]||'';
   document.querySelectorAll('.toc-link').forEach((el,i)=>{
-    const match = i===cur || (i===7 && cur>=7);
+    const match = cur>0 && (i===cur-1 || (i===8 && cur>=9));
     el.classList.toggle('active', match);
   });
   const atFirst=cur===0, atLast=cur>=TOTAL-1;
