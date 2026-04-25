@@ -652,6 +652,17 @@ body.sb-collapsed #btn-prev{left:10px;}
 .fn-item{margin:.4em 0;padding-left:2em;text-indent:-2em;}
 /* Paper 1 fn-n: 序號顯示由 .fn-n 全局樣式處理 */
 /* ── End Paper 1 tables ──────────────────────────────── */
+
+/* ── CJK Extension B 字型補丁（𤙖 U+24756、𤙣 U+24763）── */
+/* 手機版內建字型不含 CJK 擴充 B，嵌入 Noto Sans TC 微型子集確保正常顯示 */
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url('data:font/woff2;base64,d09GMgABAAAAAAPoABUAAAAACYwAAAN+AAIKPQAAAAAAAAAAAAAAAAAAAAAAAAAAGYIKGyAcQj9IVkFSKgZgP1NUQVSBNicqAAQvahEICgEqMBgBNgIkAwQLBAAEIAWHbgcgFyQYBBtBCFGULE6N4osC25g6dLFg+sDSW7yYKxbNkmETCUAZLmdf9AHux1jkh3ie3r/nXfvcB33K00MRWWV+lRpgl1Sp4ArupHe4pvmSrZ1MAVixGpEN3AOlT2DkhB4yxxZSNyj89fUfIZYtpz9v1DvaKJxDOIIxX7G1eg6FbXVp0iJsacLgsChUL8IKgnnmmpHXWPuImFMnTuzZlRTRczbkR1RJY/vt8RO1k7gm2tYFA21HbA21j9gEtZ/4NtqqgKJmoqa+fxVQqekZ6sGfYv9NoWJ1kJP6dyoZqXQWk+nV277GQbjCskut+7e20lrdaNPNXiIrNOBGqup5DeRGgrhS0BOMFGGzzRSEb8YJOsabKGLfb6lBPyDo2GizOL+YX8wv5hfTxQyKcynDAUCNGzw5AVX1sVPVKXeXX+wLB5FjlmYHpVvMNd2y/fSCmNxf3ft3UrszGIEyqXyJyRoiWoLhmhgfV5yh+lIbA0210l7HXOx2BVKcilPxLgqkyny8R45+sFqO8RoeQDFLPQ/i+AVONvIrI1DuvqPN8kYaqCaPaKu6dchhwQKi9Y53wGCdDcMNv2a00b9PNu3jxZb8vNlmIBisiOGaOi3tXRRmStrppEK66WXOJwMyEIsNymB5NiRD0U4Oy3BkWUZkJNr3M0qkXwcEFEygpg+CgNHhF0FQOhveP/0vqut/axWr7+GLZ1p/wVdHRjzx7z/fdt3mUDQUEKrv+1u6r/z7319dVwAAqb53qiDlSftBAAAwMeerpNbGcRLEaMdRDPQMKpu9RWsg6vb639QwMbsDQRANRSuno9LJ+agZmitpfQsNvdyNplYeQksnD6Otl0dop4R2RWivEANMzgt0YDkGmZ0P6GDDENPzLx0qhWGmlsl0uCBGmFi20pGy44wyuZzoURKwuamZpVGcx9wMdsQJFMC6VD7f3d7ERLQSYwT8L2OMYJnoGcIiGp8Kewc8wBUCHHYj2HzYM8ICsI4PQsDFgI6xZ4JPwD4QNg/26ewdUARMhGtubGpq6eDo4uTFgWB32XNHPqk0Ni46O7n61ot4NDEPRlWczS3Nlhi4uX5qZhE5sDeeZcQFTIDwQLHdLn+kUah8F8Ci5dwTx2cPWE4EE3diIhjDD8CrKeziEaJqq4dL/7kKkBKu5rH3qGxEO0/RtNm/xVx6BpN+/b93WoSf/8UWkMgnCgAAAA==') format('woff2');
+  unicode-range: U+24756, U+24763;
+}
 </style>
 </head>
 <body>
