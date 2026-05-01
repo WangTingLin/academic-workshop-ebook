@@ -3340,7 +3340,8 @@ function closeSidebar(){
 }
 
 let tx=null,ty=null;
-document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+/* passive:false so touchmove can preventDefault before iOS commits to pull-to-refresh */
+document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:false});
 document.addEventListener('touchend',e=>{
   if(tx===null)return;
   const dx=e.changedTouches[0].clientX-tx;
@@ -3348,11 +3349,13 @@ document.addEventListener('touchend',e=>{
   if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.8){dx<0?nextPage():prevPage();}
   tx=null;ty=null;
 },{passive:true});
-/* prevent pull-to-refresh on iOS Safari */
+/* prevent pull-to-refresh: only when at scroll-top AND pulling down */
 document.addEventListener('touchmove',e=>{
-  if(!e.cancelable)return;
+  if(!e.cancelable||tx===null)return;
   const pc=e.target.closest&&e.target.closest('.page-card');
-  if(!pc||pc.scrollTop===0)e.preventDefault();
+  const fingerDy=e.touches[0].clientY-ty;  /* >0 = finger moving down = pull */
+  if(!pc){e.preventDefault();return;}
+  if(pc.scrollTop===0&&fingerDy>0)e.preventDefault();
 },{passive:false});
 
 lazyLoad(0);
