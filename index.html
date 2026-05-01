@@ -3262,6 +3262,8 @@ document.addEventListener('touchend',e=>{
 },{passive:true});
 document.addEventListener('touchmove',e=>{
   if(!e.cancelable||tx===null)return;
+  /* Let sidebar scroll freely */
+  if(e.target.closest&&e.target.closest('#sidebar'))return;
   const pc=e.target.closest&&e.target.closest('.page-card');
   const fingerDy=e.touches[0].clientY-ty;
   if(!pc){e.preventDefault();return;}
