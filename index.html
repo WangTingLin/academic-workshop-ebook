@@ -793,10 +793,13 @@ body.sb-collapsed #btn-prev{left:10px;}
 
 <!-- ═══ STAGE ═══ -->
 <div id="stage">
-<div id="bk-single">
+<div id="bk-single"></div>
 
-<!-- ▌PAGE 0：封面 ▐ -->
-<div class="page-card active" id="pg-0">
+
+
+</div><!-- /stage -->
+
+<template id="page-0">
 <div class="pw" style="background:#e8e6e0;display:flex;align-items:center;justify-content:center;">
   <div style="
     width:595px;height:842px;background:#fdfcf8;
@@ -857,10 +860,8 @@ body.sb-collapsed #btn-prev{left:10px;}
     </div>
   </div>
 </div>
-</div>
-
-<!-- ▌PAGE 1：計畫目的 ▐ -->
-<div class="page-card" id="pg-1">
+</template>
+<template id="page-1">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -877,10 +878,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 1 —</span></div>
 </div>
-</div>
-
-<!-- ▌PAGE 2：計畫目標 ▐ -->
-<div class="page-card" id="pg-2">
+</template>
+<template id="page-2">
 <div class="pw">
   <div class="page-hero teal">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -909,10 +908,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 2 —</span></div>
 </div>
-</div>
-
-<!-- ▌PAGE 3：預期效益 ▐ -->
-<div class="page-card" id="pg-3">
+</template>
+<template id="page-3">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -930,10 +927,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 3 —</span></div>
 </div>
-</div>
-
-<!-- ▌PAGE 4：與會學者名單 ▐ -->
-<div class="page-card" id="pg-4">
+</template>
+<template id="page-4">
 <div class="pw">
   <div class="page-hero teal">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -968,10 +963,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 4 —</span></div>
 </div>
-</div>
-
-<!-- ▌PAGE 5：活動議程 ▐ -->
-<div class="page-card" id="pg-5">
+</template>
+<template id="page-5">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1029,10 +1022,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 5 —</span></div>
 </div>
-</div>
-
-<!-- ▌PAGE 6：論文發表場次 ▐ -->
-<div class="page-card" id="pg-6">
+</template>
+<template id="page-6">
 <div class="pw">
   <div class="page-hero teal">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1100,10 +1091,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 6 —</span></div>
 </div>
-</div>
-
-<!-- ▌PAGE 7：議事規則 ▐ -->
-<div class="page-card" id="pg-7">
+</template>
+<template id="page-7">
 <div class="pw">
   <div class="page-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1139,11 +1128,353 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 7 —</span></div>
 </div>
+</template>
+<template id="page-8">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">圓桌論壇（二）</div>
+    <div class="ph-title">救命！修改後再審</div>
+    <div class="ph-sub">我看了什麼？審查委員的辛酸 · 2026.05.14</div>
+  </div>
+  <div class="page-body">
+    <div class="info-card" style="margin-top:8px;">
+      <div style="flex:1;">
+        <div class="ic-role">主講人</div>
+        <div class="ic-name">蔡瑩瑩</div>
+        <div class="ic-aff">臺北市立大學　中國語文學系　助理教授兼儒學中心主任</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;font-size:0.813rem;color:var(--ink2);line-height:1.9;">
+      <div style="margin-bottom:10px;">
+        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">學　歷</span><br>
+        國立臺灣大學中文系　博士
+      </div>
+      <div style="margin-bottom:10px;">
+        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">研究專長</span><br>
+        《左傳》與春秋文學・出土文獻・早期漢語文獻敘事與用典
+      </div>
+      <div>
+        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">經　歷</span><br>
+        中央研究院歷史語言研究所博士後研究員<br>
+        國立臺灣大學中文系博士後研究員<br>
+        國立臺灣大學中文系兼任助理教授
+      </div>
+    </div>
+    <div style="margin-top:18px;">
+      <a href="https://literacy.utaipei.edu.tw/p/412-1065-7941.php" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:6px;font-size:0.813rem;color:#3d6090;text-decoration:none;border:1px solid #3d6090;border-radius:3px;padding:6px 14px;">
+        &#9654; 個人學術頁面
+      </a>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 8 —</span></div>
 </div>
-
-
-<!-- ▌PG-7：第二篇 摘要 ▐ -->
-<div class="page-card" id="pg-30">
+</template>
+<template id="page-9">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 9 —</span></div>
+</div>
+</template>
+<template id="page-10">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 10 —</span></div>
+</div>
+</template>
+<template id="page-11">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 11 —</span></div>
+</div>
+</template>
+<template id="page-12">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 12 —</span></div>
+</div>
+</template>
+<template id="page-13">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 13 —</span></div>
+</div>
+</template>
+<template id="page-14">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 14 —</span></div>
+</div>
+</template>
+<template id="page-15">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 15 —</span></div>
+</div>
+</template>
+<template id="page-16">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 16 —</span></div>
+</div>
+</template>
+<template id="page-17">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 17 —</span></div>
+</div>
+</template>
+<template id="page-18">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
+    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/tsai10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
+  </div>
+  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 18 —</span></div>
+</div>
+</template>
+<template id="page-19">
+<div class="pw">
+  <div class="paper-hero">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker">圓桌論壇（二）</div>
+    <div class="ph-title">審查委員的鷹眼</div>
+    <div class="ph-sub">我看了什麼？審查委員的辛酸 · 2026.05.14</div>
+  </div>
+  <div class="page-body">
+    <div class="info-card" style="margin-top:8px;">
+      <div style="flex:1;">
+        <div class="ic-role">主講人</div>
+        <div class="ic-name">吳佩熏</div>
+        <div class="ic-aff">國立勤益科技大學　基礎通識教育中心　助理教授</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;font-size:0.813rem;color:var(--ink2);line-height:1.9;">
+      <div style="margin-bottom:10px;">
+        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">學　歷</span><br>
+        國立政治大學中文系　博士<br>
+        國立臺灣大學中文系　碩士
+      </div>
+      <div style="margin-bottom:10px;">
+        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">研究專長</span><br>
+        古典戲曲・詠劇詩・韻文學
+      </div>
+      <div>
+        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">經　歷</span><br>
+        世新大學博士後研究員（科技部計畫）<br>
+        國立臺灣大學兼任助理教授<br>
+        國立臺灣戲曲學院音樂學系兼任講師
+      </div>
+    </div>
+    <div style="margin-top:18px;">
+      <a href="https://fec.ncut.edu.tw/p/406-1034-25669,r163.php?Lang=zh-tw" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:6px;font-size:0.813rem;color:#3d6090;text-decoration:none;border:1px solid #3d6090;border-radius:3px;padding:6px 14px;">
+        &#9654; 個人學術頁面
+      </a>
+    </div>
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 19 —</span></div>
+</div>
+</template>
+<template id="page-20">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 20 —</span></div>
+</div>
+</template>
+<template id="page-21">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 21 —</span></div>
+</div>
+</template>
+<template id="page-22">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 22 —</span></div>
+</div>
+</template>
+<template id="page-23">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 23 —</span></div>
+</div>
+</template>
+<template id="page-24">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 24 —</span></div>
+</div>
+</template>
+<template id="page-25">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 25 —</span></div>
+</div>
+</template>
+<template id="page-26">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 26 —</span></div>
+</div>
+</template>
+<template id="page-27">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 27 —</span></div>
+</div>
+</template>
+<template id="page-28">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 28 —</span></div>
+</div>
+</template>
+<template id="page-29">
+<div class="pw">
+  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+    <div class="deco-circle"></div><div class="deco-circle2"></div>
+    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
+    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
+  </div>
+  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+    <img data-src="./slides/wu10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
+  </div>
+  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 29 —</span></div>
+</div>
+</template>
+<template id="page-30">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1174,8 +1505,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 30 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-31">
+</template>
+<template id="page-31">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1195,8 +1526,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 31 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-32">
+</template>
+<template id="page-32">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1228,8 +1559,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 32 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-33">
+</template>
+<template id="page-33">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1267,8 +1598,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 33 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-34">
+</template>
+<template id="page-34">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1321,8 +1652,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 34 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-35">
+</template>
+<template id="page-35">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1360,8 +1691,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 35 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-36">
+</template>
+<template id="page-36">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1398,8 +1729,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 36 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-37">
+</template>
+<template id="page-37">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1426,8 +1757,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 37 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-38">
+</template>
+<template id="page-38">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1472,8 +1803,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 38 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-39">
+</template>
+<template id="page-39">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1524,8 +1855,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 39 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-40">
+</template>
+<template id="page-40">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1575,8 +1906,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 40 —</span></div>
 </div>
-</div>
-<div class="page-card" id="pg-41">
+</template>
+<template id="page-41">
 <div class="pw">
   <div class="paper-hero">
       <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1648,9 +1979,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">陳皓渝｜佛教咒語詞hūṃ之中古漢語音譯分析</span><span class="pgn">— 41 —</span></div>
 </div>
-</div>
-
-<div class="page-card" id="pg-42">
+</template>
+<template id="page-42">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1681,10 +2011,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 42 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-8：一、前言 ▐ -->
-<div class="page-card" id="pg-43">
+</template>
+<template id="page-43">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1704,10 +2032,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 43 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-9：二、詮釋商榷（一）▐ -->
-<div class="page-card" id="pg-44">
+</template>
+<template id="page-44">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1731,10 +2057,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 44 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-10：二（二）反駁隱逸思想詮釋 ▐ -->
-<div class="page-card" id="pg-45">
+</template>
+<template id="page-45">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1757,10 +2081,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 45 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-11：二（三）論辯策略 ▐ -->
-<div class="page-card" id="pg-46">
+</template>
+<template id="page-46">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1781,10 +2103,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 46 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-12：三（一）社會現象的批判 ▐ -->
-<div class="page-card" id="pg-47">
+</template>
+<template id="page-47">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1805,10 +2125,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 47 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-13：三（二）人性論的批判 ▐ -->
-<div class="page-card" id="pg-48">
+</template>
+<template id="page-48">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1829,10 +2147,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 48 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-14：三（三）從治天下到無為 ▐ -->
-<div class="page-card" id="pg-49">
+</template>
+<template id="page-49">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1850,10 +2166,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 49 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-15：四（一）多元的和諧想像 ▐ -->
-<div class="page-card" id="pg-50">
+</template>
+<template id="page-50">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1877,10 +2191,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 50 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-16：四（二）以道化勢 ▐ -->
-<div class="page-card" id="pg-51">
+</template>
+<template id="page-51">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1902,10 +2214,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 51 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-17：五、結語 ▐ -->
-<div class="page-card" id="pg-52">
+</template>
+<template id="page-52">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1922,10 +2232,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 52 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-18：徵引文獻 ▐ -->
-<div class="page-card" id="pg-53">
+</template>
+<template id="page-53">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -1971,10 +2279,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 53 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-19：附注 ▐ -->
-<div class="page-card" id="pg-54">
+</template>
+<template id="page-54">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2038,12 +2344,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">李宗祐｜解構聖王與安頓性命</span><span class="pgn">— 54 —</span></div>
 </div>
-</div>
-
-
-
-<!-- ▌PG-33：第三篇 ▐ -->
-<div class="page-card" id="pg-55">
+</template>
+<template id="page-55">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2073,9 +2375,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 55 —</span></div>
 </div>
-</div>
-<!-- ▌PG-34：第三篇 ▐ -->
-<div class="page-card" id="pg-56">
+</template>
+<template id="page-56">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2092,9 +2393,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 56 —</span></div>
 </div>
-</div>
-<!-- ▌PG-35：第三篇 ▐ -->
-<div class="page-card" id="pg-57">
+</template>
+<template id="page-57">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2110,9 +2410,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 57 —</span></div>
 </div>
-</div>
-<!-- ▌PG-36：第三篇 ▐ -->
-<div class="page-card" id="pg-58">
+</template>
+<template id="page-58">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2128,9 +2427,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 58 —</span></div>
 </div>
-</div>
-<!-- ▌PG-37：第三篇 ▐ -->
-<div class="page-card" id="pg-59">
+</template>
+<template id="page-59">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2147,9 +2445,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 59 —</span></div>
 </div>
-</div>
-<!-- ▌PG-38：第三篇 ▐ -->
-<div class="page-card" id="pg-60">
+</template>
+<template id="page-60">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2165,9 +2462,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 60 —</span></div>
 </div>
-</div>
-<!-- ▌PG-39：第三篇 ▐ -->
-<div class="page-card" id="pg-61">
+</template>
+<template id="page-61">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2189,9 +2485,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 61 —</span></div>
 </div>
-</div>
-<!-- ▌PG-40：第三篇 ▐ -->
-<div class="page-card" id="pg-62">
+</template>
+<template id="page-62">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2207,9 +2502,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 62 —</span></div>
 </div>
-</div>
-<!-- ▌PG-41：第三篇 ▐ -->
-<div class="page-card" id="pg-63">
+</template>
+<template id="page-63">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2225,9 +2519,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 63 —</span></div>
 </div>
-</div>
-<!-- ▌PG-42：第三篇 ▐ -->
-<div class="page-card" id="pg-64">
+</template>
+<template id="page-64">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2245,9 +2538,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 64 —</span></div>
 </div>
-</div>
-<!-- ▌PG-43：第三篇 ▐ -->
-<div class="page-card" id="pg-65">
+</template>
+<template id="page-65">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2261,9 +2553,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 65 —</span></div>
 </div>
-</div>
-<!-- ▌PG-44：第三篇 ▐ -->
-<div class="page-card" id="pg-66">
+</template>
+<template id="page-66">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2282,9 +2573,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 66 —</span></div>
 </div>
-</div>
-<!-- ▌PG-45：第三篇 ▐ -->
-<div class="page-card" id="pg-67">
+</template>
+<template id="page-67">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2301,9 +2591,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 67 —</span></div>
 </div>
-</div>
-<!-- ▌PG-46：第三篇 ▐ -->
-<div class="page-card" id="pg-68">
+</template>
+<template id="page-68">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2320,9 +2609,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 68 —</span></div>
 </div>
-</div>
-<!-- ▌PG-47：第三篇 ▐ -->
-<div class="page-card" id="pg-69">
+</template>
+<template id="page-69">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2344,9 +2632,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 69 —</span></div>
 </div>
-</div>
-<!-- ▌PG-48：第三篇 ▐ -->
-<div class="page-card" id="pg-70">
+</template>
+<template id="page-70">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2388,9 +2675,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 70 —</span></div>
 </div>
-</div>
-<!-- ▌PG-49：第三篇 ▐ -->
-<div class="page-card" id="pg-71">
+</template>
+<template id="page-71">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2420,9 +2706,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 71 —</span></div>
 </div>
-</div>
-<!-- ▌PG-50：第三篇 ▐ -->
-<div class="page-card" id="pg-72">
+</template>
+<template id="page-72">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2491,378 +2776,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">夏卓浩｜「政教二科」與孫詒讓《周禮》觀</span><span class="pgn">— 72 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-51：吳佩熏 講者介紹 ▐ -->
-<div class="page-card" id="pg-19">
-<div class="pw">
-  <div class="paper-hero">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker">圓桌論壇（二）</div>
-    <div class="ph-title">審查委員的鷹眼</div>
-    <div class="ph-sub">我看了什麼？審查委員的辛酸 · 2026.05.14</div>
-  </div>
-  <div class="page-body">
-    <div class="info-card" style="margin-top:8px;">
-      <div style="flex:1;">
-        <div class="ic-role">主講人</div>
-        <div class="ic-name">吳佩熏</div>
-        <div class="ic-aff">國立勤益科技大學　基礎通識教育中心　助理教授</div>
-      </div>
-    </div>
-    <div style="margin-top:14px;font-size:0.813rem;color:var(--ink2);line-height:1.9;">
-      <div style="margin-bottom:10px;">
-        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">學　歷</span><br>
-        國立政治大學中文系　博士<br>
-        國立臺灣大學中文系　碩士
-      </div>
-      <div style="margin-bottom:10px;">
-        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">研究專長</span><br>
-        古典戲曲・詠劇詩・韻文學
-      </div>
-      <div>
-        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">經　歷</span><br>
-        世新大學博士後研究員（科技部計畫）<br>
-        國立臺灣大學兼任助理教授<br>
-        國立臺灣戲曲學院音樂學系兼任講師
-      </div>
-    </div>
-    <div style="margin-top:18px;">
-      <a href="https://fec.ncut.edu.tw/p/406-1034-25669,r163.php?Lang=zh-tw" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:6px;font-size:0.813rem;color:#3d6090;text-decoration:none;border:1px solid #3d6090;border-radius:3px;padding:6px 14px;">
-        &#9654; 個人學術頁面
-      </a>
-    </div>
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 19 —</span></div>
-</div>
-</div>
-<!-- ▌PG-52：圓桌論壇（二）｜吳佩熏 投影片01 ▐ -->
-<div class="page-card" id="pg-20">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 20 —</span></div>
-</div>
-</div>
-<!-- ▌PG-53：圓桌論壇（二）｜吳佩熏 投影片02 ▐ -->
-<div class="page-card" id="pg-21">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 21 —</span></div>
-</div>
-</div>
-<!-- ▌PG-54：圓桌論壇（二）｜吳佩熏 投影片03 ▐ -->
-<div class="page-card" id="pg-22">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 22 —</span></div>
-</div>
-</div>
-<!-- ▌PG-55：圓桌論壇（二）｜吳佩熏 投影片04 ▐ -->
-<div class="page-card" id="pg-23">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 23 —</span></div>
-</div>
-</div>
-<!-- ▌PG-56：圓桌論壇（二）｜吳佩熏 投影片05 ▐ -->
-<div class="page-card" id="pg-24">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 24 —</span></div>
-</div>
-</div>
-<!-- ▌PG-57：圓桌論壇（二）｜吳佩熏 投影片06 ▐ -->
-<div class="page-card" id="pg-25">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 25 —</span></div>
-</div>
-</div>
-<!-- ▌PG-58：圓桌論壇（二）｜吳佩熏 投影片07 ▐ -->
-<div class="page-card" id="pg-26">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 26 —</span></div>
-</div>
-</div>
-<!-- ▌PG-59：圓桌論壇（二）｜吳佩熏 投影片08 ▐ -->
-<div class="page-card" id="pg-27">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 27 —</span></div>
-</div>
-</div>
-<!-- ▌PG-60：圓桌論壇（二）｜吳佩熏 投影片09 ▐ -->
-<div class="page-card" id="pg-28">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 28 —</span></div>
-</div>
-</div>
-<!-- ▌PG-61：圓桌論壇（二）｜吳佩熏 投影片10 ▐ -->
-<div class="page-card" id="pg-29">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜吳佩熏</div>
-    <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/wu10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
-  </div>
-  <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 29 —</span></div>
-</div>
-</div>
-<!-- ▌PG-62：蔡瑩瑩 講者介紹 ▐ -->
-<div class="page-card" id="pg-8">
-<div class="pw">
-  <div class="paper-hero">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker">圓桌論壇（二）</div>
-    <div class="ph-title">救命！修改後再審</div>
-    <div class="ph-sub">我看了什麼？審查委員的辛酸 · 2026.05.14</div>
-  </div>
-  <div class="page-body">
-    <div class="info-card" style="margin-top:8px;">
-      <div style="flex:1;">
-        <div class="ic-role">主講人</div>
-        <div class="ic-name">蔡瑩瑩</div>
-        <div class="ic-aff">臺北市立大學　中國語文學系　助理教授兼儒學中心主任</div>
-      </div>
-    </div>
-    <div style="margin-top:14px;font-size:0.813rem;color:var(--ink2);line-height:1.9;">
-      <div style="margin-bottom:10px;">
-        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">學　歷</span><br>
-        國立臺灣大學中文系　博士
-      </div>
-      <div style="margin-bottom:10px;">
-        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">研究專長</span><br>
-        《左傳》與春秋文學・出土文獻・早期漢語文獻敘事與用典
-      </div>
-      <div>
-        <span style="font-size:10px;letter-spacing:.12em;color:var(--ink3);">經　歷</span><br>
-        中央研究院歷史語言研究所博士後研究員<br>
-        國立臺灣大學中文系博士後研究員<br>
-        國立臺灣大學中文系兼任助理教授
-      </div>
-    </div>
-    <div style="margin-top:18px;">
-      <a href="https://literacy.utaipei.edu.tw/p/412-1065-7941.php" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:6px;font-size:0.813rem;color:#3d6090;text-decoration:none;border:1px solid #3d6090;border-radius:3px;padding:6px 14px;">
-        &#9654; 個人學術頁面
-      </a>
-    </div>
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 8 —</span></div>
-</div>
-</div>
-<!-- ▌PG-63：圓桌論壇（二）｜蔡瑩瑩 投影片01 ▐ -->
-<div class="page-card" id="pg-9">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 9 —</span></div>
-</div>
-</div>
-<!-- ▌PG-64：圓桌論壇（二）｜蔡瑩瑩 投影片02 ▐ -->
-<div class="page-card" id="pg-10">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 10 —</span></div>
-</div>
-</div>
-<!-- ▌PG-65：圓桌論壇（二）｜蔡瑩瑩 投影片03 ▐ -->
-<div class="page-card" id="pg-11">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 11 —</span></div>
-</div>
-</div>
-<!-- ▌PG-66：圓桌論壇（二）｜蔡瑩瑩 投影片04 ▐ -->
-<div class="page-card" id="pg-12">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 12 —</span></div>
-</div>
-</div>
-<!-- ▌PG-67：圓桌論壇（二）｜蔡瑩瑩 投影片05 ▐ -->
-<div class="page-card" id="pg-13">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 13 —</span></div>
-</div>
-</div>
-<!-- ▌PG-68：圓桌論壇（二）｜蔡瑩瑩 投影片06 ▐ -->
-<div class="page-card" id="pg-14">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 14 —</span></div>
-</div>
-</div>
-<!-- ▌PG-69：圓桌論壇（二）｜蔡瑩瑩 投影片07 ▐ -->
-<div class="page-card" id="pg-15">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 15 —</span></div>
-</div>
-</div>
-<!-- ▌PG-70：圓桌論壇（二）｜蔡瑩瑩 投影片08 ▐ -->
-<div class="page-card" id="pg-16">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 16 —</span></div>
-</div>
-</div>
-<!-- ▌PG-71：圓桌論壇（二）｜蔡瑩瑩 投影片09 ▐ -->
-<div class="page-card" id="pg-17">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 17 —</span></div>
-</div>
-</div>
-<!-- ▌PG-72：圓桌論壇（二）｜蔡瑩瑩 投影片10 ▐ -->
-<div class="page-card" id="pg-18">
-<div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
-    <div class="deco-circle"></div><div class="deco-circle2"></div>
-    <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇（二）｜蔡瑩瑩</div>
-    <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
-  </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
-    <img data-src="./slides/tsai10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
-  </div>
-  <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 18 —</span></div>
-</div>
-</div>
-
-<!-- ▌PG-73：第四篇 摘要 ▐ -->
-<div class="page-card" id="pg-73">
+</template>
+<template id="page-73">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2893,10 +2808,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">中文學科論文寫作增能計畫 活動手冊</span><span class="pgn">— 73 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-74：第四篇 ▐ -->
-<div class="page-card" id="pg-74">
+</template>
+<template id="page-74">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2912,10 +2825,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 74 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-75：第四篇 ▐ -->
-<div class="page-card" id="pg-75">
+</template>
+<template id="page-75">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2942,10 +2853,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 75 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-76：第四篇 ▐ -->
-<div class="page-card" id="pg-76">
+</template>
+<template id="page-76">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -2977,10 +2886,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 76 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-77：第四篇 ▐ -->
-<div class="page-card" id="pg-77">
+</template>
+<template id="page-77">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3009,10 +2916,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 77 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-78：第四篇 ▐ -->
-<div class="page-card" id="pg-78">
+</template>
+<template id="page-78">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3030,10 +2935,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 78 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-79：第四篇 ▐ -->
-<div class="page-card" id="pg-79">
+</template>
+<template id="page-79">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3055,10 +2958,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 79 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-80：第四篇 ▐ -->
-<div class="page-card" id="pg-80">
+</template>
+<template id="page-80">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3084,10 +2985,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 80 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-81：第四篇 ▐ -->
-<div class="page-card" id="pg-81">
+</template>
+<template id="page-81">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3105,10 +3004,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 81 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-82：第四篇 ▐ -->
-<div class="page-card" id="pg-82">
+</template>
+<template id="page-82">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3140,10 +3037,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 82 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-83：第四篇 ▐ -->
-<div class="page-card" id="pg-83">
+</template>
+<template id="page-83">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3185,10 +3080,8 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 83 —</span></div>
 </div>
-</div>
-
-<!-- ▌PG-84：第四篇 ▐ -->
-<div class="page-card" id="pg-84">
+</template>
+<template id="page-84">
 <div class="pw">
   <div class="paper-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
@@ -3226,12 +3119,7 @@ body.sb-collapsed #btn-prev{left:10px;}
   </div>
   <div class="pg-band"><span class="org">林昕嬡｜《孝經》書名翻譯研究</span><span class="pgn">— 84 —</span></div>
 </div>
-</div>
-</div><!-- /bk-single -->
-
-
-</div><!-- /stage -->
-
+</template>
 <script>
 /* COPY PROTECTION */
 document.addEventListener('contextmenu',e=>e.preventDefault());
@@ -3250,38 +3138,62 @@ const TOTAL=85;
 let cur=0,flv=parseInt(localStorage.getItem('fz')||'0');
 const titles=['封面','計畫目的','計畫目標','預期效益','與會學者名單','活動議程','論文發表場次','議事規則','蔡瑩瑩｜講者介紹','蔡（一）','蔡（二）','蔡（三）','蔡（四）','蔡（五）','蔡（六）','蔡（七）','蔡（八）','蔡（九）','蔡（十）','吳佩熏｜講者介紹','吳（一）','吳（二）','吳（三）','吳（四）','吳（五）','吳（六）','吳（七）','吳（八）','吳（九）','吳（十）','第一篇｜論文摘要','一、前言','二（一）吽','二（二）𤙖','二（四）唅','三（一）烏吽','三（三）虎吽','三（五）虎𤙣','四（一）語音差異','四（二）音譯用字','引用書目','附注','第二篇｜論文摘要','一、前言','二（一）反駁原始主義','二（二）反駁隱逸思想','二（三）論辯策略','三、解構聖王之治','三（二）人性論的批判','三（三）從治天下到無為','四（一）多元的和諧想像','四（二）以道化勢','五、結語','徵引文獻','附注','第三篇｜論文摘要','引言','一、《周禮》及其大義（一）','一（二）','一（三）','一（四）','二、「政教二科」（一）','二（二）','二（三）','二（四）','二（五）','三、《周禮政要》（一）','三（二）','三（三）','三（四）＋結語','參考文獻（一）','參考文獻（二）','附注','第四篇｜論文摘要','一、前言（一）','一（二）','二、書名選詞（一）','二（二）詞源分析','三、詞義轉譯（一）','三（二）安樂哲','三（三）文字學批判','五、結論','徵引書目（一）','徵引書目（二）','附注'];
 
-function lazyLoad(n){
-  [n-1,n,n+1].forEach(i=>{
-    const card=document.getElementById('pg-'+i);
-    if(!card)return;
-    card.querySelectorAll('img[data-src]').forEach(img=>{
-      img.src=img.dataset.src;
-      img.removeAttribute('data-src');
-    });
+/* ── fnMap: pre-built from all templates (templates not rendered) ── */
+const fnMap={};
+for(let i=0;i<TOTAL;i++){
+  const tmpl=document.getElementById('page-'+i);
+  if(!tmpl)continue;
+  tmpl.content.querySelectorAll('.fn-item').forEach(el=>{
+    const n=el.querySelector('.fn-n');
+    if(!n)return;
+    const num=n.dataset.fk||n.textContent.trim();
+    const clone=el.cloneNode(true);
+    clone.querySelector('.fn-n').remove();
+    fnMap[num]=clone.textContent.trim();
   });
 }
+
+/* ── Virtual DOM: create page-card from template on demand ── */
+function createCard(n){
+  const tmpl=document.getElementById('page-'+n);
+  if(!tmpl)return null;
+  const div=document.createElement('div');
+  div.className='page-card';
+  div.id='pg-'+n;
+  div.appendChild(document.importNode(tmpl.content,true));
+  /* Lazy-load images in this card */
+  div.querySelectorAll('img[data-src]').forEach(img=>{
+    img.src=img.dataset.src;
+    img.removeAttribute('data-src');
+  });
+  return div;
+}
+
 function goPage(n,dir){
   if(n<0||n>=TOTAL)return;
-  lazyLoad(n);
+  const bk=document.getElementById('bk-single');
   const from=document.getElementById('pg-'+cur);
-  const to=document.getElementById('pg-'+n);
-  if(!from||!to||from===to){cur=n;updateUI();return;}
   const right=(dir!==undefined)?dir>0:n>cur;
-  from.classList.remove('active');
-  from.classList.add(right?'xl':'xr');
+  const to=createCard(n);
+  if(!to)return;
+  /* Place at starting offset with no transition */
+  to.style.transition='none';
   to.style.transform=right?'translateX(32px)':'translateX(-32px)';
-  to.style.opacity='0';
-  to.classList.remove('xl','xr');
-  requestAnimationFrame(()=>{
-    to.style.transition='opacity .28s ease,transform .28s ease';
-    to.style.transform='';to.style.opacity='';
-    to.classList.add('active');
-  });
-  setTimeout(()=>{
-    from.classList.remove('xl','xr');
-    from.style.transform='';from.style.opacity='';
-  },300);
+  bk.appendChild(to);
+  void to.offsetHeight; /* force layout */
+  /* Animate in */
+  to.style.transition='';
+  to.style.transform='';
+  to.classList.add('active');
+  /* Animate out and destroy old card */
+  if(from){
+    from.classList.remove('active');
+    from.classList.add(right?'xl':'xr');
+    setTimeout(()=>{from.remove();},300);
+  }
   cur=n;updateUI();
+  /* Cover page: re-scale and replay animations after card is in DOM */
+  if(n===0){setTimeout(()=>{scaleCover();replayCoverAnim();},50);}
 }
 function prevPage(){goPage(cur-1,-1);}
 function nextPage(){goPage(cur+1,1);}
@@ -3290,10 +3202,10 @@ function updateUI(){
   document.getElementById('pg-ind').textContent=`第 ${cur+1} 頁 / 共 ${TOTAL} 頁`;
   document.getElementById('tb-title').textContent=titles[cur]||'';
   document.querySelectorAll('.toc-link').forEach((el,i)=>{
-    const match = cur>0 && (i===cur-1 || (i===7 && cur>=8 && cur<=18) || (i===8 && cur>=19 && cur<=29) || (i===9 && cur>=30 && cur<=41) || (i===10 && cur>=42 && cur<=54) || (i===11 && cur>=55 && cur<=72) || (i===12 && cur>=73 && cur<=84));
-    el.classList.toggle('active', match);
+    const match=cur>0&&(i===cur-1||(i===7&&cur>=8&&cur<=18)||(i===8&&cur>=19&&cur<=29)||(i===9&&cur>=30&&cur<=41)||(i===10&&cur>=42&&cur<=54)||(i===11&&cur>=55&&cur<=72)||(i===12&&cur>=73&&cur<=84));
+    el.classList.toggle('active',match);
   });
-  const atFirst=cur===0, atLast=cur>=TOTAL-1;
+  const atFirst=cur===0,atLast=cur>=TOTAL-1;
   document.getElementById('btn-prev').disabled=atFirst;
   document.getElementById('btn-next').disabled=atLast;
 }
@@ -3330,7 +3242,7 @@ function toggleSidebar(){
   if(mobile){
     document.getElementById('sidebar').classList.toggle('open');
     document.getElementById('overlay').classList.toggle('on');
-  } else {
+  }else{
     document.body.classList.toggle('sb-collapsed');
   }
 }
@@ -3340,7 +3252,6 @@ function closeSidebar(){
 }
 
 let tx=null,ty=null;
-/* passive:false so touchmove can preventDefault before iOS commits to pull-to-refresh */
 document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:false});
 document.addEventListener('touchend',e=>{
   if(tx===null)return;
@@ -3349,48 +3260,34 @@ document.addEventListener('touchend',e=>{
   if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.8){dx<0?nextPage():prevPage();}
   tx=null;ty=null;
 },{passive:true});
-/* prevent pull-to-refresh: only when at scroll-top AND pulling down */
 document.addEventListener('touchmove',e=>{
   if(!e.cancelable||tx===null)return;
   const pc=e.target.closest&&e.target.closest('.page-card');
-  const fingerDy=e.touches[0].clientY-ty;  /* >0 = finger moving down = pull */
+  const fingerDy=e.touches[0].clientY-ty;
   if(!pc){e.preventDefault();return;}
   if(pc.scrollTop===0&&fingerDy>0)e.preventDefault();
 },{passive:false});
 
-lazyLoad(0);
-updateUI();
-
-/* ── 註腳浮動提示 ── */
-const fnMap={};
-document.querySelectorAll('.fn-item').forEach(el=>{
-  const n=el.querySelector('.fn-n');
-  if(!n)return;
-  const num=n.dataset.fk||n.textContent.trim();
-  const clone=el.cloneNode(true);
-  clone.querySelector('.fn-n').remove();
-  fnMap[num]=clone.textContent.trim();
-});
+/* ── fn-tip: event delegation (works with dynamically created cards) ── */
 const fnTip=document.getElementById('fn-tip');
-document.querySelectorAll('.fn-r').forEach(el=>{
-  el.addEventListener('click',e=>{
-    e.stopPropagation();
-    const n=el.dataset.fn||el.textContent.trim();
-    const displayN=el.textContent.trim();
-    const text=fnMap[n];
-    if(!text){fnTip.style.display='none';return;}
-    fnTip.innerHTML=`<strong style="color:#3d6090;font-family:'Times New Roman',serif;margin-right:4px;">${displayN}</strong>${text}`;
-    fnTip.style.left='-9999px';fnTip.style.top='-9999px';
-    fnTip.style.display='block';
-    const r=el.getBoundingClientRect();
-    const tw=fnTip.offsetWidth, th=fnTip.offsetHeight;
-    let left=r.left, top=r.bottom+8;
-    if(left+tw>window.innerWidth-12)left=Math.max(8,window.innerWidth-tw-12);
-    if(top+th>window.innerHeight-8)top=Math.max(8,r.top-th-8);
-    fnTip.style.left=left+'px';fnTip.style.top=top+'px';
-  });
+document.addEventListener('click',e=>{
+  const el=e.target.closest&&e.target.closest('.fn-r');
+  if(!el){fnTip.style.display='none';return;}
+  e.stopPropagation();
+  const n=el.dataset.fn||el.textContent.trim();
+  const displayN=el.textContent.trim();
+  const text=fnMap[n];
+  if(!text){fnTip.style.display='none';return;}
+  fnTip.innerHTML=`<strong style="color:#3d6090;font-family:'Times New Roman',serif;margin-right:4px;">${displayN}</strong>${text}`;
+  fnTip.style.left='-9999px';fnTip.style.top='-9999px';
+  fnTip.style.display='block';
+  const r=el.getBoundingClientRect();
+  const tw=fnTip.offsetWidth,th=fnTip.offsetHeight;
+  let left=r.left,top=r.bottom+8;
+  if(left+tw>window.innerWidth-12)left=Math.max(8,window.innerWidth-tw-12);
+  if(top+th>window.innerHeight-8)top=Math.max(8,r.top-th-8);
+  fnTip.style.left=left+'px';fnTip.style.top=top+'px';
 });
-document.addEventListener('click',()=>{fnTip.style.display='none';});
 
 function replayCoverAnim(){
   const ids=['cv-redline','cv-topleft','cv-topright','cv-figure','cv-title','cv-80','cv-subtitle','cv-footer'];
@@ -3402,21 +3299,27 @@ function replayCoverAnim(){
     el.style.animation='';
   });
 }
-new MutationObserver(()=>{
-  if(document.getElementById('pg-0').classList.contains('active'))replayCoverAnim();
-}).observe(document.getElementById('pg-0'),{attributeFilter:['class']});
 
 function scaleCover(){
   const pw=document.querySelector('#pg-0 .pw');
   const inner=pw&&pw.firstElementChild;
   if(!inner)return;
-  const cw=pw.clientWidth, ch=pw.clientHeight;
-  const iw=595, ih=842;
-  const s=Math.min(cw/iw, ch/ih, 1);
+  const cw=pw.clientWidth,ch=pw.clientHeight;
+  const iw=595,ih=842;
+  const s=Math.min(cw/iw,ch/ih,1);
   inner.style.transform=`scale(${s})`;
 }
-scaleCover();
-window.addEventListener('resize',scaleCover);
+window.addEventListener('resize',()=>{if(document.getElementById('pg-0'))scaleCover();});
+
+/* ── Initial render: show page 0 ── */
+(function(){
+  const bk=document.getElementById('bk-single');
+  const card=createCard(0);
+  card.classList.add('active');
+  bk.appendChild(card);
+  updateUI();
+  scaleCover();
+})();
 </script>
 </body>
 </html>
