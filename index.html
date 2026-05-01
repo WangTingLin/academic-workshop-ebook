@@ -70,7 +70,7 @@
    RESET
 ══════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+html,body{height:100%;overscroll-behavior:none}
 body{
   font-family:'Noto Sans TC','CJK-ExtB','PingFang TC','Microsoft JhengHei',sans-serif;
   background:var(--paper);
@@ -239,6 +239,7 @@ body.sb-collapsed #btn-prev{left:10px;}
   border-radius:3px;
   box-shadow:0 6px 40px var(--shadow);
   overflow-y:auto;overflow-x:hidden;
+  overscroll-behavior-y:contain;
   padding:0;
   opacity:0;pointer-events:none;
   transform:translateX(32px);
