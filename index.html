@@ -70,7 +70,7 @@
    RESET
 ══════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+html,body{height:100%;overscroll-behavior:none}
 body{
   font-family:'Noto Sans TC','CJK-ExtB','PingFang TC','Microsoft JhengHei',sans-serif;
   background:var(--paper);
@@ -3348,6 +3348,12 @@ document.addEventListener('touchend',e=>{
   if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.8){dx<0?nextPage():prevPage();}
   tx=null;ty=null;
 },{passive:true});
+/* prevent pull-to-refresh on iOS Safari */
+document.addEventListener('touchmove',e=>{
+  if(!e.cancelable)return;
+  const pc=e.target.closest&&e.target.closest('.page-card');
+  if(!pc||pc.scrollTop===0)e.preventDefault();
+},{passive:false});
 
 lazyLoad(0);
 updateUI();
