@@ -504,15 +504,7 @@ body.sb-collapsed #btn-prev{left:10px;}
   #menu-btn{display:flex;}
   #overlay{display:none;}#overlay.on{display:block;}
   .goal-grid{grid-template-columns:1fr;}
-  .nav-arr{display:flex;width:40px;height:60px;
-    background:rgba(0,0,0,.26);border:none;
-    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-    color:rgba(255,255,255,.92);box-shadow:none;
-    opacity:0;transition:opacity .35s;}
-  #btn-prev{left:0;border-radius:0 8px 8px 0;}
-  #btn-next{right:0;border-radius:8px 0 0 8px;}
-  .nav-arr:disabled{opacity:0 !important;}
-  body.nav-show .nav-arr:not(:disabled){opacity:1;}
+  .nav-arr{display:none;}
   #mob-nav{display:flex;align-items:center;gap:8px;
     position:fixed;top:12px;left:12px;z-index:160;
     opacity:0;transition:opacity .35s;}
