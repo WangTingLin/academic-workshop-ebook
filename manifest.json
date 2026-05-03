@@ -1,0 +1,31 @@
+{
+  "name": "中文學科論文寫作計畫 活動手冊",
+  "short_name": "活動手冊",
+  "description": "2024 中文學科研究論文寫作計畫 學術工作坊活動手冊",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f1ec",
+  "theme_color": "#BE1E2D",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
