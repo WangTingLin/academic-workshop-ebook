@@ -241,7 +241,6 @@ body.sb-collapsed #btn-prev{left:10px;}
 }
 .btn:hover{background:rgba(0,0,0,.06);color:var(--ink);}
 [data-theme=dark] .btn:hover{background:rgba(255,255,255,.08);}
-.btn:hover{background:var(--paper2);color:var(--red);border-color:var(--red);}
 
 /* ══════════════════════════════
    STAGE
@@ -4268,7 +4267,6 @@ if(lsGet('th',null)==='dark'){
   document.documentElement.setAttribute('data-theme','dark');
   document.getElementById('sun-ic').style.display='none';
   document.getElementById('moon-ic').style.display='';
-  document.getElementById('theme-btn').lastChild.nodeValue=' 日間';
 }
 
 function applyFz(){document.documentElement.style.fontSize=(16+flv*1.5)+'px';}
