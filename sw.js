@@ -1,4 +1,4 @@
-const CACHE = 'ebook-v1';
+const CACHE = 'ebook-v2';
 const PRECACHE = [
   './',
   './manifest.json',
