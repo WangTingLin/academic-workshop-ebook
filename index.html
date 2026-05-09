@@ -56,7 +56,7 @@
   --shadow:   rgba(26,21,16,.14);
   --page-w:   680px;
   --sb-w:     256px;
-  --topbar-h: 50px;
+  --topbar-h: 44px;
   --glass-sb:   rgba(26,21,16,.88);
   --glass-top:  rgba(250,248,243,.85);
   --glass-arr:  rgba(250,248,243,.78);
@@ -204,15 +204,15 @@ body{
   height:calc(var(--topbar-h) + env(safe-area-inset-top));
   background:var(--glass-top);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 calc(18px + env(safe-area-inset-right)) 0 calc(18px + env(safe-area-inset-left));z-index:150;
+  padding:0 calc(14px + env(safe-area-inset-right)) 0 calc(14px + env(safe-area-inset-left));z-index:150;
   transition:left .32s,background .3s;
-  box-shadow:0 2px 12px var(--shadow);
+  box-shadow:0 1px 24px var(--shadow);
 }
-[data-theme=dark] #topbar{background:var(--glass-top);border-bottom:1px solid var(--border);}
-#tb-left{display:flex;align-items:center;gap:10px;}
-#menu-btn{display:flex;}
+[data-theme=dark] #topbar{background:var(--glass-top);}
+[data-theme=dark] #pg-ind{background:rgba(255,255,255,.06);border-color:var(--border);}
+#tb-left{display:flex;align-items:center;gap:8px;}
+#menu-btn{display:flex;padding:6px 7px;margin-right:2px;}
 
 /* sidebar collapsed (desktop) */
 body.sb-collapsed #sidebar{transform:translateX(-100%);}
@@ -220,27 +220,31 @@ body.sb-collapsed #topbar{left:0;}
 body.sb-collapsed #stage{left:0;}
 body.sb-collapsed #btn-prev{left:10px;}
 #pg-ind{
-  font-size:11.5px;font-weight:700;
-  color:var(--red);
-  background:rgba(190,30,45,.08);
-  border:1px solid rgba(190,30,45,.2);
-  padding:3px 12px;border-radius:20px;
-  letter-spacing:.05em;
+  font-size:11px;font-weight:500;
+  color:var(--ink3);
+  background:rgba(0,0,0,.05);
+  border:1px solid var(--border);
+  padding:2px 10px;border-radius:20px;
+  letter-spacing:.04em;
+  font-variant-numeric:tabular-nums;
 }
 #tb-title{
-  font-size:13px;color:var(--ink3);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:240px;
+  font-size:12.5px;font-weight:400;color:var(--ink3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px;
+  letter-spacing:.01em;
 }
-#controls{display:flex;gap:5px;}
+#controls{display:flex;gap:2px;align-items:center;}
 .btn{
   background:none;
-  border:1px solid var(--border);
-  border-radius:5px;padding:4px 10px;
+  border:none;
+  border-radius:6px;padding:5px 9px;
   cursor:pointer;color:var(--ink2);
-  font-size:12px;transition:all .18s;
-  display:flex;align-items:center;gap:4px;
+  font-size:12px;transition:background .15s,color .15s;
+  display:flex;align-items:center;gap:3px;
   font-family:inherit;
 }
+.btn:hover{background:rgba(0,0,0,.06);color:var(--ink);}
+[data-theme=dark] .btn:hover{background:rgba(255,255,255,.08);}
 .btn:hover{background:var(--paper2);color:var(--red);border-color:var(--red);}
 
 /* ══════════════════════════════
@@ -860,7 +864,6 @@ body.sb-collapsed #btn-prev{left:10px;}
       <svg id="moon-ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
       </svg>
-      夜間
     </button>
   </div>
 </div>
@@ -4236,7 +4239,7 @@ function prevPage(){goPage(cur-1,-1);}
 function nextPage(){goPage(cur+1,1);}
 
 function updateUI(){
-  document.getElementById('pg-ind').textContent=`第 ${cur+1} 頁 / 共 ${TOTAL} 頁`;
+  document.getElementById('pg-ind').textContent=`${cur+1} / ${TOTAL}`;
   document.getElementById('tb-title').textContent=titles[cur]||'';
   document.querySelectorAll('.toc-link').forEach((el,i)=>{
     const match=cur>0&&(i===cur-1||(i===7&&cur>=8&&cur<=15)||(i===8&&cur>=16&&cur<=30)||(i===9&&cur>=31&&cur<=55)||(i===10&&cur>=56&&cur<=66)||(i===11&&cur>=67&&cur<=77)||(i===12&&cur>=78&&cur<=86)||(i===13&&cur>=87&&cur<=92)||(i===14&&cur>=93&&cur<=104)||(i===15&&cur>=105&&cur<=117)||(i===16&&cur>=118&&cur<=135)||(i===17&&cur>=136&&cur<=147));
@@ -4254,13 +4257,11 @@ function toggleTheme(){
     document.documentElement.removeAttribute('data-theme');
     document.getElementById('sun-ic').style.display='';
     document.getElementById('moon-ic').style.display='none';
-    document.getElementById('theme-btn').lastChild.nodeValue=' 夜間';
     lsSet('th','light');
   }else{
     document.documentElement.setAttribute('data-theme','dark');
     document.getElementById('sun-ic').style.display='none';
     document.getElementById('moon-ic').style.display='';
-    document.getElementById('theme-btn').lastChild.nodeValue=' 日間';
     lsSet('th','dark');
   }
 }
