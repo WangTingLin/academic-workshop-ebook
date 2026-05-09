@@ -287,7 +287,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 /* page-hero: coloured top band, like poster header */
 .page-hero{
   position:relative;overflow:hidden;
-  padding:28px 36px 22px;
+  padding:22px 26px 18px;
   background:linear-gradient(135deg,var(--red) 0%,#8b1020 100%);
   color:#fff;
 }
@@ -318,9 +318,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 .hero-title .teal-word{ color:var(--teal-lt); }
 
 /* page body padding */
-.page-body{padding:28px 36px 16px;}
+.page-body{padding:22px 26px 16px;}
+/* slide pages: compact hero + centered image body */
+.slide-hero{padding:10px 26px 8px !important;flex:none;}
+.slide-body{padding:14px 20px !important;display:flex;align-items:center;justify-content:center;}
 /* 論文頁縮緊左右邊界 */
-.paper-hero ~ .page-body{padding:20px 26px 14px;}
+.paper-hero ~ .page-body{padding:18px 26px 14px;}
 
 /* section bracket label  【 】 */
 .bracket-label{
@@ -590,7 +593,7 @@ body.sb-collapsed #btn-prev{left:10px;}
 /* ── 論文全文專用樣式 ── */
 .paper-hero{
   position:relative;overflow:hidden;
-  padding:24px 26px 20px;
+  padding:20px 26px 16px;
   background:linear-gradient(135deg,#2d3a5a 0%,#1a2540 100%);
   color:#fff;
 }
@@ -1264,12 +1267,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-9">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜王誠御</div>
     <div class="ph-title" style="font-size:13px;">圓桌論壇讕言</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wang01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
   </div>
   <div class="pg-band"><span class="org">王誠御｜圓桌論壇讕言</span><span class="pgn">— 9 —</span></div>
@@ -1277,12 +1280,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-10">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜王誠御</div>
     <div class="ph-title" style="font-size:13px;">圓桌論壇讕言</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wang02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
   </div>
   <div class="pg-band"><span class="org">王誠御｜圓桌論壇讕言</span><span class="pgn">— 10 —</span></div>
@@ -1290,12 +1293,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-11">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜王誠御</div>
     <div class="ph-title" style="font-size:13px;">圓桌論壇讕言</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wang03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
   </div>
   <div class="pg-band"><span class="org">王誠御｜圓桌論壇讕言</span><span class="pgn">— 11 —</span></div>
@@ -1303,12 +1306,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-12">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜王誠御</div>
     <div class="ph-title" style="font-size:13px;">圓桌論壇讕言</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wang04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
   </div>
   <div class="pg-band"><span class="org">王誠御｜圓桌論壇讕言</span><span class="pgn">— 12 —</span></div>
@@ -1316,12 +1319,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-13">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜王誠御</div>
     <div class="ph-title" style="font-size:13px;">圓桌論壇讕言</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wang05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
   </div>
   <div class="pg-band"><span class="org">王誠御｜圓桌論壇讕言</span><span class="pgn">— 13 —</span></div>
@@ -1329,12 +1332,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-14">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜王誠御</div>
     <div class="ph-title" style="font-size:13px;">圓桌論壇讕言</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wang06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
   </div>
   <div class="pg-band"><span class="org">王誠御｜圓桌論壇讕言</span><span class="pgn">— 14 —</span></div>
@@ -1342,12 +1345,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-15">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜王誠御</div>
     <div class="ph-title" style="font-size:13px;">圓桌論壇讕言</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wang07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
   </div>
   <div class="pg-band"><span class="org">王誠御｜圓桌論壇讕言</span><span class="pgn">— 15 —</span></div>
@@ -1390,12 +1393,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-17">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 17 —</span></div>
@@ -1403,12 +1406,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-18">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 18 —</span></div>
@@ -1416,12 +1419,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-19">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 19 —</span></div>
@@ -1429,12 +1432,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-20">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 20 —</span></div>
@@ -1442,12 +1445,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-21">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 21 —</span></div>
@@ -1455,12 +1458,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-22">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 22 —</span></div>
@@ -1468,12 +1471,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-23">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 23 —</span></div>
@@ -1481,12 +1484,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-24">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 24 —</span></div>
@@ -1494,12 +1497,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-25">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 25 —</span></div>
@@ -1507,12 +1510,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-26">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 26 —</span></div>
@@ -1520,12 +1523,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-27">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan11.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 11">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 27 —</span></div>
@@ -1533,12 +1536,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-28">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan12.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 12">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 28 —</span></div>
@@ -1546,12 +1549,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-29">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan13.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 13">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 29 —</span></div>
@@ -1559,12 +1562,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-30">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜嚴浩然</div>
     <div class="ph-title" style="font-size:13px;">投稿經驗小識</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yan14.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 14">
   </div>
   <div class="pg-band"><span class="org">嚴浩然｜投稿經驗小識</span><span class="pgn">— 30 —</span></div>
@@ -1607,12 +1610,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-32">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 32 —</span></div>
@@ -1620,12 +1623,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-33">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 33 —</span></div>
@@ -1633,12 +1636,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-34">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 34 —</span></div>
@@ -1646,12 +1649,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-35">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 35 —</span></div>
@@ -1659,12 +1662,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-36">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 36 —</span></div>
@@ -1672,12 +1675,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-37">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 37 —</span></div>
@@ -1685,12 +1688,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-38">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 38 —</span></div>
@@ -1698,12 +1701,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-39">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 39 —</span></div>
@@ -1711,12 +1714,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-40">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 40 —</span></div>
@@ -1724,12 +1727,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-41">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 41 —</span></div>
@@ -1737,12 +1740,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-42">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang11.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 11">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 42 —</span></div>
@@ -1750,12 +1753,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-43">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang12.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 12">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 43 —</span></div>
@@ -1763,12 +1766,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-44">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang13.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 13">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 44 —</span></div>
@@ -1776,12 +1779,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-45">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang14.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 14">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 45 —</span></div>
@@ -1789,12 +1792,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-46">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang15.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 15">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 46 —</span></div>
@@ -1802,12 +1805,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-47">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang16.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 16">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 47 —</span></div>
@@ -1815,12 +1818,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-48">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang17.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 17">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 48 —</span></div>
@@ -1828,12 +1831,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-49">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang18.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 18">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 49 —</span></div>
@@ -1841,12 +1844,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-50">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang19.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 19">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 50 —</span></div>
@@ -1854,12 +1857,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-51">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang20.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 20">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 51 —</span></div>
@@ -1867,12 +1870,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-52">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang21.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 21">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 52 —</span></div>
@@ -1880,12 +1883,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-53">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang22.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 22">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 53 —</span></div>
@@ -1893,12 +1896,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-54">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang23.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 23">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 54 —</span></div>
@@ -1906,12 +1909,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-55">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜楊卓剛</div>
     <div class="ph-title" style="font-size:13px;">被退稿的勇氣</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/yang24.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 24">
   </div>
   <div class="pg-band"><span class="org">楊卓剛｜被退稿的勇氣</span><span class="pgn">— 55 —</span></div>
@@ -1961,12 +1964,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-57">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 57 —</span></div>
@@ -1974,12 +1977,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-58">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 58 —</span></div>
@@ -1987,12 +1990,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-59">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 59 —</span></div>
@@ -2000,12 +2003,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-60">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 60 —</span></div>
@@ -2013,12 +2016,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-61">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 61 —</span></div>
@@ -2026,12 +2029,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-62">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 62 —</span></div>
@@ -2039,12 +2042,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-63">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 63 —</span></div>
@@ -2052,12 +2055,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-64">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 64 —</span></div>
@@ -2065,12 +2068,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-65">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 65 —</span></div>
@@ -2078,12 +2081,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-66">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜蔡瑩瑩</div>
     <div class="ph-title" style="font-size:13px;">救命！修改後再審</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/tsai10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
   </div>
   <div class="pg-band"><span class="org">蔡瑩瑩｜救命！修改後再審</span><span class="pgn">— 66 —</span></div>
@@ -2134,12 +2137,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-68">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 68 —</span></div>
@@ -2147,12 +2150,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-69">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 69 —</span></div>
@@ -2160,12 +2163,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-70">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 70 —</span></div>
@@ -2173,12 +2176,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-71">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 71 —</span></div>
@@ -2186,12 +2189,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-72">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 72 —</span></div>
@@ -2199,12 +2202,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-73">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 73 —</span></div>
@@ -2212,12 +2215,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-74">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 74 —</span></div>
@@ -2225,12 +2228,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-75">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 75 —</span></div>
@@ -2238,12 +2241,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-76">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu09.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 9">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 76 —</span></div>
@@ -2251,12 +2254,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-77">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜吳佩熏</div>
     <div class="ph-title" style="font-size:13px;">審查委員的鷹眼</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/wu10.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 10">
   </div>
   <div class="pg-band"><span class="org">吳佩熏｜審查委員的鷹眼</span><span class="pgn">— 77 —</span></div>
@@ -2305,12 +2308,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-79">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 79 —</span></div>
@@ -2318,12 +2321,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-80">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 80 —</span></div>
@@ -2331,12 +2334,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-81">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 81 —</span></div>
@@ -2344,12 +2347,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-82">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 82 —</span></div>
@@ -2357,12 +2360,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-83">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 83 —</span></div>
@@ -2370,12 +2373,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-84">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye06.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 6">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 84 —</span></div>
@@ -2383,12 +2386,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-85">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye07.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 7">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 85 —</span></div>
@@ -2396,12 +2399,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-86">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜葉叡宸</div>
     <div class="ph-title" style="font-size:13px;">「同理」與「對話」</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/ye08.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 8">
   </div>
   <div class="pg-band"><span class="org">葉叡宸｜「同理」與「對話」</span><span class="pgn">— 86 —</span></div>
@@ -2445,12 +2448,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-88">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜趙旻祐</div>
     <div class="ph-title" style="font-size:13px;">一次投稿換來終身內向</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/zhao01.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 1">
   </div>
   <div class="pg-band"><span class="org">趙旻祐｜研究者的情緒管理</span><span class="pgn">— 88 —</span></div>
@@ -2458,12 +2461,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-89">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜趙旻祐</div>
     <div class="ph-title" style="font-size:13px;">一次投稿換來終身內向</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/zhao02.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 2">
   </div>
   <div class="pg-band"><span class="org">趙旻祐｜研究者的情緒管理</span><span class="pgn">— 89 —</span></div>
@@ -2471,12 +2474,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-90">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜趙旻祐</div>
     <div class="ph-title" style="font-size:13px;">一次投稿換來終身內向</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/zhao03.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 3">
   </div>
   <div class="pg-band"><span class="org">趙旻祐｜研究者的情緒管理</span><span class="pgn">— 90 —</span></div>
@@ -2484,12 +2487,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-91">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜趙旻祐</div>
     <div class="ph-title" style="font-size:13px;">一次投稿換來終身內向</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/zhao04.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 4">
   </div>
   <div class="pg-band"><span class="org">趙旻祐｜研究者的情緒管理</span><span class="pgn">— 91 —</span></div>
@@ -2497,12 +2500,12 @@ body.sb-collapsed #btn-prev{left:10px;}
 </template>
 <template id="page-92">
 <div class="pw">
-  <div class="paper-hero" style="padding:10px 20px 8px;flex:none;">
+  <div class="paper-hero slide-hero">
     <div class="deco-circle"></div><div class="deco-circle2"></div>
     <div class="ph-kicker" style="margin-bottom:3px;">圓桌論壇｜趙旻祐</div>
     <div class="ph-title" style="font-size:13px;">一次投稿換來終身內向</div>
   </div>
-  <div class="page-body" style="padding:12px 14px;display:flex;align-items:center;justify-content:center;">
+  <div class="page-body slide-body">
     <img data-src="./slides/zhao05.png" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.15);" alt="投影片 5">
   </div>
   <div class="pg-band"><span class="org">趙旻祐｜研究者的情緒管理</span><span class="pgn">— 92 —</span></div>
